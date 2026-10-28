@@ -20,3 +20,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Erkan henüz madde 0'a (yöntem kararı) cevap vermedi; ortak parçalar sürüyor.
 - Yeni: ilk hesaplayıcı `public/tools/job-price-calculator.html` (iş fiyatı/kâr marjı, çerezsiz, saf JS) + sitemap. Ana sayfa hâlâ placeholder/noindex; lansman iletişim bilgileri (madde 4) gelince.
 - Dağıtım işi: hesaplayıcı sayfası SEO sayfası olarak eklendi. Sonraki: 2. hesaplayıcı (saatlik ücret), eyalet verisi kaynak toplama.
+
+## 4. çalıştırma (28 Ekim)
+- Erkan madde 0'a hâlâ cevap vermedi; ortak parçalar sürüyor.
+- Yeni: `public/tools/hourly-rate-calculator.html` (saatlik ücret hesaplayıcısı, çerezsiz) + sitemap. Örnek hesap elle doğrulandı (~$88.80/saat).
+- Dağıtım işi: ikinci SEO araç sayfası. Sonraki: ana sayfa araç listesi (lansmandan önce), eyalet verisi kaynak toplama, teklif/markup hesaplayıcısı.

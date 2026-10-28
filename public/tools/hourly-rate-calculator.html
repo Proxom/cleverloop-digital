@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hourly Rate Calculator for Home-Service Pros | Clever Loop Digital</title>
+<meta name="description" content="Free hourly rate calculator for contractors, cleaners and other home-service pros. Enter your income goal, yearly business costs and billable hours to get the hourly rate you need to charge.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/hourly-rate-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Hourly Rate Calculator</h1>
+<p>Find the hourly rate you must charge to hit your take-home goal after business costs, taxes and unpaid time. Only a fraction of your working week is billable, so the rate is higher than most people expect. Everything runs in your browser; nothing is stored or sent. See also the <a href="job-price-calculator.html">Job Price Calculator</a>.</p>
+<div class="card">
+<div class="row"><div><label for="inc">Yearly take-home income goal ($)</label><input id="inc" type="number" min="0" step="1000" value="80000"></div>
+<div><label for="tax">Set aside for taxes (% of profit)</label><input id="tax" type="number" min="0" max="60" step="1" value="25"></div></div>
+<div class="row"><div><label for="cost">Yearly business costs ($): insurance, vehicle, tools, software</label><input id="cost" type="number" min="0" step="500" value="18000"></div>
+<div><label for="wk">Working weeks per year</label><input id="wk" type="number" min="1" max="52" step="1" value="48"></div></div>
+<div class="row"><div><label for="hw">Hours worked per week</label><input id="hw" type="number" min="1" max="100" step="1" value="45"></div>
+<div><label for="bill">Billable share of those hours (%)</label><input id="bill" type="number" min="1" max="100" step="1" value="65"></div></div>
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Pre-tax profit needed = take-home goal &divide; (1 &minus; tax %). Revenue needed = pre-tax profit + yearly business costs. Billable hours = working weeks &times; hours per week &times; billable share. Hourly rate = revenue needed &divide; billable hours.</p>
+<p>Example: $80,000 take-home at 25% tax needs $106,667 of profit; add $18,000 of costs for $124,667 of revenue. With 48 weeks &times; 45 hours &times; 65% = 1,404 billable hours, the rate is about $88.80 per hour.</p>
+<p>Driving, quoting, buying materials and invoicing are unpaid, which is why the billable share is usually well under 100%. Use your own tax rate and costs from your books.</p>
+<p><small>This tool gives estimates for planning only. It is not accounting, tax or legal advice, and it does not know your local taxes or licensing rules.</small></p>
+</main>
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var ids=["inc","tax","cost","wk","hw","bill"],f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var n=parseFloat(document.getElementById(i).value);return isFinite(n)&&n>=0?n:0}
+function calc(){
+var t=Math.min(v("tax"),60)/100,profit=v("inc")/(1-t),rev=profit+v("cost"),hrs=v("wk")*v("hw")*Math.min(v("bill"),100)/100,rate=hrs>0?rev/hrs:0;
+document.getElementById("out").innerHTML=
+"<tr><td>Pre-tax profit needed</td><td>"+f.format(profit)+"</td></tr>"+
+"<tr><td>Revenue needed per year</td><td>"+f.format(rev)+"</td></tr>"+
+"<tr><td>Billable hours per year</td><td>"+Math.round(hrs).toLocaleString("en-US")+"</td></tr>"+
+"<tr><td><strong>Hourly rate to charge</strong></td><td class='big'>"+f.format(rate)+"</td></tr>"+
+"<tr><td>Revenue needed per month</td><td>"+f.format(rev/12)+"</td></tr>";}
+ids.forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>
