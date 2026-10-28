@@ -35,13 +35,19 @@ Affiliate disclosure (FTC), CAN-SPAM for any email, CCPA/state privacy for list,
 Home page for "tools for home-service pros", 3 launch calculators (job pricing, hourly rate / profit margin, quote markup) in plain JS (no cookies), comparison pages with disclosed affiliate links (only after Erkan joins programs), email capture (needs provider chosen by Erkan, no account created by me), template pack page (pricing displayed, checkout later), trust pages with Erkan's real details.
 Cost: £0 beyond domain/hosting already paid.
 
-## Kill criteria and 30-day validation (numeric)
-Day 30 after tools go live:
-- ≥ 500 organic visits total AND ≥ 25 email sign-ups, else rethink distribution (switch emphasis to backup E or drop D).
-- ≥ 1 affiliate program accepted by Erkan and ≥ 3 qualified clicks logged.
-- ≥ 1 paid template sale or ≥ 10 pre-order "notify me" sign-ups.
-Day 90 kill: < 2,000 monthly visits or < 150 subscribers → stop D, pick next candidate.
-Day 180 must-have: ≥ £500/month, else the £5k/month goal needs a different method.
+## Kill criteria and 30-day validation (numeric, revised after red-team)
+Single assumption: 1.5-3% of visits join the email list. Thresholds derive from it.
+- Day 45: >= 15 pages indexed AND >= 1,000 Search Console impressions (day-30 traffic is noise on a new domain).
+- Day 30-45: willingness-to-pay test: a paid $29-49 sample report/pre-order (paid deposit only; free "notify me" sign-ups do NOT count as demand).
+- Day 90: >= 3,000 visits/month, rising >= 30% month on month, and >= $1 affiliate revenue or one paid pre-order.
+- Hard checkpoint ~June 2027: >= £1,000/month; stop or pivot if < £300.
+- Caps: kill if Erkan's time > 45 min/day or spend > £200. Pause on any Google manual action or affiliate ban.
 
-## Red-team notes
-(to be filled by the red-team subagent)
+## Red-team notes (subagent; unverified, no web searches run)
+1. Revenue math does not close: 100k visits/mo gives only ~$435/mo from $29 packs; $6.3k needs ~500k-1M visits/mo. "£5k net" also ignores fees, US sales tax/nexus, UK tax, W-8BEN. The "$87" line in row D is a one-off, not monthly.
+2. Original thresholds contradicted the model (implied 5-7.5% capture) - fixed above.
+3. SEO on a new domain takes 3-6 months; Jobber/ServiceTitan/Housecall Pro own calculator queries; AI Overviews answer them.
+4. Thin/AI-run content risk (scaled content abuse): few pages, original data, real sources.
+5. Depends on Erkan (affiliate sign-ups, email provider, details); forums ban AI/promo posts; trades audiences respond poorly to email.
+Probability of reaching £5k/month by Oct 2027 with D: estimated <= 5% by the red team. Honest view: low; this is a validation bet, not a plan.
+Changes adopted: pick high-bounty niche (field-service software $100+/signup, financing) rather than $29 packs; add original state-by-state data (licensing, permits, rates, with sources) as content moat; test paid demand in week 1 via E-style sample report.
