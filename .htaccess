@@ -1,0 +1,10 @@
+# Web root is the repository root; only public/ is served. Everything else is blocked.
+Options -Indexes
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Block repo/agent files
+RewriteRule ^(AGENT\.md|README\.md|docs/|\.github/|\.git) - [R=404,L]
+# Serve from public/
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ public/$1 [L]
