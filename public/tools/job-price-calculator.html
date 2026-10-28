@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Job Price Calculator for Home-Service Pros | Clever Loop Digital</title>
+<meta name="description" content="Free job price calculator for contractors, cleaners, landscapers and other home-service pros. Enter labor, materials and overhead to get a quote price at your target profit margin.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/job-price-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Job Price Calculator</h1>
+<p>Work out what to quote for a job so you actually keep the profit margin you want. Margin is the share of the <em>price</em> you keep, not a markup on cost. Everything runs in your browser; nothing is stored or sent.</p>
+<div class="card">
+<div class="row"><div><label for="hrs">Labor hours</label><input id="hrs" type="number" min="0" step="0.25" value="8"></div>
+<div><label for="rate">Labor cost per hour ($, wages plus payroll taxes)</label><input id="rate" type="number" min="0" step="0.5" value="30"></div></div>
+<div class="row"><div><label for="mat">Materials ($)</label><input id="mat" type="number" min="0" step="1" value="400"></div>
+<div><label for="oth">Other job costs: fuel, permits, rentals ($)</label><input id="oth" type="number" min="0" step="1" value="60"></div></div>
+<div class="row"><div><label for="ovh">Overhead (% of direct cost)</label><input id="ovh" type="number" min="0" max="200" step="1" value="15"></div>
+<div><label for="mar">Target profit margin (% of price)</label><input id="mar" type="number" min="0" max="90" step="1" value="25"></div></div>
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Direct cost = labor hours &times; hourly labor cost + materials + other job costs. Cost with overhead = direct cost &times; (1 + overhead %). Quote price = cost with overhead &divide; (1 &minus; margin %). Example: $700 of cost at a 25% margin is $933.33, not $875, because 25% of the <em>price</em> must be profit.</p>
+<p>Your overhead percentage is your yearly non-job costs (insurance, vehicle, software, office) divided by your yearly direct job costs. If you do not know it, 10&ndash;20% is a common starting guess, but use your own books.</p>
+<p><small>This tool gives estimates for planning only. It is not accounting, tax or legal advice, and it does not know your local taxes or licensing rules.</small></p>
+</main>
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var ids=["hrs","rate","mat","oth","ovh","mar"],f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var n=parseFloat(document.getElementById(i).value);return isFinite(n)&&n>=0?n:0}
+function calc(){
+var direct=v("hrs")*v("rate")+v("mat")+v("oth"),withOvh=direct*(1+v("ovh")/100),m=Math.min(v("mar"),90)/100,price=withOvh/(1-m),profit=price-withOvh;
+document.getElementById("out").innerHTML=
+"<tr><td>Direct job cost</td><td>"+f.format(direct)+"</td></tr>"+
+"<tr><td>Cost including overhead</td><td>"+f.format(withOvh)+"</td></tr>"+
+"<tr><td>Profit at target margin</td><td>"+f.format(profit)+"</td></tr>"+
+"<tr><td><strong>Quote price</strong></td><td class='big'>"+f.format(price)+"</td></tr>"+
+"<tr><td>Equivalent markup on cost</td><td>"+(withOvh>0?((price/withOvh-1)*100).toFixed(1)+"%":"-")+"</td></tr>";}
+ids.forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>

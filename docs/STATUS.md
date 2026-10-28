@@ -15,3 +15,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - docs/DECISION.md taslağı yazıldı; Semrush API birimi yok (hacim alınamadı). Kırmızı takım alt ajanı çalışıyor; sonucu sonraki adımda karara işlenecek.
 - Onay maddesi 0 eklendi. Stripe'a dokunulmadı.
 - Kırmızı takım tamamlandı, DECISION.md güncellendi (gerçekçi olasılık düşük, ölüm kriterleri sertleşti).
+
+## 3. çalıştırma (28 Ekim)
+- Erkan henüz madde 0'a (yöntem kararı) cevap vermedi; ortak parçalar sürüyor.
+- Yeni: ilk hesaplayıcı `public/tools/job-price-calculator.html` (iş fiyatı/kâr marjı, çerezsiz, saf JS) + sitemap. Ana sayfa hâlâ placeholder/noindex; lansman iletişim bilgileri (madde 4) gelince.
+- Dağıtım işi: hesaplayıcı sayfası SEO sayfası olarak eklendi. Sonraki: 2. hesaplayıcı (saatlik ücret), eyalet verisi kaynak toplama.
