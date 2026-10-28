@@ -1,4 +1,5 @@
 # Onaylar (her biri tek karar)
+0. **Para kazanma yöntemi (taslak, kırmızı takım bekleniyor):** docs/DECISION.md — birincil: ABD ev-hizmetleri esnafı için ücretsiz hesaplayıcılar + açıklamalı affiliate + e-posta listesi + ücretli şablon paketi; yedek: aylık niş rapor aboneliği. Onaylıyor musun, yoksa değiştirir misin? (Cevap gelene kadar ortak site parçalarını yapıyorum.)
 1. **Alan adı:** cleverloopdigital.com satın alınsın mı (marka kontrolü UK IPO/USPTO sonrası)? Alternatifler: tilverra.com, cobaltmoor.com.
 2. **Hosting:** alan adı alınınca Hostinger'da site oluştur (veya konektörle onay ver).
 3. **Stripe:** yeni hesabı Claude'a bağla (şu an sadece Proxom Ltd görünüyor; ona dokunmuyorum).

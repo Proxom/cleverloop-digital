@@ -10,3 +10,7 @@
 ## Gelir: £0 (henüz satış yok)
 ## Sonraki adımlar
 Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon (Sheets) üretimi; yasal sayfalar için iletişim bilgisi.
+
+## 2. çalıştırma (28 Ekim, 21:16 UTC)
+- docs/DECISION.md taslağı yazıldı; Semrush API birimi yok (hacim alınamadı). Kırmızı takım alt ajanı çalışıyor; sonucu sonraki adımda karara işlenecek.
+- Onay maddesi 0 eklendi. Stripe'a dokunulmadı.
