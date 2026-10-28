@@ -1,0 +1,2 @@
+# İletişim kurulmayacaklar listesi
+(boş)

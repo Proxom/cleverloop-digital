@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cleverloopdigital.com/sitemap.xml
