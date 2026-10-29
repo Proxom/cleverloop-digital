@@ -40,3 +40,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Erkan madde 0'a hâlâ cevap vermedi; yeni araç/sayfa eklemedim (4 hesaplayıcı + merkez hazır).
 - Dağıtım işi: `docs/distribution/003-tool-submission-plan.md` (araç gönderim planı taslağı; hiçbir şey gönderilmedi).
 - Sonraki: lansman için madde 4 (iletişim bilgisi) ve madde 0 cevabı gerekli; ana sayfa araç listesi lansmanla birlikte.
+
+## 8. çalıştırma (29 Ekim)
+- Erkan madde 0 ve 4'e hâlâ cevap vermedi; yeni sayfa eklemedim.
+- Dağıtım işi: `docs/distribution/004-forum-answer-drafts.md` (3 forum cevabı taslağı; hiçbir şey paylaşılmadı).
