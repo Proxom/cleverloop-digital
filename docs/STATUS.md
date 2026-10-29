@@ -96,3 +96,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 
 ## 24. çalıştırma (29 Ekim)
 - a-003 onaylı → noindex kaldırıldı. Yeni: docs/distribution/006-first-sale-sprint.md. Engel: bize ait ödeme hesabı yok (Stripe'ta yalnızca Proxom Ltd); Payhip hesabını Erkan açmalı. xlsx üretilemedi (openpyxl kurulamadı).
+
+## 25. çalıştırma (29 Ekim)
+- Ürün dosyası hazır: docs/distribution/product/contractor-quote-margin-sheet.csv (Google Sheets'e içe aktarılır, formüller elle doğrulandı: örnek 3.744$ teklif, 1.123,20$ kâr). Erkan: Sheets'e yükle, Payhip'e $9 olarak ekle.
+- Stripe: bize ait hesap yok, ödeme kontrolü yapılamadı. Engel: Payhip hesabı (Erkan).
