@@ -54,3 +54,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 
 ## 11. çalıştırma (29 Ekim)
 - Madde 0 ve 4 hâlâ cevapsız; main üzerinde yeni değişiklik yok → erken durdum.
+
+## 12. çalıştırma (29 Ekim)
+- Dashboard: a-001 (yöntem) ONAYLANDI → Faz 2 başladı. a-002 (iletişim) "onaylandı" ama not boş; e-posta/adres yok, uydurmuyorum.
+- Yeni: ana sayfa gerçek içerikle (hesaplayıcı odaklı) yeniden yazıldı; noindex iletişim bilgisi gelene kadar duruyor.
+- Engel: a-002 notunda herkese açık e-posta (+ adres ya da "adres gösterme") gerekli.
