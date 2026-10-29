@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Markup vs Margin Calculator for Contractors | Clever Loop Digital</title>
+<meta name="description" content="Free markup and margin calculator for contractors and home-service pros. Convert markup to margin and back, and get the selling price for your cost.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/markup-margin-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Markup vs Margin Calculator</h1>
+<p>Markup is profit as a share of your <em>cost</em>. Margin is profit as a share of your <em>price</em>. Mixing them up is the most common way a quote ends up underpriced. Enter your cost and either number; the other one is calculated. Everything runs in your browser; nothing is stored or sent.</p>
+<div class="card">
+<div class="row"><div><label for="cost">Your cost ($)</label><input id="cost" type="number" min="0" step="1" value="700"></div>
+<div><label for="mode">I know my</label><select id="mode" style="width:100%;padding:8px 10px;font:inherit"><option value="mar">Margin (% of price)</option><option value="mk">Markup (% of cost)</option></select></div></div>
+<label for="pct">Percent</label><input id="pct" type="number" min="0" step="1" value="25">
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Price = cost &times; (1 + markup). Margin = (price &minus; cost) &divide; price. So markup = margin &divide; (1 &minus; margin), and margin = markup &divide; (1 + markup). Example: a 25% margin equals a 33.3% markup, not 25%. Adding 25% markup to a $700 cost gives $875, which is only a 20% margin.</p>
+<p><small>Estimates for planning only. This is not accounting, tax or legal advice.</small></p>
+</main>
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var n=parseFloat(document.getElementById(i).value);return isFinite(n)&&n>=0?n:0}
+function calc(){
+var c=v("cost"),p=v("pct")/100,mode=document.getElementById("mode").value,out=document.getElementById("out");
+if(mode==="mar"&&p>=1){out.innerHTML="<tr><td>Margin must be below 100%.</td></tr>";return}
+var mk=mode==="mar"?p/(1-p):p,mar=mk/(1+mk),price=c*(1+mk);
+out.innerHTML="<tr><td>Markup (% of cost)</td><td>"+(mk*100).toFixed(1)+"%</td></tr>"+
+"<tr><td>Margin (% of price)</td><td>"+(mar*100).toFixed(1)+"%</td></tr>"+
+"<tr><td>Profit</td><td>"+f.format(price-c)+"</td></tr>"+
+"<tr><td><strong>Selling price</strong></td><td class='big'>"+f.format(price)+"</td></tr>";}
+["cost","pct","mode"].forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>
