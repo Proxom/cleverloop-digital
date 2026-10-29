@@ -77,3 +77,6 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 
 ## 18. çalıştırma (29 Ekim)
 - a-002 notu hâlâ boş; main değişmedi → erken durdum. Engel: herkese açık e-posta (+ adres ya da "adres gösterme").
+
+## 19. çalıştırma (29 Ekim)
+- a-002 notu hâlâ boş; main değişmedi → erken durdum. Engel: herkese açık e-posta (+ adres ya da "adres gösterme").
