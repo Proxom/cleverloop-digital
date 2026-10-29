@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Break-Even Calculator for Home-Service Businesses | Clever Loop Digital</title>
+<meta name="description" content="Free break-even calculator for contractors and home-service pros. See how many jobs per month cover your fixed costs.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/break-even-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Break-Even Calculator</h1>
+<p>How many jobs a month do you need just to cover your fixed costs? Enter your monthly overhead and the average numbers for one job. Everything runs in your browser; nothing is stored or sent.</p>
+<div class="card">
+<div class="row"><div><label for="fixed">Monthly fixed costs ($)</label><input id="fixed" type="number" min="0" step="50" value="4000"></div>
+<div><label for="price">Average price per job ($)</label><input id="price" type="number" min="0" step="10" value="900"></div></div>
+<div class="row"><div><label for="var">Average variable cost per job ($)</label><input id="var" type="number" min="0" step="10" value="500"></div>
+<div><label for="cap">Jobs you can do per month</label><input id="cap" type="number" min="0" step="1" value="20"></div></div>
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Contribution per job = price &minus; variable cost (materials, labor paid per job, fuel, fees). Break-even jobs = fixed costs &divide; contribution, rounded up. Example: $4,000 fixed &divide; ($900 &minus; $500) = 10 jobs a month. Fixed costs include insurance, software, vehicle payments, rent and any salary you pay yourself.</p>
+<p><small>Estimates for planning only. This is not accounting, tax or legal advice.</small></p>
+</main></main>
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var n=parseFloat(document.getElementById(i).value);return isFinite(n)&&n>=0?n:0}
+function calc(){
+var fx=v("fixed"),p=v("price"),vc=v("var"),cap=v("cap"),out=document.getElementById("out"),c=p-vc;
+if(c<=0){out.innerHTML="<tr><td>Your variable cost is at or above the price, so no number of jobs breaks even. Raise the price or cut costs.</td></tr>";return}
+var n=Math.ceil(fx/c),rows="<tr><td>Contribution per job</td><td>"+f.format(c)+"</td></tr><tr><td>Contribution margin</td><td>"+(c/p*100).toFixed(1)+"%</td></tr><tr><td>Break-even revenue</td><td>"+f.format(n*p)+"</td></tr><tr><td><strong>Break-even jobs / month</strong></td><td class='big'>"+n+"</td></tr>";
+if(cap>0){rows+= n>cap?"<tr><td colspan='2'>You need more jobs than you can do ("+cap+"). Raise prices or cut fixed costs.</td></tr>":"<tr><td>Profit at "+cap+" jobs</td><td>"+f.format(cap*c-fx)+"</td></tr>";}
+out.innerHTML=rows;}
+["fixed","price","var","cap"].forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>

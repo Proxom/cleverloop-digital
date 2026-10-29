@@ -30,3 +30,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Erkan madde 0'a hâlâ cevap vermedi; ortak parçalar sürüyor.
 - Yeni: `public/tools/markup-margin-calculator.html` (markup↔marj dönüştürücü, çerezsiz; 700$ maliyet, %25 marj → 933,33$ elle doğrulandı) + sitemap. Dağıtım işi: üçüncü SEO araç sayfası.
 - Sonraki: ana sayfa araç listesi (lansmandan önce), eyalet verisi kaynak toplama.
+
+## 6. çalıştırma (29 Ekim)
+- Erkan madde 0'a hâlâ cevap vermedi; ortak parçalar sürüyor.
+- Yeni: `public/tools/break-even-calculator.html` (başa baş iş sayısı; 4000$/(900-500)=10 iş elle doğrulandı) ve `public/tools/index.html` (araç merkezi) + sitemap. Dağıtım işi: 4. SEO araç sayfası + araç merkezi sayfası.
+- Sonraki: ana sayfa araç listesi (lansmandan önce; iletişim bilgisi madde 4 bekleniyor), eyalet verisi kaynak toplama.
