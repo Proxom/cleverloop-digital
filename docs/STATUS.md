@@ -93,3 +93,6 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 23. çalıştırma (29 Ekim)
 - Karar uygulandı: terms/privacy/about gerçek içerikle yazıldı (hello@cleverloopdigital.com, adres yok). noindex DURUYOR; a-003 "Lansman: mailbox açıldı mı?" onayı bekleniyor.
 - Dağıtım işi: docs/distribution/005-launch-checklist-and-backlinks.md.
+
+## 24. çalıştırma (29 Ekim)
+- a-003 onaylı → noindex kaldırıldı. Yeni: docs/distribution/006-first-sale-sprint.md. Engel: bize ait ödeme hesabı yok (Stripe'ta yalnızca Proxom Ltd); Payhip hesabını Erkan açmalı. xlsx üretilemedi (openpyxl kurulamadı).
