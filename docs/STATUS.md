@@ -51,3 +51,6 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 
 ## 10. çalıştırma (29 Ekim)
 - Madde 0 ve 4 hâlâ cevapsız; yapılacak ortak iş yok → erken durdum.
+
+## 11. çalıştırma (29 Ekim)
+- Madde 0 ve 4 hâlâ cevapsız; main üzerinde yeni değişiklik yok → erken durdum.
