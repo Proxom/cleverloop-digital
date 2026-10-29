@@ -100,3 +100,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 25. çalıştırma (29 Ekim)
 - Ürün dosyası hazır: docs/distribution/product/contractor-quote-margin-sheet.csv (Google Sheets'e içe aktarılır, formüller elle doğrulandı: örnek 3.744$ teklif, 1.123,20$ kâr). Erkan: Sheets'e yükle, Payhip'e $9 olarak ekle.
 - Stripe: bize ait hesap yok, ödeme kontrolü yapılamadı. Engel: Payhip hesabı (Erkan).
+
+## 26. çalıştırma (29 Ekim)
+- Erkan'dan yeni cevap yok; Stripe'ta hâlâ yalnızca Proxom Ltd (bize ait hesap yok, dokunulmadı).
+- Yeni: `public/tools/labor-burden-calculator.html` (işçilik yükü: 25$ ücret, %20 yük, %70 faturalanabilir → 42,86$/saat maliyet, %40 marjla 71,43$ satış; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 5. SEO araç sayfası.
+- Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
