@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Change Order Calculator: Price Extra Work Fairly | Clever Loop Digital</title>
+<meta name="description" content="Free change order calculator for contractors. Price extra labor and materials with markup and a disruption allowance.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/change-order-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Change Order Calculator</h1>
+<p>The customer adds a task mid-job. Price it before you say yes. Enter the extra labor and materials and see the change order total. Everything runs in your browser; nothing is stored or sent.</p>
+<div class="card">
+<div class="row"><div><label for="hrs">Extra labor hours</label><input id="hrs" type="number" min="0" step="0.5" value="6"></div>
+<div><label for="rate">Billing rate per hour ($)</label><input id="rate" type="number" min="0" step="1" value="70"></div></div>
+<div class="row"><div><label for="mat">Extra materials at your cost ($)</label><input id="mat" type="number" min="0" step="10" value="300"></div>
+<div><label for="mk">Materials markup (%)</label><input id="mk" type="number" min="0" step="1" value="20"></div></div>
+<div class="row"><div><label for="dis">Disruption allowance (% of labor, for re-sequencing and rework)</label><input id="dis" type="number" min="0" step="1" value="10"></div><div></div></div>
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Labor = hours &times; rate. Disruption = labor &times; allowance%. Materials charged = cost &times; (1 + markup%). Change order total = labor + disruption + materials charged. Example: 6 &times; $70 = $420; disruption $42.00; materials $300 &times; 1.20 = $360; total $822.00. Get the customer to sign the change order before starting. Check your contract and local rules on written change orders.</p>
+<p>Need the base job priced too? Try the <a href="job-price-calculator.html">job price calculator</a> or <a href="labor-burden-calculator.html">labor burden calculator</a>.</p>
+<p><small>Estimates for planning only. This is not accounting, tax or legal advice.</small></p>
+</main>
+
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var n=parseFloat(document.getElementById(i).value);return isFinite(n)&&n>=0?n:0}
+function calc(){
+var l=v("hrs")*v("rate"),d=l*v("dis")/100,m=v("mat")*(1+v("mk")/100),t=l+d+m;
+document.getElementById("out").innerHTML="<tr><td>Labor</td><td>"+f.format(l)+"</td></tr><tr><td>Disruption allowance</td><td>"+f.format(d)+"</td></tr><tr><td>Materials with markup</td><td>"+f.format(m)+"</td></tr><tr><td><strong>Change order total</strong></td><td class='big'>"+f.format(t)+"</td></tr>";}
+["hrs","rate","mat","mk","dis"].forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>

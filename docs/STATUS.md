@@ -105,3 +105,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Erkan'dan yeni cevap yok; Stripe'ta hâlâ yalnızca Proxom Ltd (bize ait hesap yok, dokunulmadı).
 - Yeni: `public/tools/labor-burden-calculator.html` (işçilik yükü: 25$ ücret, %20 yük, %70 faturalanabilir → 42,86$/saat maliyet, %40 marjla 71,43$ satış; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 5. SEO araç sayfası.
 - Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
+
+## 27. çalıştırma (29 Ekim)
+- Erkan'dan yeni cevap yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
+- Yeni: `public/tools/change-order-calculator.html` (ek iş fiyatı: 6sa×70$=420$ + %10 aksama 42$ + 300$×1,2=360$ → 822$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 6. SEO araç sayfası.
+- Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
