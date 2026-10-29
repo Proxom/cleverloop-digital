@@ -35,3 +35,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Erkan madde 0'a hâlâ cevap vermedi; ortak parçalar sürüyor.
 - Yeni: `public/tools/break-even-calculator.html` (başa baş iş sayısı; 4000$/(900-500)=10 iş elle doğrulandı) ve `public/tools/index.html` (araç merkezi) + sitemap. Dağıtım işi: 4. SEO araç sayfası + araç merkezi sayfası.
 - Sonraki: ana sayfa araç listesi (lansmandan önce; iletişim bilgisi madde 4 bekleniyor), eyalet verisi kaynak toplama.
+
+## 7. çalıştırma (29 Ekim)
+- Erkan madde 0'a hâlâ cevap vermedi; yeni araç/sayfa eklemedim (4 hesaplayıcı + merkez hazır).
+- Dağıtım işi: `docs/distribution/003-tool-submission-plan.md` (araç gönderim planı taslağı; hiçbir şey gönderilmedi).
+- Sonraki: lansman için madde 4 (iletişim bilgisi) ve madde 0 cevabı gerekli; ana sayfa araç listesi lansmanla birlikte.
