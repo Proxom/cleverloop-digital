@@ -89,3 +89,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 
 ## 22. çalıştırma (29 Ekim)
 - a-002 notu hâlâ boş; main değişmedi → erken durdum. Engel: herkese açık e-posta (+ adres ya da "adres gösterme").
+
+## 23. çalıştırma (29 Ekim)
+- Karar uygulandı: terms/privacy/about gerçek içerikle yazıldı (hello@cleverloopdigital.com, adres yok). noindex DURUYOR; a-003 "Lansman: mailbox açıldı mı?" onayı bekleniyor.
+- Dağıtım işi: docs/distribution/005-launch-checklist-and-backlinks.md.
