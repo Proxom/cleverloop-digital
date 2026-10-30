@@ -10,7 +10,7 @@ Kaynak: Erkan'ın verdiği 12 site. Her sitenin ana sayfası 30 Ekim'de okundu; 
 4. **Bizim için en önemli ders: "ürün kendini dağıtsın"** (Tally rozeti). Esnaf, faturasını/teklifini MÜŞTERİSİNE gönderir; belgenin altındaki "Made with Clever Loop" bağlantısı her gönderimde yeni esnafa ulaşır. Bu outreach değil, ürünün kendisi.
 5. **9 $'lık Excel tek başına 5.000 £ hedefine yetmez:** ~6.500 $/ay için ayda ~720 satış gerekir. Daha yüksek değerli / tekrarlayan bir ürün lazım.
 
-**Karar (ajan):** Yeni birincil ürün = **ücretsiz, tarayıcıda çalışan "Contractor Estimate & Invoice Maker"** (giriş yok, sunucu yok, PDF olarak yazdır, her belgede küçük "Made with Clever Loop Digital" bağlantısı). Gelir: **Pro** (logo, rozeti kaldırma, kayıtlı müşteri/kalem listesi, sınırsız belge geçmişi) tek seferlik ~29-49 $. Mevcut 9 $ Excel paketi giriş ürünü olarak kalır. Detay ve gerekçe aşağıda.
+**Karar:** Birincil ürün = **ücretsiz, tarayıcıda çalışan Estimate & Invoice Maker** (/maker/, 18 meslek sayfası; paralel bir oturum aynı sonuca vardı ve yayınladı). Gelir: **Pro $9/ay** talebi ölçülüyor (markasız PDF, kayıtlı listeler). Alternatif test: tek seferlik ~29-49 $ Pro (TypingMind/HeadshotPro örneği). Her ücretsiz PDF'te küçük "Made with cleverloopdigital.com" satırı = Tally rozeti dersi. 9 $ Excel paketi giriş ürünü olarak kalır.
 
 ## English detail
 

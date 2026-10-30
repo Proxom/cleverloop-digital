@@ -1,142 +1,121 @@
-import sys,os
-sys.path.insert(0,os.path.dirname(__file__))
+"""Generate the Estimate & Invoice Maker page and per-trade landing pages. Usage: python3 scripts/site/maker.py public"""
+import sys,os,json
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from common import *
-exec(open(os.path.dirname(__file__)+"/pages.py").read().split("# HOME")[0].split("os.chdir(sys.argv[1])")[1])
 os.chdir(sys.argv[1])
-U="https://cleverloopdigital.com/tools/invoice-maker.html"
-T="Free Invoice &amp; Estimate Maker for Contractors"
-D="Make a professional contractor invoice or estimate in your browser and save it as a PDF. Line items, sales tax, deposit and balance due calculate automatically. Free, no sign-up, nothing uploaded."
-faq=[("Is the invoice maker really free?","Yes. Create as many estimates and invoices as you like and save them as PDFs. No sign-up and no watermark across the page; a small Made with Clever Loop Digital line sits at the bottom of each document."),
-("Where is my data stored?","Only in your own browser. Nothing you type is sent to our server. Your business details and the current document are kept in this browser so they are still there next time; clear them any time with the Start over button."),
-("How do I save the invoice as a PDF?","Click Download PDF / Print, then choose Save as PDF as the printer. On a phone, use the share or print option of your browser."),
-("Can I turn an estimate into an invoice?","Yes. Switch the document type from Estimate to Invoice: your line items stay, the number changes, and the deposit becomes a payment received so the invoice shows the balance due."),
-("Does it work for any trade?","Yes. It is built for US home-service businesses such as handymen, painters, plumbers, electricians, landscapers, cleaners and remodelers, but any small business can use it.")]
-ld='{"@context":"https://schema.org","@type":"FAQPage","mainEntity":['+",".join('{"@type":"Question","name":"%s","acceptedAnswer":{"@type":"Answer","text":"%s"}}'%(q,a) for q,a in faq)+']}'
-app='{"@context":"https://schema.org","@type":"WebApplication","name":"Clever Loop Invoice & Estimate Maker","url":"%s","applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}'%U
-bc='{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cleverloopdigital.com/"}, {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://cleverloopdigital.com/tools/index.html"}, {"@type": "ListItem", "position": 3, "name": "Invoice & Estimate Maker", "item": "%s"}]}'%U
-og=f'<meta property="og:type" content="website"><meta property="og:site_name" content="Clever Loop Digital"><meta property="og:title" content="{T}"><meta property="og:description" content="{D}"><meta property="og:url" content="{U}"><meta property="og:image" content="https://cleverloopdigital.com/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">'
-css='''<style>
-.mk{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:28px;align-items:start}
-@media(max-width:980px){.mk{grid-template-columns:minmax(0,1fr)}.doc{position:static;padding:22px 18px}}
-.mk>*{min-width:0}.doc{overflow-wrap:anywhere}
-@media(max-width:560px){main.page #doc table td,main.page #doc table th{padding:6px 4px;font-size:12px;white-space:normal}.doc .top,.doc .two{flex-direction:column;gap:8px}.doc .kind,.doc .meta{text-align:left}.doc .two>div{max-width:none!important;text-align:left!important}}.mk fieldset{min-width:0}.mk input{max-width:100%}
-.mk fieldset{border:0;padding:0;margin:0 0 18px}.mk legend{font-weight:700;font-size:1.05rem;margin-bottom:8px}
-.mk textarea{width:100%;font:inherit;padding:10px 12px;border-radius:10px;border:1px solid var(--line,#e6e1d6);background:var(--card,#fff);color:inherit;min-height:70px}
-.seg{display:inline-flex;border:1px solid var(--line,#e6e1d6);border-radius:999px;padding:4px;gap:4px;margin-bottom:16px}
-.seg button{border:0;background:transparent;font:inherit;font-weight:600;padding:8px 18px;border-radius:999px;cursor:pointer;color:inherit}
-.seg button[aria-pressed=true]{background:#0d2240;color:#fff}
-.items{width:100%;border-collapse:collapse}.items td{padding:4px 3px;vertical-align:top}.items input{width:100%;min-width:0}
-.items .d{width:46%}.items .q{width:14%}.items .p{width:22%}.items .t{width:8%;text-align:center}.items .x{width:8%}
-.items .t input{width:auto}
-.rm{border:0;background:transparent;font-size:1.3rem;line-height:1;cursor:pointer;color:#9aa6ba;padding:8px}
-.add{margin-top:8px}
-.acts{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 4px}
-.doc{background:#fff;color:#0f1b2d;border-radius:14px;box-shadow:0 18px 50px rgba(13,34,64,.16);padding:34px 34px 22px;font-size:14px;position:sticky;top:84px}
-.doc .top{display:flex;justify-content:space-between;gap:20px;border-bottom:3px solid #0d2240;padding-bottom:14px;margin-bottom:16px}
-.doc h2{margin:0;font-size:1.35rem}.doc .kind{font-size:1.5rem;font-weight:800;color:#ff6a2b;letter-spacing:.04em;text-align:right}
-.doc .muted{color:#586273;font-size:12.5px;white-space:pre-line}.doc .meta{text-align:right;font-size:12.5px;color:#586273}
-.doc .two{display:flex;justify-content:space-between;gap:20px;margin-bottom:14px}
-main.page #doc table{width:100%;max-width:none;border-collapse:collapse;margin-top:6px;border:0;border-radius:0;background:transparent}.doc th{background:#0d2240;color:#fff;text-align:left;padding:7px 8px;font-size:12px}
-.doc td{padding:7px 8px;border-bottom:1px solid #e6e1d6}.doc td.r,.doc th.r,main.page #doc table td.r,main.page #doc table th.r{text-align:right;font-variant-numeric:tabular-nums}
-main.page #doc table.sum{margin-left:auto;width:min(320px,100%);margin-top:10px}.doc .sum td{border:0;padding:4px 8px}
-.doc .sum tr.big td{font-size:1.15rem;font-weight:800;border-top:2px solid #0d2240;padding-top:8px}.doc .sum tr.big td:last-child{color:#ff6a2b}
-.doc .notes{margin-top:18px;font-size:12.5px;color:#3d4757;white-space:pre-line}
-.doc .sign{margin-top:22px;font-size:12.5px;color:#3d4757}
-.doc .made{margin-top:22px;padding-top:10px;border-top:1px solid #e6e1d6;font-size:11px;color:#9aa6ba;text-align:center}
-.doc .made a{color:#9aa6ba}
-@media print{body *{visibility:hidden}.doc,.doc *{visibility:visible}.doc{position:absolute;left:0;top:0;width:100%;box-shadow:none;border-radius:0;padding:0}@page{margin:14mm}}
-</style>'''
-body=f'''<section class="phead"><div class="w"><p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Calculators</a> / <span>Invoice &amp; Estimate Maker</span></p>
-<span class="pill">Free &middot; No sign-up &middot; Nothing uploaded</span>
-<h1 style="margin-top:14px">Free Invoice &amp; Estimate Maker for Contractors</h1>
-<p class="lede">Fill in the form, watch the document build itself, then save it as a PDF and send it to your customer. Sales tax, deposit and balance due are calculated for you.</p></div></section>
-<main class="wide page" style="max-width:1240px">
-<div class="mk">
-<form id="f" onsubmit="return false" aria-label="Invoice and estimate details">
-<div class="seg" role="group" aria-label="Document type"><button type="button" data-k="Estimate" aria-pressed="true">Estimate</button><button type="button" data-k="Invoice" aria-pressed="false">Invoice</button></div>
-<fieldset><legend>Your business</legend>
-<div class="row"><div><label for="bn">Business name</label><input id="bn" placeholder="Rivera Home Repair LLC"></div><div><label for="bl">License # (optional)</label><input id="bl"></div></div>
-<label for="bc">Address, phone, email</label><textarea id="bc" placeholder="123 Main St, Austin, TX&#10;(512) 555-0100 &middot; you@example.com"></textarea></fieldset>
-<fieldset><legend>Customer and job</legend>
-<div class="row"><div><label for="cn">Customer name</label><input id="cn"></div><div><label for="ja">Job address</label><input id="ja"></div></div>
-<label for="jd">Job description</label><input id="jd" placeholder="Replace 180 sq ft of deck boards and railings"></fieldset>
-<fieldset><legend>Number and dates</legend>
-<div class="row"><div><label for="no">Number</label><input id="no"></div><div><label for="dt">Date</label><input id="dt" type="date"></div></div>
-<div class="row"><div><label for="d2" id="d2l">Valid until</label><input id="d2" type="date"></div><div><label for="tx">Sales tax rate (%)</label><input id="tx" type="number" min="0" step="0.01" value="0"></div></div></fieldset>
-<fieldset><legend>Line items</legend>
-<table class="items"><thead><tr><th class="d">Description</th><th class="q">Qty</th><th class="p">Unit price</th><th class="t" title="Taxable">Tax</th><th class="x"></th></tr></thead><tbody id="li"></tbody></table>
-<button type="button" class="btn btn-ghost add" id="addb">+ Add line</button></fieldset>
-<fieldset><legend id="dl">Deposit</legend>
-<div class="row"><div><label for="dp" id="dpl">Deposit to start (%)</label><input id="dp" type="number" min="0" step="1" value="30"></div><div><label for="pr" id="prl">Payment received ($)</label><input id="pr" type="number" min="0" step="0.01" value="0"></div></div></fieldset>
-<fieldset><legend>Notes and terms</legend><textarea id="nt"></textarea></fieldset>
-<div class="acts"><button type="button" class="btn btn-acc" id="pb">Download PDF / Print</button><button type="button" class="btn btn-ghost" id="rs">Start over</button></div>
-<p><small>Everything stays in this browser. Nothing is uploaded.</small></p>
-</form>
-<div><article class="doc" id="doc" aria-live="polite"></article></div>
+ARROW='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+TRADES={
+ "general-contractor":("General Contractor","general contractors and remodelers",["Split demolition, labor, materials and permits into separate lines so changes are easy to price.","Put the permit and inspection costs on their own line; customers accept them more easily when they see them.","Use a 30% deposit line and a valid-until date when material prices are moving."]),
+ "plumbing":("Plumbing","plumbers",["List the fixture or water heater separately from labor so the customer sees what they are paying for.","Add haul-away of the old unit as its own line instead of hiding it in labor.","For service calls, a trip or diagnostic charge line avoids arguments later."]),
+ "electrical":("Electrical","electricians",["Show the permit as a separate line; many jobs need one.","Price devices (outlets, breakers, fixtures) per unit so add-ons are easy.","Keep labor in hours so a change order can reuse the same rate."]),
+ "painting":("Painting","painters",["Price walls, ceilings and trim by square or linear foot; customers compare those numbers.","Put paint and supplies on one line so a color change does not reprice the whole job.","Note how many coats are included in the description."]),
+ "roofing":("Roofing","roofers",["Price per square (100 sq ft): tear-off and installation on separate lines.","Underlayment, flashing and ventilation belong on their own lines.","Add the dumpster and disposal so the total has no surprises."]),
+ "landscaping":("Landscaping","landscapers and lawn care pros",["Price recurring work per visit and one-off work per job or cubic yard.","Mulch, soil and plants are easiest to adjust when quantity and unit are visible.","Add yard waste removal as its own line."]),
+ "cleaning":("Cleaning","house cleaners and cleaning companies",["Price the main clean per job, then add-ons (oven, fridge, windows) per item.","Customers pick add-ons more often when each has its own price.","Say what is included in the description: rooms, bathrooms, supplies."]),
+ "handyman":("Handyman","handymen",["Labor in hours plus a materials line covers most small jobs.","A trip charge line makes small jobs worth the drive.","Group several small tasks on one estimate to raise the job size."]),
+ "hvac":("HVAC","HVAC technicians",["List parts and refrigerant per unit (each, lb) so the bill is easy to check.","A tune-up or diagnostic line sets the base price of the visit.","Offer repair options as separate estimates rather than one long list."]),
+ "flooring":("Flooring","flooring installers",["Material quantity should include waste: install 400 sq ft, order about 420.","Keep removal, underlayment and installation on separate lines.","Transitions and stair nosing are easy to forget; give them their own line."]),
+ "drywall":("Drywall","drywall contractors",["Price patches per patch and new drywall per square foot.","Texture matching takes time; give it its own line.","Note the finish level in the description."]),
+ "pressure-washing":("Pressure Washing","pressure washing businesses",["Price house, driveway and deck per square foot on separate lines.","Customers often add a second surface when each has a visible price.","Mention the cleaning solution and any plant protection in the notes."]),
+ "carpentry":("Carpentry","carpenters and finish carpenters",["Price trim and baseboard per linear foot and doors per unit; hourly labor covers the custom work.","Keep lumber and fasteners on one materials line so a wood species change is a one-line edit.","Say in the description whether paint or stain is included; it is the most common surprise."]),
+ "concrete":("Concrete","concrete contractors",["Price the slab per square foot and state the thickness (4 in for patios and walks, often 5-6 in for driveways).","Excavation, gravel base and rebar or forms belong on their own lines; they change with site conditions.","Note the finish (broom, stamped, exposed aggregate) and whether sealing is included."]),
+ "fencing":("Fencing","fence installers",["Price the fence per linear foot and gates per unit; customers compare those numbers between bids.","Removal of the old fence is its own line, and so are post holes in concrete if you charge for them.","Mention who calls 811 to locate utilities and who handles the HOA or permit approval."]),
+ "tile":("Tile","tile setters",["Price installation per square foot and demolition separately; old tile removal varies a lot from job to job.","Backer board and waterproofing get their own line in showers so nobody skips them to cut the price.","Large-format, mosaic and herringbone layouts take longer; price them at a higher per-foot rate."]),
+ "junk-removal":("Junk Removal","junk removal and hauling businesses",["Price by truck volume (quarter, half, full load) so the customer can picture what they pay for.","Mattresses, tires and appliances often carry disposal fees; show them per item.","A stairs or long-carry line covers the extra labor without arguments on site."]),
+ "window-cleaning":("Window Cleaning","window cleaners",["Price per window (or per pane) and list interior and exterior on separate lines; many customers want only the outside.","Screens and tracks are easy add-ons when each has its own price.","Note any second-story or ladder work and hard-water stain removal as extras."]),
+}
+APP=lambda: '''<div class="wide mk">
+<div class="mk-form">
+<div class="mk-sec"><h2>Document <span class="seg" role="group" aria-label="Document type"><button type="button" data-settype="estimate">Estimate</button><button type="button" data-settype="invoice">Invoice</button></span></h2>
+<div class="g3"><div><label for="f-number">Number</label><input id="f-number"></div><div><label for="f-date">Date</label><input id="f-date" type="date"></div><div><label for="f-due" id="lbl-due">Valid until</label><input id="f-due" type="date"></div></div></div>
+<div class="mk-sec"><h2>Your business</h2>
+<label for="f-biz">Business name</label><input id="f-biz" autocomplete="organization">
+<label for="f-bizInfo">Address, phone, email, license #</label><textarea id="f-bizInfo" rows="3"></textarea>
+<div class="logo-drop"><img id="logo-prev" alt="Your logo" hidden><div><label for="logo" style="margin-top:0">Logo (optional, stays on your device)</label><input id="logo" type="file" accept="image/png,image/jpeg,image/svg+xml,image/webp"><div id="logo-msg" class="prev-note" style="margin:4px 0 0"></div></div></div></div>
+<div class="mk-sec"><h2>Customer</h2>
+<label for="f-client">Customer name</label><input id="f-client">
+<label for="f-clientInfo">Job address, phone, email</label><textarea id="f-clientInfo" rows="2"></textarea></div>
+<div class="mk-sec"><h2>Line items</h2>
+<div class="prev-note" style="margin:0">Start from a trade (example prices, replace with yours):</div><div class="preset-row" id="presets"></div>
+<div class="items-h" aria-hidden="true"><span>Description</span><span>Qty</span><span>Unit</span><span>Rate $</span><span></span></div>
+<div class="items" id="items"></div><button type="button" class="addrow" id="add">+ Add line</button>
+<div class="g3" style="margin-top:6px"><div><label for="f-tax">Sales tax %</label><input id="f-tax" inputmode="decimal"></div>
+<div id="wrap-deposit"><label for="f-deposit">Deposit %</label><input id="f-deposit" inputmode="decimal"></div>
+<div id="wrap-paid" hidden><label for="f-paid">Already paid $</label><input id="f-paid" inputmode="decimal"></div></div></div>
+<div class="mk-sec"><h2>Notes &amp; terms</h2><textarea id="f-notes" rows="3" aria-label="Notes and terms"></textarea></div>
+<div class="mk-actions"><button type="button" class="btn btn-acc" id="pdf">Download PDF</button><button type="button" class="btn btn-plain" id="reset">Start over</button>
+<a class="btn btn-plain" href="#pro" data-demand-click="maker-pro" data-root="ROOT">Save &amp; reuse clients <span class="pro-tag">PRO</span></a></div>
+<p class="prev-note" style="margin:0">Your draft is saved only in this browser. Nothing you type is sent to us. "Download PDF" opens your browser's print window: choose "Save as PDF".</p>
 </div>
-<h2>How to make a contractor invoice or estimate</h2>
-<ol>
-<li><strong>Add your business details once.</strong> They are remembered in this browser for next time.</li>
-<li><strong>List the work as line items.</strong> Labor, materials, rentals, disposal and permits on separate lines are easier for a customer to accept. Tick &ldquo;Tax&rdquo; only on lines that are taxable in your state.</li>
-<li><strong>Price from cost and margin.</strong> Not sure what to charge? Use the <a href="job-price-calculator.html">job price calculator</a> first.</li>
-<li><strong>Estimate first, invoice later.</strong> Send the estimate with a deposit percentage. When the job is done, switch to Invoice, add any signed change orders and enter the deposit you received: the balance due updates.</li>
-<li><strong>Save as PDF and send.</strong> Click Download PDF / Print and choose Save as PDF.</li>
-</ol>
-<p>Prefer a spreadsheet? Get the free <a href="../templates/contractor-estimate-template.html">estimate template</a> or <a href="../templates/contractor-invoice-template.html">invoice template</a> for Excel and Google Sheets.</p>
+<div class="mk-prev"><div class="paper" id="paper" aria-label="Document preview"></div><p class="prev-note">Live preview. This is exactly what your customer receives.</p></div>
+</div>'''
+PRO='''<section class="sec alt no-print" id="pro"><div class="wide">
+<div class="sec-head center"><p class="eyebrow">Pricing</p><h2>Free forever. Pro when you need more.</h2><p>The maker is free with no sign-up. Pro is for businesses that send estimates every week.</p></div>
+<div class="plans">
+<div class="plan"><h3>Free</h3><div class="price">$0</div><ul><li>Unlimited estimates and invoices</li><li>Your logo, PDF download</li><li>18 trade starting points</li><li>Small &ldquo;Made with&rdquo; line on the PDF</li></ul><a class="btn btn-plain" href="#top">Use it free</a></div>
+<div class="plan hot"><span class="pill">Coming soon</span><h3>Pro</h3><div class="price">$9<small>/month</small></div><ul><li>Everything in Free, no branding line</li><li>Saved customers and price list</li><li>Turn an estimate into an invoice in one click</li><li>Document history on your device</li></ul><a class="btn btn-acc" href="#pro" data-demand-click="maker-pro" data-root="ROOT">Get Pro {A}</a></div>
+</div></div></section>'''
+def faq_html(items): return '<div class="faq">'+"".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q,a in items)+'</div>'
+def faq_ld(items): return json.dumps({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in items]})
+def app_ld(name,url): return json.dumps({"@context":"https://schema.org","@type":"WebApplication","name":name,"url":url,"applicationCategory":"BusinessApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}})
+def write(path,p,title,desc,canon,body,lds,trade="",typ=""):
+    attrs=(f' data-trade="{trade}"' if trade else "")+(f' data-type="{typ}"' if typ else "")
+    head="".join(f'\n<script type="application/ld+json">{x}</script>' for x in lds)
+    open(path,"w").write(f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="https://cleverloopdigital.com/{canon}">
+{headlinks(p)}
+<link rel="stylesheet" href="{p}site-v2.css"><link rel="stylesheet" href="{p}app-v1.css">{head}
+<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v2.js" defer></script>
+</head><body id="top"{attrs}>
+{header(p,"maker")}
+{body}
+{footer(p)}
+</body></html>
+''')
+GEN_FAQ=[("Is the estimate and invoice maker really free?","Yes. Make as many estimates and invoices as you like, add your logo and download them as PDF. There is no sign-up and no watermark across the page; a small line at the bottom says which free tool made it."),
+("Where is my data stored?","Only in your own browser on this device. Nothing you type, including your logo and customer details, is sent to our server. Clearing your browser data removes the draft."),
+("How do I save the estimate as a PDF?","Click Download PDF. Your browser's print window opens; choose Save as PDF as the destination. On a phone, use Share or Print and then Save to Files."),
+("What is the difference between an estimate and an invoice?","An estimate tells the customer what a job will cost before you start; an invoice asks for payment after the work (or a stage of it) is done. Switch between them with the Estimate / Invoice toggle."),
+("How should I price the line items?","Start from your real costs and the margin you want. The free job price calculator divides cost by (1 minus your target margin), so a $700 job at a 25% margin is $933.33, not $875.")]
+# main maker page
+body=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../index.html">Home</a> / <span>Estimate &amp; Invoice Maker</span></p><p class="eyebrow">Free online tool</p><h1>Free Estimate &amp; Invoice Maker for Contractors</h1><p class="lede">Fill in the form, watch the document build itself, download a clean PDF. Your logo, your line items, tax and deposit worked out for you. No sign-up.</p></div></section>
+<main class="mk-main">
+{APP().replace("ROOT","../")}
+<div class="w no-print" style="padding-bottom:20px">
+<h2>Made for the trades</h2>
+<p>Pick a starting point and the line items fill in with typical work for that trade. Prices are examples; replace them with yours.</p>
+<div class="tiles">{"".join(f'<a class="tile" href="{k}.html"><b>{v[0]} estimate template</b><span>Online estimate and invoice maker for {v[1]}.</span></a>' for k,v in TRADES.items())}</div>
 <h2>Frequently asked questions</h2>
-<div class="faq">{"".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q,a in faq)}</div>
-<div class="card promo-card"><h2>Know your margin before you send it</h2><p>The <a href="../ventures/sheets.html">Contractor Quote &amp; Margin Sheet</a> prices every job from your costs and target margin, with hourly rate, change order and job profit log tabs.</p></div>
-<p><small>A document tool for general business use. Check your state's rules on estimates, contracts, sales tax and late fees. Not legal, tax or accounting advice.</small></p>
+{faq_html(GEN_FAQ)}
+</div>
 </main>
-<script>
-(function(){{
-var K="cl-maker-v1",$=function(i){{return document.getElementById(i)}};
-var F=["bn","bl","bc","cn","ja","jd","no","dt","d2","tx","dp","pr","nt"];
-function today(n){{var d=new Date();d.setDate(d.getDate()+(n||0));return d.toISOString().slice(0,10)}}
-var DEF={{kind:"Estimate",bn:"",bl:"",bc:"",cn:"",ja:"",jd:"",no:"1001",dt:today(0),d2:today(30),tx:"0",dp:"30",pr:"0",
-nt:"Price valid until the date above. Work not listed is extra and needs a signed change order.\\nDeposit due on acceptance; balance due on completion.",
-items:[{{d:"Labor",q:"16",p:"75",t:false}},{{d:"Materials",q:"1",p:"1200",t:true}},{{d:"Equipment rental",q:"1",p:"150",t:false}},{{d:"Disposal / dump fee",q:"1",p:"95",t:false}}]}};
-var NI="Payment due by the due date above. Thank you for your business.";
-var S;try{{S=JSON.parse(localStorage.getItem(K))}}catch(e){{}}
-if(!S||!S.items)S=JSON.parse(JSON.stringify(DEF));
-function save(){{try{{localStorage.setItem(K,JSON.stringify(S))}}catch(e){{}}}}
-function esc(s){{return String(s==null?"":s).replace(/[&<>"]/g,function(c){{return{{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}}[c]}})}}
-function num(v){{var n=parseFloat(v);return isFinite(n)?n:0}}
-function usd(n){{return(n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{{minimumFractionDigits:2,maximumFractionDigits:2}})}}
-function fdate(s){{if(!s)return"";var p=s.split("-");return p.length==3?(+p[1])+"/"+(+p[2])+"/"+p[0]:s}}
-function rows(){{var b=$("li");b.innerHTML="";S.items.forEach(function(it,i){{var tr=document.createElement("tr");
-tr.innerHTML='<td class="d"><input aria-label="Description" value="'+esc(it.d)+'"></td><td class="q"><input aria-label="Quantity" type="number" step="any" value="'+esc(it.q)+'"></td><td class="p"><input aria-label="Unit price" type="number" step="0.01" value="'+esc(it.p)+'"></td><td class="t"><input aria-label="Taxable" type="checkbox"'+(it.t?" checked":"")+'></td><td class="x"><button type="button" class="rm" aria-label="Remove line">&times;</button></td>';
-var ins=tr.querySelectorAll("input");ins[0].oninput=function(){{it.d=this.value;draw()}};ins[1].oninput=function(){{it.q=this.value;draw()}};ins[2].oninput=function(){{it.p=this.value;draw()}};ins[3].onchange=function(){{it.t=this.checked;draw()}};
-tr.querySelector(".rm").onclick=function(){{S.items.splice(i,1);rows();draw()}};b.appendChild(tr)}})}}
-function kind(k){{if(k!==S.kind){{S.kind=k;if(k==="Invoice"){{if(/^1\\d{{3}}$/.test(S.no))S.no=String(+S.no+1000);S.d2=today(15);if(S.nt===DEF.nt)S.nt=NI;
-if(num(S.pr)===0)S.pr=String(Math.round(totals().total*num(S.dp))/100);}}else{{S.d2=today(30);if(S.nt===NI)S.nt=DEF.nt}}fill()}}
-document.querySelectorAll(".seg button").forEach(function(b){{b.setAttribute("aria-pressed",b.dataset.k===S.kind)}});
-var inv=S.kind==="Invoice";$("d2l").textContent=inv?"Due date":"Valid until";$("dl").textContent=inv?"Payments":"Deposit";
-$("dp").parentNode.style.display=inv?"none":"";$("pr").parentNode.style.display=inv?"":"none";draw()}}
-function totals(){{var sub=0,taxable=0;S.items.forEach(function(it){{var a=num(it.q)*num(it.p);sub+=a;if(it.t)taxable+=a}});
-var tax=Math.round(taxable*num(S.tx))/100,total=sub+tax;return{{sub:sub,tax:tax,total:total}}}}
-function draw(){{var t=totals(),inv=S.kind==="Invoice",h="";
-h+='<div class="top"><div><h2>'+(esc(S.bn)||"Your Business Name")+'</h2><div class="muted">'+esc(S.bc)+(S.bl?"\\nLicense # "+esc(S.bl):"")+'</div></div>';
-h+='<div><div class="kind">'+S.kind.toUpperCase()+'</div><div class="meta"># '+esc(S.no)+'<br>Date: '+fdate(S.dt)+'<br>'+(inv?"Due":"Valid until")+': '+fdate(S.d2)+'</div></div></div>';
-h+='<div class="two"><div><div class="muted">'+(inv?"BILL TO":"PREPARED FOR")+'</div><b>'+(esc(S.cn)||"Customer name")+'</b><div class="muted">'+esc(S.ja)+'</div></div><div style="max-width:55%;text-align:right"><div class="muted">'+(inv?"WORK COMPLETED":"JOB")+'</div>'+esc(S.jd)+'</div></div>';
-h+='<table><tr><th>Description</th><th class="r">Qty</th><th class="r">Unit price</th><th class="r">Amount</th></tr>';
-S.items.forEach(function(it){{if(!it.d&&!num(it.p))return;h+='<tr><td>'+esc(it.d)+(it.t?" *":"")+'</td><td class="r">'+esc(it.q)+'</td><td class="r">'+usd(num(it.p))+'</td><td class="r">'+usd(num(it.q)*num(it.p))+'</td></tr>'}});
-h+='</table><table class="sum"><tr><td>Subtotal</td><td class="r">'+usd(t.sub)+'</td></tr><tr><td>Sales tax ('+num(S.tx)+'%'+(t.tax?" on * lines":"")+')</td><td class="r">'+usd(t.tax)+'</td></tr>';
-if(inv){{var paid=num(S.pr);h+='<tr><td>Invoice total</td><td class="r">'+usd(t.total)+'</td></tr><tr><td>Less payments received</td><td class="r">'+usd(-paid)+'</td></tr><tr class="big"><td>Balance due</td><td class="r">'+usd(t.total-paid)+'</td></tr>'}}
-else{{var dep=Math.round(t.total*num(S.dp))/100;h+='<tr class="big"><td>Total</td><td class="r">'+usd(t.total)+'</td></tr><tr><td>Deposit to start ('+num(S.dp)+'%)</td><td class="r">'+usd(dep)+'</td></tr><tr><td>Balance on completion</td><td class="r">'+usd(t.total-dep)+'</td></tr>'}}
-h+='</table>';if(S.nt)h+='<div class="notes">'+esc(S.nt)+'</div>';
-if(!inv)h+='<div class="sign">Accepted by: ______________________________ &nbsp; Date: ____________</div>';
-h+='<div class="made">Made with the free invoice maker at <a href="https://cleverloopdigital.com/tools/invoice-maker.html">cleverloopdigital.com</a></div>';
-$("doc").innerHTML=h;save()}}
-function fill(){{F.forEach(function(k){{$(k).value=S[k]||""}})}}
-F.forEach(function(k){{$(k).addEventListener("input",function(){{S[k]=this.value;draw()}})}});
-document.querySelectorAll(".seg button").forEach(function(b){{b.onclick=function(){{kind(b.dataset.k)}}}});
-$("addb").onclick=function(){{S.items.push({{d:"",q:"1",p:"",t:false}});rows();draw()}};
-$("pb").onclick=function(){{window.print()}};
-$("rs").onclick=function(){{if(confirm("Clear everything and start over?")){{S=JSON.parse(JSON.stringify(DEF));fill();rows();kind(S.kind)}}}};
-fill();rows();kind(S.kind);
-}})();
-</script>'''
-page("tools/invoice-maker.html","../","tools",T+" | Clever Loop Digital",D,"tools/invoice-maker.html",body,
- extra_head=f'\n{og}\n<script type="application/ld+json">{bc}</script>\n<script type="application/ld+json">{app}</script>\n<script type="application/ld+json">{ld}</script>\n{css}')
-print("ok")
+{PRO.replace("ROOT","../").replace("{A}",ARROW)}'''
+write("maker/index.html","../","Free Estimate &amp; Invoice Maker for Contractors (PDF) | Clever Loop Digital",
+ "Make a professional contractor estimate or invoice online in minutes: your logo, line items, sales tax, deposit, PDF download. Free, no sign-up, data stays in your browser.",
+ "maker/",body,[faq_ld(GEN_FAQ),app_ld("Estimate & Invoice Maker","https://cleverloopdigital.com/maker/")])
+# trade pages
+for k,(name,who,tips) in TRADES.items():
+    faq=[(f"Is this {name.lower()} estimate template free?",f"Yes. The online maker is free with no sign-up. It starts with typical {name.lower()} line items, which you can edit, and downloads as a PDF."),
+         (f"What should a {name.lower()} estimate include?","Your business details and license number if your state requires one, the customer and job address, a clear description of the work, line items with quantity, unit and price, tax, total, deposit, how long the price is valid, and a signature line."),
+         ("Can I turn it into an invoice?","Yes. Switch the toggle at the top from Estimate to Invoice. The same line items carry over, and you can enter what the customer already paid to show the balance due.")]
+    b=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../index.html">Home</a> / <a href="index.html">Estimate &amp; Invoice Maker</a> / <span>{name}</span></p><p class="eyebrow">Free {name.lower()} template</p><h1>Free {name} Estimate Template</h1><p class="lede">An online estimate and invoice maker for {who}. It starts with typical {name.lower()} line items; change anything, add your logo and download a PDF. Free, no sign-up.</p></div></section>
+<main class="mk-main">
+{APP().replace("ROOT","../")}
+<div class="w no-print" style="padding-bottom:20px">
+<h2>Tips for {name.lower()} estimates</h2>
+<ul>{"".join(f"<li>{t}</li>" for t in tips)}</ul>
+<p>Not sure what to charge? Use the <a href="../tools/job-price-calculator.html">job price calculator</a> and read <a href="../guides/how-to-price-a-contractor-job.html">how to price a contractor job</a>.</p>
+<h2>Frequently asked questions</h2>
+{faq_html(faq)}
+<h2>Other trades</h2>
+<p>{" &middot; ".join(f'<a href="{o}.html">{v[0]}</a>' for o,v in TRADES.items() if o!=k)}</p>
+</div>
+</main>
+{PRO.replace("ROOT","../").replace("{A}",ARROW)}'''
+    write(f"maker/{k}.html","../",f"Free {name} Estimate Template &amp; Invoice Maker | Clever Loop Digital",
+      f"Free {name.lower()} estimate template you fill in online: typical {name.lower()} line items, your logo, tax and deposit, PDF download. Also makes invoices. No sign-up.",
+      f"maker/{k}.html",b,[faq_ld(faq),app_ld(f"{name} Estimate Maker",f"https://cleverloopdigital.com/maker/{k}.html")],trade=k)
+print("pages",1+len(TRADES))

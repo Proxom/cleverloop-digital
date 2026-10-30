@@ -18,10 +18,10 @@ rows=[("Labor","16 hr","$1,200.00"),("Materials (see list)","1 lot","$1,200.00")
 tr="".join(f'<tr class="in"><td>{a}</td><td>{b}</td><td>{c}</td></tr>' for a,b,c in rows)
 body=f'''<section class="phead"><div class="wide promo">
 <div><p class="crumbs"><a href="../index.html">Home</a> / <span>Contractor Invoice Template</span></p>
-<span class="pill">Free download &middot; Excel &amp; Google Sheets</span>
+<span class="pill" data-demand-view="invoice-template">Free download &middot; Excel &amp; Google Sheets</span>
 <h1 style="margin-top:14px">Free Contractor Invoice Template</h1>
 <p class="lede">Bill the finished job in minutes: line items, signed change orders, sales tax, the deposit you already took and the balance due. Every total calculates itself. No sign-up.</p>
-<p style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-acc" href="contractor-invoice-template.xlsx" download>{DL} Download the template (.xlsx)</a><a class="btn btn-ghost" href="contractor-estimate-template.html">Need the estimate first?</a></p></div>
+<p style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-acc" href="contractor-invoice-template.xlsx" download data-demand-download="invoice-template">{DL} Download the template (.xlsx)</a><a class="btn btn-ghost" href="contractor-estimate-template.html">Need the estimate first?</a></p></div>
 <div class="sheet" role="img" aria-label="Preview of the invoice template: 5 line items, invoice total $3,467.00, deposit received $793.50, balance due $2,673.50">
 <div class="bar-top"><i></i><i></i><i></i></div>
 <table>
@@ -35,7 +35,7 @@ body=f'''<section class="phead"><div class="wide promo">
 </table></div>
 </div></section>
 <main class="w page">
-<p class="card" style="margin-top:0">Rather fill it in online? Use the free <a href="../tools/invoice-maker.html">invoice &amp; estimate maker</a>: type, then save as PDF. No spreadsheet needed.</p>
+<p class="card" style="margin-top:0">Rather fill it in online? Use the free <a href="../maker/">invoice &amp; estimate maker</a>: type, then save as PDF. No spreadsheet needed.</p>
 <h2>What is in the template</h2>
 <ul>
 <li>Header for your business name, address, phone, email and license number</li>
@@ -71,5 +71,5 @@ body=f'''<section class="phead"><div class="wide promo">
 <p><small>Template for general business use. Check your state's rules on invoicing, sales tax and late fees. Not legal, tax or accounting advice.</small></p>
 </main>'''
 page("templates/contractor-invoice-template.html","../","",T+" | Clever Loop Digital",D,"templates/contractor-invoice-template.html",body,
- extra_head=f'\n{og}\n<script type="application/ld+json">{bc}</script>\n<script type="application/ld+json">{ld}</script>')
+ extra_head=f'\n{og}\n<script type="application/ld+json">{bc}</script>\n<script type="application/ld+json">{ld}</script>\n<script src="../js/demand.js" defer></script>')
 print("ok")

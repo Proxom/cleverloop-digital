@@ -1,10 +1,19 @@
 # Para kazanma fikirleri (sıralı backlog) — her çalıştırmada güncellenir
 
+## ANA ÜRÜN (30 Ekim, Erkan'ın örnek siteleri: Tally, HeadshotPro, Senja, ShipFast...)
+Ders: tek kişilik başarılı siteler TEK dar işi kusursuz yapar, hero'da ürünü çalışırken gösterir, "ücretsiz başla" ile çeker, programatik SEO sayfalarıyla (şablon/meslek sayfaları) trafik toplar, sonra ücretli plana çevirir.
+Bizim karşılığımız: **Estimate & Invoice Maker** (/maker/) — tarayıcıda çalışan ücretsiz teklif/fatura oluşturucu, 12 meslek sayfası (/maker/<trade>.html). Ücretli plan: **Pro $9/ay** (markasız PDF, kayıtlı müşteri/fiyat listesi, teklif→fatura tek tık, belge geçmişi). Talep: `maker` (görüntüleme, PDF indirme) + `maker-pro` (Pro tıklaması) panelde.
+Sıradaki büyüme işleri (yalnızca ürün + SEO):
+1. Daha fazla meslek sayfası — 51. çalıştırmada 6 eklendi (carpentry, concrete, fencing, tile, junk removal, window cleaning; toplam 18). Sırada: cabinet, moving, pest control, pool, gutter, appliance repair, masonry, siding.
+2. "Invoice" odaklı meslek sayfaları (/maker/<trade>-invoice.html, data-type="invoice").
+3. Ürün: tahmini-faturaya çevir, birden çok taslak, para birimi seçimi (CAD/AUD/GBP), kalem kütüphanesi.
+4. Karşılaştırma/rehber içerikleri: "how to write an estimate", "estimate vs quote vs bid", "what to put on an invoice".
+
+
 Durum: 30 Ekim (Erkan'ın 12 örnek sitesi incelendi → docs/BENCHMARKS.md; kapsam yazılım/AI dahil genişledi). Gelir £0. Tek darboğaz: ödeme altyapısı (Payhip/Gumroad/Stripe hesabı Erkan'da). Aşağıdakilerin hepsi gerçek kanıt istenen tahminlerdir; uydurma rakam yok.
 
 | # | Fikir | Alıcı | Fiyat | Kanal | Engel | Sonraki adım |
 |---|-------|-------|-------|-------|-------|--------------|
-| 0 | **Ücretsiz Invoice & Estimate Maker (tarayıcıda) + Pro kilidi** (logo, rozetsiz, kayıtlı listeler) | ABD esnafı; her belge müşteriye gider ("Made with" bağlantısı) | Ücretsiz → Pro $29-49 tek sefer | SEO ("free invoice generator", meslek sayfaları) + ürünün kendi dağıtımı | Pro için lisans anahtarlı ödeme (a-004) | İLK SÜRÜM YAYINDA (30 Ekim). Sırada: logo, kayıtlı müşteriler, meslek açılış sayfaları |
 | 1 | Contractor Pricing Toolkit (.xlsx, 5 sekme) | ABD esnaf (tesisatçı, boyacı, tamirci) | $9 lansman | SEO: satış sayfası + rehber/araç sayfalarından iç link | Payhip hesabı (Erkan) | HAZIR: docs/distribution/product/contractor-pricing-toolkit.xlsx; Erkan Payhip'e yükleyince butona link |
 | 3 | Niş paketler: temizlikçi / bahçıvan / boyacı için fiyatlama şablonu | Her meslek ayrı arama yapar | $9-15 | SEO: meslek bazlı fiyatlama rehberleri + araçlar | #1 ile aynı | Toolkit'ten meslek varyantları üret (kare metre / oda bazlı fiyat) |
 | 4 | Bundle: Toolkit + teklif (estimate) & fatura şablonu | Teklif yazan esnaf | $19 | SEO: "estimate template" / "invoice template" sayfaları | #1 | YAPILDI: estimate + invoice ücretsiz şablon/SEO sayfaları, pakete 2 sekme. Sırada: "change order form template" sayfası + ücretsiz form |
@@ -13,5 +22,7 @@ Durum: 30 Ekim (Erkan'ın 12 örnek sitesi incelendi → docs/BENCHMARKS.md; kap
 Öldürülen (30 Ekim, Erkan'ın modeli: yalnızca ürün + SEO): Etsy listeleme (yeni hesap isteği), "fiyat kontrolü" e-posta hizmeti (insanlara ulaşma/e-posta), forum/sosyal paylaşımlar.
 
 | 6 | Meslek bazlı ücretsiz şablon sayfaları (painting estimate, handyman invoice vb.) | Mesleğe özel arayan esnaf | Ücretsiz → $9 paket | SEO (uzun kuyruk) | Yok | Yeni fikir (48. çalıştırma): mevcut şablon motoru ile meslek varyantları |
+
+| 7 | Meslek başına "pricing guide" sayfaları (ör. "how much to charge for fence installation per foot") + maker'a link | Fiyat araştıran esnaf | Ücretsiz → Pro $9/ay | SEO (uzun kuyruk, ticari niyet) | Yok; fiyat aralıkları için okunmuş kaynak gerekir | Yeni fikir (51. çalıştırma): kaynaklı 1 rehberle başla |
 
 Kural: Kanal YALNIZCA SEO. Erkan'dan yeni bir şey istenmez.

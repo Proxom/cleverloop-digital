@@ -214,8 +214,24 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Ürün: ücretli pakete 7. sekme "Customer Invoice" (kalemler + imzalı ek iş, vergi, alınan depozito, kalan borç; örnek 2.645$ + 822$ = 3.467$ − 793,50$ = 2.673,50$, LibreOffice ile yeniden hesaplanıp doğrulandı). Satış sayfası "5 bonus sekme".
 - SEO: yeni sayfa `templates/contractor-invoice-template.html` ("free contractor invoice template" hedefi; ücretsiz .xlsx, önizleme, 6 adım, örnek, FAQ + Breadcrumb + OG) + sitemap; 28 sayfanın alt bilgisinde link; teklif şablonu ↔ fatura şablonu ve fatura ↔ vergi/kart ücreti/gecikme hesaplayıcıları iç link.
 - Panel: a-004 "onaylandı" ama Payhip linki notta yok; yeni istek eklenmedi.
+## 49. çalıştırma (30 Ekim, Erkan: "ödeme kurmadan önce talebi ölç")
+- Talep ölçümü: `public/api/t.php` (anonim günlük sayaç; çerez/IP yok; veri repo dışı `data/demand.json`, gitignore) + `public/js/demand.js`. Satış sayfasında "Buy now · $9" düğmesi → tıklama sayılır, "checkout yakında" penceresi ücretsiz araçlara yönlendirir. Ücretsiz estimate şablonunda görüntüleme + indirme sayılır. Gizlilik metni güncellendi.
+- Panel: "Talep" bölümü (ürün başına görüntüleme, Buy tıklaması, dönüşüm %). Her saatlik çalışmada ajan https://cleverloopdigital.com/api/t.php okuyup `demand/<ürün>` dokümanlarını günceller.
 
-## 49. çalıştırma (30 Ekim, Erkan'ın 12 örnek sitesi)
+## 50. çalıştırma (30 Ekim, Erkan'ın örnek siteleri → ana ürün)
+- Yeni ana ürün: **Estimate & Invoice Maker** (/maker/): tarayıcıda çalışır, hesap yok; logo, kalemler, vergi, depozito/ödenen, notlar, canlı önizleme, PDF (tarayıcı yazdır→PDF). Taslak yalnızca kullanıcının tarayıcısında. Test: boya örneği 1.767,50$ + %8,25 = 1.913,32$; 500$ ödenince kalan 1.413,32$ (elle doğrulandı).
+- SEO: 12 meslek sayfası (/maker/<trade>.html; mesleğe özgü kalemler + ipuçları + FAQ + WebApplication şeması), sitemap 41 URL. Ana sayfa ürün odaklı hero ile yeniden kuruldu; menüde öne çıkan düğme "Estimate Maker".
+- Talep: `maker` (görüntüleme, PDF) + `maker-pro` (Pro $9/ay "Get Pro" tıklaması) panelde.
+- Semrush: API birimi yok (hacim verisi alınamadı).
+
+## 51. çalıştırma (30 Ekim, 16:50 UTC, ürün + SEO)
+- Ürün: Maker'a 6 yeni meslek başlangıç kalemi (marangoz, beton, çit, fayans, hurda/eşya kaldırma, cam temizliği) → 18 meslek. JS önbellek kuralı gereği `js/maker-v2.js` (eski v1 kaldırıldı, tüm maker sayfaları v2'ye bağlı). Yerelde tarayıcıyla test edildi: çit örneği 450+4.800+350+475 = 6.075$, JS hatası yok.
+- SEO: 6 yeni meslek sayfası (/maker/<meslek>.html, mesleğe özgü ipuçları + FAQ + WebApplication şeması), sitemap 47 URL. 19 maker sayfasına Open Graph/Twitter + BreadcrumbList eklendi (önceden yoktu); `seo_tags.py`'deki göreli breadcrumb URL hatası düzeltildi.
+- Talep: canlıda yalnızca kendi test görüntülemelerimiz var (net 0). Gelir £0.
+- Sonraki: kalan meslekler (cabinet, moving, pest control, pool, gutter...), "how to write an estimate" rehberi, meslek fiyat rehberleri (fikir #7).
+
+## 52. çalıştırma (30 Ekim, Erkan'ın 12 örnek sitesi, paralel oturum)
 - Analiz: docs/BENCHMARKS.md (12 site: ürün, fiyat, büyüme kanalı, kaynaklı gelir tahminleri). Ders: yarısı kurucunun sosyal medya kitlesiyle büyüdü (bizde yasak); bize uyanlar HeadshotPro (SEO), Tally (ürün kendini dağıtır), Bannerbear/Revid (SEO + ücretsiz araç sayfaları). 9 $'lık Excel tek başına 5.000 £'e yetmez (~720 satış/ay).
-- Karar: yeni birincil ürün = ücretsiz "Invoice & Estimate Maker" (tarayıcıda, giriş yok, PDF; her belgede "Made with cleverloopdigital.com"). İLK SÜRÜM YAYINDA: tools/invoice-maker.html (teklif↔fatura geçişi, vergili kalemler, depozito/kalan, notlar, yerel kayıt; 2.645$ + %8,25 vergi malzemede 99$ → 2.744$, %30 depozito 823,20$ test edildi). Ana sayfa, araç merkezi, şablon sayfaları, 29 sayfa alt bilgi, sitemap bağlandı.
+- Karar: yeni birincil ürün = ücretsiz "Invoice & Estimate Maker" (tarayıcıda, giriş yok, PDF; her belgede "Made with cleverloopdigital.com"). Paralel oturum aynı ürünü /maker/ altında daha kapsamlı yayınlamıştı; benim kopyam (tools/invoice-maker.html) yinelenen içerik olmaması için SİLİNDİ, bağlantılar /maker/'a yönlendirildi. Benim sürümümün özellikleri: (teklif↔fatura geçişi, vergili kalemler, depozito/kalan, notlar, yerel kayıt; 2.645$ + %8,25 vergi malzemede 99$ → 2.744$, %30 depozito 823,20$ test edildi). Ana sayfa, araç merkezi, şablon sayfaları, 29 sayfa alt bilgi, sitemap bağlandı.
 - AGENT.md: Erkan'ın emri + kapsam genişlemesi (yazılım/AI dahil) + yeni birincil ürün kalıcı olarak yazıldı.
+- Ek: araç merkezinde Maker kartı, iki şablon sayfasında "online doldur" bağlantısı (/maker/).
