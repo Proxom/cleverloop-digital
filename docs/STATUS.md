@@ -214,3 +214,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Ürün: ücretli pakete 7. sekme "Customer Invoice" (kalemler + imzalı ek iş, vergi, alınan depozito, kalan borç; örnek 2.645$ + 822$ = 3.467$ − 793,50$ = 2.673,50$, LibreOffice ile yeniden hesaplanıp doğrulandı). Satış sayfası "5 bonus sekme".
 - SEO: yeni sayfa `templates/contractor-invoice-template.html` ("free contractor invoice template" hedefi; ücretsiz .xlsx, önizleme, 6 adım, örnek, FAQ + Breadcrumb + OG) + sitemap; 28 sayfanın alt bilgisinde link; teklif şablonu ↔ fatura şablonu ve fatura ↔ vergi/kart ücreti/gecikme hesaplayıcıları iç link.
 - Panel: a-004 "onaylandı" ama Payhip linki notta yok; yeni istek eklenmedi.
+
+## 49. çalıştırma (30 Ekim, Erkan'ın 12 örnek sitesi)
+- Analiz: docs/BENCHMARKS.md (12 site: ürün, fiyat, büyüme kanalı, kaynaklı gelir tahminleri). Ders: yarısı kurucunun sosyal medya kitlesiyle büyüdü (bizde yasak); bize uyanlar HeadshotPro (SEO), Tally (ürün kendini dağıtır), Bannerbear/Revid (SEO + ücretsiz araç sayfaları). 9 $'lık Excel tek başına 5.000 £'e yetmez (~720 satış/ay).
+- Karar: yeni birincil ürün = ücretsiz "Invoice & Estimate Maker" (tarayıcıda, giriş yok, PDF; her belgede "Made with cleverloopdigital.com"). İLK SÜRÜM YAYINDA: tools/invoice-maker.html (teklif↔fatura geçişi, vergili kalemler, depozito/kalan, notlar, yerel kayıt; 2.645$ + %8,25 vergi malzemede 99$ → 2.744$, %30 depozito 823,20$ test edildi). Ana sayfa, araç merkezi, şablon sayfaları, 29 sayfa alt bilgi, sitemap bağlandı.
+- AGENT.md: Erkan'ın emri + kapsam genişlemesi (yazılım/AI dahil) + yeni birincil ürün kalıcı olarak yazıldı.
