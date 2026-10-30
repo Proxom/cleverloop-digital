@@ -84,8 +84,8 @@ home=f'''<section class="hero"><div class="wide">
 <div><span class="pill">Coming soon &middot; planned price $9</span>
 <h2>The Contractor Quote &amp; Margin Sheet</h2>
 <p>All of this in one Google Sheets page. Type your materials, hours, rates, overhead and target margin into the yellow cells; get the quote, your profit, the deposit and your walk-away price.</p>
-<ul><li>Works in Excel and Google Sheets</li><li>Bonus tabs: hourly rate, change orders, job profit log, customer estimate</li><li>Shows what a 10% or 20% discount does to your margin</li><li>No macros, add-ons or subscription</li></ul>
-<p style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="btn btn-acc" href="ventures/sheets.html">See the sheet {ARROW}</a><a href="templates/contractor-estimate-template.html">Or get the free estimate template</a></p></div>
+<ul><li>Works in Excel and Google Sheets</li><li>Bonus tabs: hourly rate, change orders, job profit log, customer estimate and invoice</li><li>Shows what a 10% or 20% discount does to your margin</li><li>No macros, add-ons or subscription</li></ul>
+<p style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="btn btn-acc" href="ventures/sheets.html">See the sheet {ARROW}</a><a href="templates/contractor-estimate-template.html">Or get the free estimate</a> or <a href="templates/contractor-invoice-template.html">invoice template</a></p></div>
 {SHEET("")}
 </div></section>
 <section class="sec alt"><div class="w">
@@ -146,11 +146,12 @@ sb=f'''<section class="phead"><div class="wide promo">
 <li>Deposit due at your chosen percentage</li>
 <li>What your margin becomes if the client negotiates 10% or 20% off, and your break-even price</li></ul>
 <p>Yellow input cells, everything else is formulas. No macros, no add-ons, no subscription.</p></div>
-<div class="card"><h2>Plus four bonus tabs in the same workbook</h2><ul>
+<div class="card"><h2>Plus five bonus tabs in the same workbook</h2><ul>
 <li><strong>Hourly Rate:</strong> the rate to charge for your income goal after overhead and unbillable time</li>
 <li><strong>Change Order:</strong> price extra work as labor + disruption allowance + marked-up materials</li>
 <li><strong>Job Profit Log:</strong> list finished jobs and see the margin you really made on each, and in total</li>
-<li><strong>Customer Estimate:</strong> a clean estimate to send, with line items, tax, deposit and a signature line</li></ul>
+<li><strong>Customer Estimate:</strong> a clean estimate to send, with line items, tax, deposit and a signature line</li>
+<li><strong>Customer Invoice:</strong> bill the finished job with change orders, subtract the deposit and show the balance due</li></ul>
 <p>One .xlsx file that opens in Excel and imports into Google Sheets (File &gt; Import &gt; Upload).</p></div>
 <p>Prefer to try the math first? Use the free <a href="../tools/job-price-calculator.html">job price calculator</a> or see all <a href="../tools/index.html">free tools</a>.</p>
 <h2 id="buy">Get the sheet</h2>

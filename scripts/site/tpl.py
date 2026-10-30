@@ -47,7 +47,7 @@ body=f'''<section class="phead"><div class="wide promo">
 <li><strong>List the work as line items.</strong> Labor, materials, rentals, disposal and permits on separate lines make the price easier to accept and to change later.</li>
 <li><strong>Price from cost and margin.</strong> Work out the price with the <a href="../tools/job-price-calculator.html">job price calculator</a> so the total carries the margin you want. See <a href="../guides/how-to-price-a-contractor-job.html">how to price a contractor job</a>.</li>
 <li><strong>Set the deposit and the expiry date.</strong> The template splits the total into the deposit and the balance. A &ldquo;valid until&rdquo; date protects you when material prices move.</li>
-<li><strong>Get it signed.</strong> Anything added later goes on a signed change order; see <a href="../guides/how-to-price-a-change-order.html">how to price a change order</a>.</li>
+<li><strong>Get it signed.</strong> Anything added later goes on a signed change order; see <a href="../guides/how-to-price-a-change-order.html">how to price a change order</a>. When the job is done, bill it with the free <a href="contractor-invoice-template.html">contractor invoice template</a>.</li>
 </ol>
 <h2>Worked example</h2>
 <table>
