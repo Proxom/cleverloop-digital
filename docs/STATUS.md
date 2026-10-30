@@ -258,3 +258,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Ürün + SEO: `tools/flooring-estimate-calculator.html` (en fazla 3 oda alanı, fire %, malzeme ve işçilik $/sq ft, söküm, underlayment, geçiş/trim parçaları, taşıma, minimum ücret; net alan ve sipariş miktarı gösterilir). "Turn into an estimate" kalemleri maker/flooring.html'e aktarır. Örnek: 20×15 + 12×10 = 420 sq ft, %10 fire → 462 sq ft sipariş; 1.501,50$ + 1.260$ + 3×45$ = 2.896,50$ (tarayıcı testiyle doğrulandı, JS hatası yok; maker'da 3 kalem görünüyor).
 - FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS + ikon), maker zemin sayfasından link (maker.py CALC).
 - Yapılmadı: talep (t.php) okuma ve panel güncellemesi (bu ortamda panel yazma akışı yüklenmedi). Sıradaki araç: drywall, concrete, mulch, cleaning.
+
+## 58. çalıştırma (30 Ekim, karar v3 adım 6)
+- Ürün + SEO: `tools/drywall-estimate-calculator.html` (iki oda duvar + tavan alanı, kapı/pencere düşümü, fire %, levha sayısı 4x8/4x12, levha fiyatı, asma+macun işçiliği $/sq ft, tekstür, yama, moloz, minimum ücret). "Turn into an estimate" kalemleri maker/drywall.html'e aktarır. Örnek: 14×12×8 ft oda + tavan = 584 sq ft − 40 = 544 sq ft; %10 fire → 19 levha; 266$ + 1.224$ = 1.490$ (tarayıcı testiyle doğrulandı, JS hatası yok).
+- FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı, maker alçıpan sayfasından link.
+- Yapılmadı: talep (t.php) okuma ve panel güncellemesi (bu ortamda panel yazma akışı yok). Sıradaki araç: concrete, mulch, cleaning.
