@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Job Sales Tax Calculator for Contractors | Clever Loop Digital</title>
+<meta name="description" content="Free sales tax calculator for contractors. Add sales tax on materials (and optionally labor) to a job quote and see the invoice total.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/job-sales-tax-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}select,input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Job Sales Tax Calculator</h1>
+<p>Enter materials, labor and your local sales tax rate. You get the tax and the invoice total. Everything runs in your browser; nothing is stored or sent.</p>
+<div class="card">
+<div class="row"><div><label for="m">Materials ($)</label><input id="m" type="number" min="0" step="1" value="1500"></div>
+<div><label for="l">Labor ($)</label><input id="l" type="number" min="0" step="1" value="2000"></div></div>
+<div class="row"><div><label for="t">Sales tax rate (%)</label><input id="t" type="number" min="0" step="0.01" value="8.25"></div>
+<div><label for="x">Is labor taxable?</label><select id="x"><option value="0">No</option><option value="1">Yes</option></select></div></div>
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Tax = taxable amount &times; rate. Example: $1,500 materials &times; 8.25% = $123.75 tax. Labor of $2,000 is not taxed here, so the total is $1,500 + $123.75 + $2,000 = $3,623.75. Whether labor, materials or both are taxable differs by state and by type of work, so check your state revenue department or a local accountant for your own rules. The 8.25% default is only an example.</p>
+<p>Next step: set your price with the <a href="job-price-calculator.html">job price calculator</a>.</p>
+<p><small>Estimates for planning only. This is not accounting, tax or legal advice.</small></p>
+</main>
+
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var x=parseFloat(document.getElementById(i).value);return isFinite(x)&&x>=0?x:0}
+function calc(){
+var m=v("m"),l=v("l"),r=v("t")/100,tx=(m+(document.getElementById("x").value==="1"?l:0))*r;
+document.getElementById("out").innerHTML="<tr><td>Materials + labor</td><td>"+f.format(m+l)+"</td></tr><tr><td>Sales tax</td><td>"+f.format(tx)+"</td></tr><tr><td>Invoice total</td><td class='big'>"+f.format(m+l+tx)+"</td></tr>";}
+["m","l","t","x"].forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>
