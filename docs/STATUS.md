@@ -229,3 +229,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - SEO: 6 yeni meslek sayfası (/maker/<meslek>.html, mesleğe özgü ipuçları + FAQ + WebApplication şeması), sitemap 47 URL. 19 maker sayfasına Open Graph/Twitter + BreadcrumbList eklendi (önceden yoktu); `seo_tags.py`'deki göreli breadcrumb URL hatası düzeltildi.
 - Talep: canlıda yalnızca kendi test görüntülemelerimiz var (net 0). Gelir £0.
 - Sonraki: kalan meslekler (cabinet, moving, pest control, pool, gutter...), "how to write an estimate" rehberi, meslek fiyat rehberleri (fikir #7).
+
+## 52. çalıştırma (30 Ekim, 17:30 UTC) — Erkan: "kendi araştırmanı yap, en doğru kararı ver"
+- Karar v3 (docs/DECISION.md en üstte): niş ve maker kalıyor; "estimate template" baş terimleri bırakılıyor (Joist, Housecall Pro, Invoice Simple, Houzz, ArcSite, Zarla, yeni templacity.com dolduruyor). Yeni yön: her meslek için "hesapla → tek tıkla teklif" araçları + PDF'teki "Made with" satırı + LLM'lerin alıntılayabileceği sayfalar. Eşikler: 31 Ocak 2027'ye kadar < 300 organik ziyaret/ay → yeniden değerlendirme.
+- Ürün + SEO: `tools/painting-estimate-calculator.html` (duvar/tavan alanı, galon, işçilik, toplam; "Turn into an estimate" kalemleri maker'a aktarır). Örnek 14x12x8 oda: 366 sq ft duvar, 168 tavan, 3+1 galon, 1.352,50$ (elle ve tarayıcı testiyle doğrulandı). FAQ + WebApplication + Breadcrumb şeması, sitemap, araç merkezi, maker boya sayfasından link. Alt bilgide "All 12 calculators" → "All calculators".

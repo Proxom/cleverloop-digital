@@ -19,7 +19,7 @@ def header(p, cur=""):
 def footer(p):
     return f'''<footer class="site-foot"><div class="wide cols">
 <div><a class="logo" href="{p}index.html">{LOGO}<span>Clever Loop Digital</span></a><p>Free pricing calculators and plain-English guides for US home-service businesses. Everything runs in your browser.</p></div>
-<div><h4>Free tools</h4><a href="{p}maker/">Estimate &amp; invoice maker</a><a href="{p}tools/job-price-calculator.html">Job price</a><a href="{p}tools/hourly-rate-calculator.html">Hourly rate</a><a href="{p}tools/markup-margin-calculator.html">Markup vs margin</a><a href="{p}tools/break-even-calculator.html">Break-even</a><a href="{p}tools/index.html">All 12 calculators</a></div>
+<div><h4>Free tools</h4><a href="{p}maker/">Estimate &amp; invoice maker</a><a href="{p}tools/job-price-calculator.html">Job price</a><a href="{p}tools/hourly-rate-calculator.html">Hourly rate</a><a href="{p}tools/markup-margin-calculator.html">Markup vs margin</a><a href="{p}tools/break-even-calculator.html">Break-even</a><a href="{p}tools/index.html">All calculators</a></div>
 <div><h4>Guides</h4><a href="{p}guides/how-to-price-a-contractor-job.html">Price a job</a><a href="{p}guides/markup-vs-margin-for-contractors.html">Markup vs margin</a><a href="{p}guides/contractor-overhead-rate.html">Overhead rate</a><a href="{p}guides/how-to-price-a-change-order.html">Change orders</a><a href="{p}guides/index.html">All guides</a></div>
 <div><h4>Company</h4><a href="{p}templates/contractor-estimate-template.html">Free estimate template</a><a href="{p}templates/contractor-invoice-template.html">Free invoice template</a><a href="{p}about.html">About</a><a href="{p}ventures/sheets.html">Quote &amp; Margin Sheet</a><a href="mailto:hello@cleverloopdigital.com">hello@cleverloopdigital.com</a><a href="{p}terms.html">Terms</a><a href="{p}privacy.html">Privacy</a></div>
 </div><div class="wide legal"><span>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital, United Kingdom.</span><span>No cookies, no trackers. Estimates only, not financial, tax or legal advice.</span></div></footer>'''
@@ -35,6 +35,7 @@ ICONS = {
  "break-even-calculator": I('<path d="M3 3v18h18"/><path d="M6 17L19 6"/><path d="M6 9h13"/>'),
  "labor-burden-calculator": I('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 4.5a3.5 3.5 0 0 1 0 7"/><path d="M19 14a6.5 6.5 0 0 1 2.5 6"/>'),
  "change-order-calculator": I('<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M12 12v6M9 15h6"/>'),
+ "painting-estimate-calculator": I('<rect x="3" y="3" width="15" height="6" rx="1.5"/><path d="M18 6h3v5h-9v3"/><rect x="10" y="14" width="4" height="7" rx="1"/>'),
  "material-waste-calculator": I('<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>'),
  "deposit-payment-schedule-calculator": I('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 15h3"/>'),
  "invoice-processing-fee-calculator": I('<rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6.5 15h4"/>'),
@@ -45,6 +46,7 @@ ICONS = {
 }
 TOOLS = [  # slug, name, desc, group
  ("job-price-calculator","Job Price Calculator","Price a job from labor, materials and your target margin.","Price the job"),
+ ("painting-estimate-calculator","Painting Estimate Calculator","Wall area, gallons of paint, labor and a priced estimate in one go.","Price the job"),
  ("hourly-rate-calculator","Hourly Rate Calculator","Work out the hourly rate you need to hit your income goal.","Price the job"),
  ("markup-margin-calculator","Markup vs Margin Calculator","Convert markup to margin and back, and get the selling price.","Price the job"),
  ("change-order-calculator","Change Order Calculator","Price extra work added mid-job.","Price the job"),

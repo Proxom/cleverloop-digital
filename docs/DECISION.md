@@ -1,53 +1,26 @@
-# KARAR: Para kazanma yöntemi (Faz 1) — taslak v1, 28 Ekim 2026
+# KARAR v3 — 30 Ekim 2026, 17:30 UTC (ajanın kendi kararı; Erkan: "bana ispatlamaya çalışma, en doğru kararı ver")
 
-## Özet (Türkçe)
-- **Semrush:** hesapta API birimi yok (`no_api_units`) → anahtar kelime hacmi ALINAMADI. Talep kanıtı yalnızca web kaynaklarından; hacim doğrulaması yok, bunu karar belirsizliği olarak kabul et.
-- **Sert gerçek:** İlk dalga seçimi (şablon + yazılım rehberi) zayıf. Whop verisine göre dijital şablon kategorisinde 6.700 üründen yalnızca 367'si gelir üretiyor, ortalama $70/ay, $5k/ay üstü ürün SIFIR (whoptrends.com/categories/digital_templates). Tek başına şablon satışı £5k/ay hedefine götürmez.
-- **Dağıtım gerçeği:** 50 soğuk e-posta = 0 yanıt. Erkan'ın zamanı olmadan ilk 100 müşteriye ulaşmanın tek ölçeklenebilir yolu: arama motoru + ücretsiz araçlar + e-posta listesi. Arama trafiği yayıncılar için düşüyor (~%60, kaynak aşağıda) → bu yüzden tek sayfa/çok sayfa değil, *araç + özgün veri* gerekir.
-- **Öneri (kırmızı takım sonrası bkz. aşağıda):** BİRİNCİL = "ABD ev-hizmetleri esnafı için ücretsiz fiyat/kâr hesaplayıcıları + yazılım karşılaştırma (açıklamalı affiliate) + e-posta listesi → ücretli şablon paketi". YEDEK = "Aylık otomatik niş rapor/veri aboneliği" sadece ilk 30 günde birincil eşikleri tutturamazsa.
-- Erkan onayı gerekli: docs/APPROVALS.md madde 0.
+## Kısa karar (Türkçe)
+- **Niş aynı kalıyor** (ABD ev-hizmetleri esnafı), **ana ürün aynı** (ücretsiz Estimate & Invoice Maker). Ama **SEO hedefi değişiyor**: "X estimate template" gibi baş terimlerle yarışmayı bırakıyoruz; her meslek için **"hesapla → tek tıkla teklife çevir"** araçları yapıyoruz (ilki: boya teklif hesaplayıcısı).
+- **Neden niş değişmiyor:** Asıl engel niş değil, yeni ve otoritesiz alan adı + yalnızca SEO kuralı. Niş değiştirmek bunu çözmez, birikmiş konu otoritesini (13 araç, 6 rehber, 2 şablon, maker, 18 meslek sayfası) sıfırlar. Bu 4 günde 4. yön değişikliği olurdu.
+- **Neden hedef değişiyor:** "estimate template / invoice template" aramalarının ilk sayfası 1M+ kullanıcılı firmaların elinde: Joist (1,3M esnaf), Housecall Pro (her meslek için şablon sayfası), Invoice Simple (fence/concrete estimate sayfaları bile var), Houzz Pro, ArcSite, Zarla. 28 Ekim'de templacity.com aynı "meslek presetli şablon" fikriyle çıktı. Bu kalabalıkta 19. benzer sayfa sıralama almaz. Rakiplerde olmayan şey: hesaplayıcı ile teklifin **tek akışta** olması (onların hesaplayıcısı ve şablonu ayrı, kayıt istiyor).
+- **Örnek sitelerden ders:** Çoğu ilk müşterisini X/Twitter kitlesi, Product Hunt veya soğuk mesajla buldu (Senja, Bannerbear, HeadshotPro lansmanı). Bunlar bizim için yasak. Bizim kurallarımıza uyan iki büyüme motoru var: (1) ürünün kendisi dağıtım kanalı ("Made with Tally" rozeti yeni kayıtların %40'ı), (2) birikerek büyüyen SEO (HeadshotPro'nun alıcı niyetli uzun kuyruk sayfaları, Tally'de 2025'ten beri 1 numaralı kaynak ChatGPT). Bizim karşılığı: her PDF'te "Made with ... cleverloopdigital.com" satırı + hesaplayıcı uzun kuyruğu + LLM'lerin alıntılayabileceği net, kaynaklı sayfalar.
+- **Dürüst olasılık:** Yalnızca SEO ile, yeni alan adıyla 12 ayda £5k/ay düşük olasılık. Sıralamalar 3-9 ay sürer. Yine de bu kurallar altında en iyi bahis bu.
+- **Gelir:** Pro $9/ay, ancak trafik oluşunca (aşağıdaki eşik) test edilir. Ödeme altyapısı Erkan'da; yeni istek yok.
 
-## Adaylar (English details)
-Revenue target: £5k/month ≈ $6.3k (FX 1.27 assumed).
+## Plan ve eşikler
+1. Her çalıştırma: bir meslek için hesapla→teklif aracı (sıra: pressure washing, fencing, roofing, flooring, drywall, concrete, landscaping/mulch, cleaning), maker meslek sayfasından ve araç merkezinden iç link.
+2. Yeni ince "X estimate template" sayfası EKLENMEZ (18'de duruyor); mevcutlar araçlarla derinleştirilir.
+3. LLM/AI arama: net tanımlar, örnek hesaplar, `llms.txt`.
+4. Ölçüm: demand sayaçları (maker görüntüleme, PDF, Pro tıklaması).
+5. Eşikler: 31 Ocak 2027'ye kadar maker+araçlar organik ziyareti < 300/ay ise niş/kanal yeniden değerlendirilir. Maker 1.000 ziyaret/ay ve Pro tıklama oranı ≥ %2 olursa Erkan'a ödeme kurulumu önerilir (o zamana kadar istek yok).
 
-| # | Method | Revenue math (assumptions) | First-100-customer path (no Erkan time) | Verdict |
-|---|---|---|---|---|
-| A | Template shop (Sheets/Excel) on own site | $19 avg → ~330 sales/mo. Whop: avg $76/mo/product, 1.8% of products > $1k/mo, 0 > $5k | SEO + Pinterest/Etsy-like discovery; Etsy bans bot-made listings | Weak alone; keep as *cross-sell* only |
-| B | Software directory + affiliate + paid featured listing | 30 featured × $197 = $5.9k (vendor-blog claim, unverified) or affiliate 20-25% recurring | Needs organic traffic; directories lost traffic in AI era (directorygems case study); cold outreach to vendors = same 0-reply risk | Medium-weak; merge into D as affiliate layer |
-| C | Rank-and-rent / pay-per-lead local sites | ~20 leads/mo × $20 = $400/mo per site (dn.org example) → ~15 ranking sites for $6k | Must rank in local SERPs; slow (6-12 mo); buyers are local businesses needing sales calls | Too slow, sales-heavy, reject |
-| D | Free calculators/tools + comparison content for US home-service pros, monetised by affiliate + email list + paid template packs | Illustrative: 20k visits/mo × 1.5% email capture = 300 subs; 1% buy $29 = ~$87... realistically needs 100k+ visits for $5k; affiliate adds ~$30-100 per software signup | Search (tools earn links), directory submissions, forum answers (drafts for Erkan), no calls | Primary: only option with compounding distribution, but 12-month path is uncertain |
-| E | Monthly niche data report subscription ($29-99/mo) | 100 subs × $49 = $4.9k | Same distribution problem; needs 5-10k niche audience first | Backup; validate with free sample reports from D's audience |
-| F | Pure AI affiliate comparison blog | Revenue per page claims (thestacc.com: $1,121/page) are vendor-published, unverified | Google scaled-content-abuse risk | Reject as standalone |
+## Kanıtlar (okundu, 30 Ekim)
+- SERP "free contractor estimate template", "fence estimate template free", "roofing estimate template": joist.com, housecallpro.com (handyman/hvac/field-service şablonları), invoicesimple.com/estimate-template (fence, concrete, cleaning...), pro.houzz.com/pro-learn/blog/fence-estimate-template, arcsite.com, zarla.com (Ekim 2026), templacity.com (28 Ekim 2026, "nine trade presets").
+- Tally: büyümenin %100'ü organik/kulaktan kulağa; haftalık 35k kaydın %40'ı "Made with Tally" rozetinden (newsletter.saasstrats.com, Mayıs 2026); 2025'te ChatGPT 1 numaralı yönlendiren (blog.tally.so/from-2-to-3m-arr...).
+- HeadshotPro: lansman X'te, sonrasında SEO + affiliate (indiefounder.me, vibecoderhq.com, remarkablemag.com; rakamlar beyan, denetimli değil).
+- Senja: ilk kullanıcılar Twitter + soğuk DM (senja.io/blog/from-0-to-250-mrr...). Bannerbear: Product Hunt x3, topluluk paylaşımları (bannerbear.com/blog/how-to-get-your-first-25-saas-customers).
+- Semrush: API birimi yok; Google Trends/Autocomplete bu ortamdan erişilemiyor → hacim verisi yok.
 
-## Sources actually read (search excerpts)
-- whoptrends.com/categories/digital_templates (template market stats, Whop only, estimates)
-- developers.google.com/search/docs/essentials/spam-policies (scaled content abuse)
-- searchengineland.com/small-publisher-search-traffic-drops-data-471974
-- etsy.com seller handbook (bot-made listings banned)
-- dn.org geo-domain lead-gen article (illustrative numbers)
-- thestacc.com programmatic SEO case study (vendor self-report, treated as UNVERIFIED)
-- Semrush: NOT available (no API units).
+---
 
-## Legal/platform risks
-Affiliate disclosure (FTC), CAN-SPAM for any email, CCPA/state privacy for list, Google spam policy (few pages, real tools), no regulated advice (calculators give estimates only, with disclaimers; no tax/legal advice).
-
-## What must be built (Phase 2)
-Home page for "tools for home-service pros", 3 launch calculators (job pricing, hourly rate / profit margin, quote markup) in plain JS (no cookies), comparison pages with disclosed affiliate links (only after Erkan joins programs), email capture (needs provider chosen by Erkan, no account created by me), template pack page (pricing displayed, checkout later), trust pages with Erkan's real details.
-Cost: £0 beyond domain/hosting already paid.
-
-## Kill criteria and 30-day validation (numeric, revised after red-team)
-Single assumption: 1.5-3% of visits join the email list. Thresholds derive from it.
-- Day 45: >= 15 pages indexed AND >= 1,000 Search Console impressions (day-30 traffic is noise on a new domain).
-- Day 30-45: willingness-to-pay test: a paid $29-49 sample report/pre-order (paid deposit only; free "notify me" sign-ups do NOT count as demand).
-- Day 90: >= 3,000 visits/month, rising >= 30% month on month, and >= $1 affiliate revenue or one paid pre-order.
-- Hard checkpoint ~June 2027: >= £1,000/month; stop or pivot if < £300.
-- Caps: kill if Erkan's time > 45 min/day or spend > £200. Pause on any Google manual action or affiliate ban.
-
-## Red-team notes (subagent; unverified, no web searches run)
-1. Revenue math does not close: 100k visits/mo gives only ~$435/mo from $29 packs; $6.3k needs ~500k-1M visits/mo. "£5k net" also ignores fees, US sales tax/nexus, UK tax, W-8BEN. The "$87" line in row D is a one-off, not monthly.
-2. Original thresholds contradicted the model (implied 5-7.5% capture) - fixed above.
-3. SEO on a new domain takes 3-6 months; Jobber/ServiceTitan/Housecall Pro own calculator queries; AI Overviews answer them.
-4. Thin/AI-run content risk (scaled content abuse): few pages, original data, real sources.
-5. Depends on Erkan (affiliate sign-ups, email provider, details); forums ban AI/promo posts; trades audiences respond poorly to email.
-Probability of reaching £5k/month by Oct 2027 with D: estimated <= 5% by the red team. Honest view: low; this is a validation bet, not a plan.
-Changes adopted: pick high-bounty niche (field-service software $100+/signup, financing) rather than $29 packs; add original state-by-state data (licensing, permits, rates, with sources) as content moat; test paid demand in week 1 via E-style sample report.

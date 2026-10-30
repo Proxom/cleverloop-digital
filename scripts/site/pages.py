@@ -106,7 +106,7 @@ page("index.html","","", "Free Estimate &amp; Invoice Maker for Contractors | Cl
  "Free estimate and invoice maker for contractors and home-service pros: pick your trade, fill in the job, download a PDF. Plus free pricing calculators and guides. No sign-up.","",home)
 
 # TOOLS HUB
-tb=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../index.html">Home</a> / <span>Calculators</span></p><p class="eyebrow">12 free calculators</p><h1>Free Calculators for Home-Service Pros</h1><p class="lede">Simple pricing tools for contractors, cleaners, landscapers and other home-service businesses. No sign-up, no cookies; everything runs in your browser.</p></div></section>
+tb=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../index.html">Home</a> / <span>Calculators</span></p><p class="eyebrow">13 free calculators</p><h1>Free Calculators for Home-Service Pros</h1><p class="lede">Simple pricing tools for contractors, cleaners, landscapers and other home-service businesses. No sign-up, no cookies; everything runs in your browser.</p></div></section>
 <main class="wide page">
 {tool_tiles("../")}
 <h2>Not sure where to start?</h2>
@@ -120,7 +120,7 @@ gb=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../in
 <main class="wide page">
 {guide_tiles("../")}
 <h2>Run the numbers</h2>
-<p>Every guide links to a matching free tool. See all <a href="../tools/index.html">12 calculators</a>.</p>
+<p>Every guide links to a matching free tool. See all <a href="../tools/index.html">13 calculators</a>.</p>
 <p><small>Figures are illustrative estimates for planning only. Not accounting, tax or legal advice.</small></p>
 </main>'''
 page("guides/index.html","../","guides","Pricing Guides for Contractors | Clever Loop Digital","Step-by-step pricing guides for contractors and home-service pros: job pricing, markup vs margin, overhead, labor cost, break-even and change orders.","guides/index.html",gb)

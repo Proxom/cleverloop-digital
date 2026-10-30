@@ -24,6 +24,7 @@ TRADES={
  "junk-removal":("Junk Removal","junk removal and hauling businesses",["Price by truck volume (quarter, half, full load) so the customer can picture what they pay for.","Mattresses, tires and appliances often carry disposal fees; show them per item.","A stairs or long-carry line covers the extra labor without arguments on site."]),
  "window-cleaning":("Window Cleaning","window cleaners",["Price per window (or per pane) and list interior and exterior on separate lines; many customers want only the outside.","Screens and tracks are easy add-ons when each has its own price.","Note any second-story or ladder work and hard-water stain removal as extras."]),
 }
+CALC={"painting":'<p><b>Measure the room first:</b> the <a href="../tools/painting-estimate-calculator.html">painting estimate calculator</a> works out wall and ceiling area, gallons of paint and labor, then fills in this estimate for you.</p>\n'}
 APP=lambda: '''<div class="wide mk">
 <div class="mk-form">
 <div class="mk-sec"><h2>Document <span class="seg" role="group" aria-label="Document type"><button type="button" data-settype="estimate">Estimate</button><button type="button" data-settype="invoice">Invoice</button></span></h2>
@@ -107,7 +108,7 @@ for k,(name,who,tips) in TRADES.items():
 <div class="w no-print" style="padding-bottom:20px">
 <h2>Tips for {name.lower()} estimates</h2>
 <ul>{"".join(f"<li>{t}</li>" for t in tips)}</ul>
-<p>Not sure what to charge? Use the <a href="../tools/job-price-calculator.html">job price calculator</a> and read <a href="../guides/how-to-price-a-contractor-job.html">how to price a contractor job</a>.</p>
+{CALC.get(k,"")}<p>Not sure what to charge? Use the <a href="../tools/job-price-calculator.html">job price calculator</a> and read <a href="../guides/how-to-price-a-contractor-job.html">how to price a contractor job</a>.</p>
 <h2>Frequently asked questions</h2>
 {faq_html(faq)}
 <h2>Other trades</h2>
