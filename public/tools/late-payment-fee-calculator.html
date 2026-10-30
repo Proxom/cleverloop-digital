@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Late Payment Fee Calculator for Contractors | Clever Loop Digital</title>
+<meta name="description" content="Free late fee calculator for contractors. Estimate the late fee on an overdue invoice from a monthly rate and days past due.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/late-payment-fee-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Late Payment Fee Calculator</h1>
+<p>Enter an overdue invoice, your monthly late fee rate and the days past due. You get the late fee and the new balance. Everything runs in your browser; nothing is stored or sent.</p>
+<div class="card">
+<div class="row"><div><label for="t">Unpaid invoice ($)</label><input id="t" type="number" min="0" step="50" value="1500"></div>
+<div><label for="p">Late fee per month (%)</label><input id="p" type="number" min="0" max="20" step="0.1" value="1.5"></div></div>
+<div class="row"><div><label for="d">Days past due</label><input id="d" type="number" min="0" step="1" value="45"></div><div></div></div>
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Late fee = unpaid amount &times; monthly rate &times; (days past due &divide; 30). Example: $1,500 &times; 1.5% = $22.50 a month; 45 days is 1.5 months, so $33.75, and the new balance is $1,533.75. The 1.5% default is illustrative. Many states cap late fees or interest, and a fee generally needs to be stated in your contract or invoice terms beforehand, so check local rules.</p>
+<p>Next step: protect your cash flow with the <a href="deposit-payment-schedule-calculator.html">deposit &amp; payment schedule calculator</a>.</p>
+<p><small>Estimates for planning only. This is not accounting, tax or legal advice.</small></p>
+</main>
+
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var x=parseFloat(document.getElementById(i).value);return isFinite(x)&&x>=0?x:0}
+function calc(){
+var t=v("t"),p=Math.min(v("p"),20)/100,d=v("d"),fee=t*p*d/30;
+document.getElementById("out").innerHTML="<tr><td>Late fee</td><td class='big'>"+f.format(fee)+"</td></tr><tr><td>New balance</td><td class='big'>"+f.format(t+fee)+"</td></tr>";}
+["t","p","d"].forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>
