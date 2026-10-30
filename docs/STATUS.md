@@ -110,3 +110,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Erkan'dan yeni cevap yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
 - Yeni: `public/tools/change-order-calculator.html` (ek iş fiyatı: 6sa×70$=420$ + %10 aksama 42$ + 300$×1,2=360$ → 822$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 6. SEO araç sayfası.
 - Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
+
+## 28. çalıştırma (30 Ekim)
+- Erkan'dan yeni cevap yok (3 onay da eski); Stripe'a dokunulmadı.
+- Yeni: `public/tools/material-waste-calculator.html` (1.200 sf × %10 = 1.320 sf; fazla 120 sf × 2,50$ = 300$; toplam 3.300$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 7. SEO araç sayfası.
+- Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
