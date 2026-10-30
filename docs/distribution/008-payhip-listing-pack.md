@@ -53,3 +53,6 @@ Not: Gumroad da olur (aynı alanlar). İki platformun komisyonları bu çalışt
 ## UPDATE 30 Oct (run 45): upload the .xlsx instead of the CSV
 File to upload on Payhip: `docs/distribution/product/contractor-pricing-toolkit.xlsx` (5 tabs: Start Here, Quote & Margin, Hourly Rate, Change Order, Job Profit Log). Download it from GitHub (open the file > "Download raw file").
 Add to the description: "Includes 3 bonus tabs: Hourly Rate, Change Order and Job Profit Log." Price stays $9 (launch price).
+
+
+> NOT (30 Ekim): Paylaşım metni bölümü kullanılmaz (outreach yok). Yalnızca Payhip ürün kurulumu geçerli.

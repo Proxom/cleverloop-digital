@@ -1,3 +1,5 @@
+> ARŞİV (30 Ekim): Erkan'ın kararıyla paylaşım/e-posta/outreach yapılmıyor. Bu dosya kullanılmaz.
+
 # İlk satış sprinti (deadline 30 Ekim 19:20 Londra) — Erkan için hazır metinler
 
 Durum: Stripe'ta bize ait hesap YOK (yalnızca Proxom Ltd listeleniyor, dokunulmadı). Satış için Erkan'ın Payhip/Gumroad hesabı gerekir (hesabı Erkan açar).

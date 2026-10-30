@@ -1,3 +1,5 @@
+> ARŞİV (30 Ekim): Erkan'ın kararıyla paylaşım/e-posta/outreach yapılmıyor. Bu dosya kullanılmaz.
+
 # Dağıtım işi 002 — Dizin satıcı outreach taslağı (Erkan gönderir, ≤10/gün)
 Alıcı listesi: HENÜZ YOK — sonraki çalıştırmada satıcıların kendi sitelerinden herkese açık iş e-postalarıyla (kişisel veri toplamadan) hazırlanacak.
 **Subject:** Listing {Product} in a directory for home-service businesses

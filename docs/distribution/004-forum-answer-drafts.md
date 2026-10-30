@@ -1,3 +1,5 @@
+> ARŞİV (30 Ekim): Erkan'ın kararıyla paylaşım/e-posta/outreach yapılmıyor. Bu dosya kullanılmaz.
+
 # Forum answer taslakları (Erkan göndermez/yazmaz; sadece hazır metin)
 Kural: önce gerçekten yardımcı ol, bağlantıyı yalnızca soru fiyatlandırma/hesaplama ise ekle; kuralları (self-promo) oku. Hiçbir şey paylaşılmadı.
 

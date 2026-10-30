@@ -1,3 +1,5 @@
+> ARŞİV (30 Ekim): Erkan'ın kararıyla paylaşım/e-posta/outreach yapılmıyor. Bu dosya kullanılmaz.
+
 # Hazır paylaşım metinleri (EN) — Erkan sadece yapıştırır, kural izin veriyorsa, GERÇEK bir soruya cevap olarak
 
 Kural: spam yok, aynı metni birden çok yerde peşpeşe yapıştırma, günde en fazla 3 paylaşım. Hiçbiri paylaşılmadı.

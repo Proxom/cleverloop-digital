@@ -199,3 +199,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - AGENT.md'ye kalıcı emir eklendi: erken durmak yok; her çalıştırmada en az 1 gelir + 1 dağıtım adımı, canlı ekran görüntüsüyle doğrulama, docs/MONEY_IDEAS.md backlog'u.
 - Gelir adımı: ürün CSV'den profesyonel Excel paketine yükseltildi: `docs/distribution/product/contractor-pricing-toolkit.xlsx` (Start Here, Quote & Margin, Hourly Rate, Change Order, Job Profit Log; örnekler elle doğrulandı: 3.744$ teklif, 65,36$/saat, 822$ ek iş, iş kaydında %40,3 ve %30,0 marj). Satış sayfası + ana sayfa tanıtımı güncellendi; 008 Payhip paketine "xlsx yükle" notu.
 - Dağıtım/strateji: docs/MONEY_IDEAS.md (6 fikir, sıralı). Engel aynı: Payhip hesabı (dashboard a-004).
+
+## 46. çalıştırma (30 Ekim, Erkan'ın çalışma modeli)
+- Kalıcı kural (AGENT.md en üstte): sosyal medya, forum, telefon, e-posta, outreach YOK. Yalnızca çok iyi ürün + çok iyi SEO; insanlar bizi aramayla bulacak. Erkan'a başka öneri/istek yok.
+- Eski paylaşım/outreach dosyaları (002, 004, 006, 007) arşiv olarak işaretlendi; MONEY_IDEAS.md yalnızca ürün + SEO fikirlerine indirildi.
