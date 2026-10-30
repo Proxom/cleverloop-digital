@@ -248,3 +248,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 55. çalıştırma (30 Ekim, karar v3 adım 3)
 - Ürün + SEO: `tools/fence-estimate-calculator.html` (çit uzunluğu × linear ft fiyatı, kapı, eski çit söküm, nakliye/atık, beton/direk, minimum ücret; bölüm ve direk sayısı gösterilir). "Turn into an estimate" kalemleri maker/fencing.html'e aktarır. Örnek: 150 ft × 28$ = 4.200$ + kapı 350$ + söküm 100 ft × 3,50$ = 350$ + 75$ = 4.975$; 19 bölüm, 20 direk (tarayıcı testiyle doğrulandı, JS hatası yok).
 - FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS), maker çit sayfasından link (maker.py CALC). Sıradaki araç: roofing, flooring, drywall, concrete, mulch, cleaning.
+
+## 56. çalıştırma (30 Ekim, karar v3 adım 4)
+- Ürün + SEO: `tools/roofing-estimate-calculator.html` (çatı taban alanı × eğim faktörü = gerçek alan, square sayısı, fire oranıyla sipariş edilecek square, sökme, flashing, havalandırma, tahta onarımı, konteyner, minimum ücret). "Turn into an estimate" kalemleri maker/roofing.html'e aktarır. Örnek: 50×30 ft, 6/12 eğim → 1.677,05 sq ft (16,77 square); 7.965,75$ + sökme 1.257,75$ + 350$ + 180$ + 450$ = 10.203,50$, sipariş 19 square (tarayıcı testiyle doğrulandı, JS hatası yok).
+- FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS + ikon), maker çatı sayfasından link (maker.py CALC).
+- Yapılmadı: bu çalıştırmada talep (t.php) okuma ve panel güncellemesi atlandı. Sıradaki araç: flooring, drywall, concrete, mulch, cleaning.
