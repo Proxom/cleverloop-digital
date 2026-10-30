@@ -244,3 +244,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS), maker basınçlı yıkama sayfasından link (maker.py CALC).
 - Not: pages.py/maker.py OG etiketlerini siliyor → her üretimden sonra `python3 scripts/site/seo_tags.py public` çalıştır.
 - Sıradaki araç: fencing (çit) hesapla→teklif.
+
+## 55. çalıştırma (30 Ekim, karar v3 adım 3)
+- Ürün + SEO: `tools/fence-estimate-calculator.html` (çit uzunluğu × linear ft fiyatı, kapı, eski çit söküm, nakliye/atık, beton/direk, minimum ücret; bölüm ve direk sayısı gösterilir). "Turn into an estimate" kalemleri maker/fencing.html'e aktarır. Örnek: 150 ft × 28$ = 4.200$ + kapı 350$ + söküm 100 ft × 3,50$ = 350$ + 75$ = 4.975$; 19 bölüm, 20 direk (tarayıcı testiyle doğrulandı, JS hatası yok).
+- FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS), maker çit sayfasından link (maker.py CALC). Sıradaki araç: roofing, flooring, drywall, concrete, mulch, cleaning.
