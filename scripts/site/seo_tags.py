@@ -17,7 +17,8 @@ for f in glob.glob("**/*.html",recursive=True):
         items=[]
         for a in re.finditer(r'<a href="([^"]*)">(.*?)</a>|<span>(.*?)</span>',m.group(1)):
             if a.group(1):
-                href=a.group(1).replace("../",""); url="https://cleverloopdigital.com/"+("" if href=="index.html" else href); name=html.unescape(a.group(2))
+                href=os.path.normpath(os.path.join(os.path.dirname(f),a.group(1))); href="" if href=="index.html" else href[:-10] if href.endswith("/index.html") else href
+                url="https://cleverloopdigital.com/"+href; name=html.unescape(a.group(2))
             else: url=u; name=html.unescape(a.group(3))
             items.append({"@type":"ListItem","position":len(items)+1,"name":name,"item":url})
         bc='\n<script type="application/ld+json">'+json.dumps({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":items},ensure_ascii=False)+'</script>'

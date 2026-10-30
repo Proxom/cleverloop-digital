@@ -223,3 +223,9 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - SEO: 12 meslek sayfası (/maker/<trade>.html; mesleğe özgü kalemler + ipuçları + FAQ + WebApplication şeması), sitemap 41 URL. Ana sayfa ürün odaklı hero ile yeniden kuruldu; menüde öne çıkan düğme "Estimate Maker".
 - Talep: `maker` (görüntüleme, PDF) + `maker-pro` (Pro $9/ay "Get Pro" tıklaması) panelde.
 - Semrush: API birimi yok (hacim verisi alınamadı).
+
+## 51. çalıştırma (30 Ekim, 16:50 UTC, ürün + SEO)
+- Ürün: Maker'a 6 yeni meslek başlangıç kalemi (marangoz, beton, çit, fayans, hurda/eşya kaldırma, cam temizliği) → 18 meslek. JS önbellek kuralı gereği `js/maker-v2.js` (eski v1 kaldırıldı, tüm maker sayfaları v2'ye bağlı). Yerelde tarayıcıyla test edildi: çit örneği 450+4.800+350+475 = 6.075$, JS hatası yok.
+- SEO: 6 yeni meslek sayfası (/maker/<meslek>.html, mesleğe özgü ipuçları + FAQ + WebApplication şeması), sitemap 47 URL. 19 maker sayfasına Open Graph/Twitter + BreadcrumbList eklendi (önceden yoktu); `seo_tags.py`'deki göreli breadcrumb URL hatası düzeltildi.
+- Talep: canlıda yalnızca kendi test görüntülemelerimiz var (net 0). Gelir £0.
+- Sonraki: kalan meslekler (cabinet, moving, pest control, pool, gutter...), "how to write an estimate" rehberi, meslek fiyat rehberleri (fikir #7).

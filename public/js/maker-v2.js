@@ -13,7 +13,13 @@
     "hvac": { label: "HVAC", items: [["AC tune-up", 1, "ea", 129], ["Replace run capacitor", 1, "ea", 185], ["Refrigerant R-410A", 2, "lb", 95]] },
     "flooring": { label: "Flooring", items: [["LVP installation", 400, "sq ft", 2.5], ["LVP flooring material", 420, "sq ft", 3.2], ["Underlayment", 400, "sq ft", 0.45], ["Remove old flooring", 400, "sq ft", 1]] },
     "drywall": { label: "Drywall", items: [["Drywall patch", 3, "ea", 145], ["Hang and finish drywall", 240, "sq ft", 2.75], ["Texture match", 1, "job", 125]] },
-    "pressure-washing": { label: "Pressure washing", items: [["House wash", 2400, "sq ft", 0.2], ["Driveway", 800, "sq ft", 0.18], ["Deck", 300, "sq ft", 0.35]] }
+    "pressure-washing": { label: "Pressure washing", items: [["House wash", 2400, "sq ft", 0.2], ["Driveway", 800, "sq ft", 0.18], ["Deck", 300, "sq ft", 0.35]] },
+    "carpentry": { label: "Carpentry", items: [["Finish carpentry labor", 16, "hr", 65], ["Baseboard, installed", 180, "lin ft", 4.5], ["Interior door, pre-hung, installed", 3, "ea", 285], ["Trim lumber and fasteners", 1, "lot", 210]] },
+    "concrete": { label: "Concrete", items: [["Excavation and grading", 1, "job", 650], ["Gravel base, 4 in", 600, "sq ft", 1.1], ["Concrete slab, 4 in, broom finish", 600, "sq ft", 7.5], ["Rebar and forms", 1, "lot", 480]] },
+    "fencing": { label: "Fencing", items: [["Remove old fence", 150, "lin ft", 3], ["6 ft wood privacy fence, installed", 150, "lin ft", 32], ["Walk gate", 1, "ea", 350], ["Post holes in concrete", 19, "ea", 25]] },
+    "tile": { label: "Tile", items: [["Remove old tile", 60, "sq ft", 3], ["Cement board and waterproofing", 60, "sq ft", 4], ["Tile installation", 60, "sq ft", 12], ["Grout, thinset and trim", 1, "lot", 180]] },
+    "junk-removal": { label: "Junk removal", items: [["Junk removal, half truck load", 1, "load", 325], ["Mattress disposal fee", 1, "ea", 40], ["Appliance haul-away", 2, "ea", 60], ["Stairs / long carry", 1, "ea", 50]] },
+    "window-cleaning": { label: "Window cleaning", items: [["Exterior windows", 24, "ea", 8], ["Interior windows", 24, "ea", 6], ["Screen cleaning", 24, "ea", 3], ["Track and sill cleaning", 24, "ea", 2]] }
   };
   window.CL_PRESETS = PRESETS;
   var today = new Date(), plus = function (d) { var x = new Date(today); x.setDate(x.getDate() + d); return x.toISOString().slice(0, 10); };

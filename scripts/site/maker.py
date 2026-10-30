@@ -17,6 +17,12 @@ TRADES={
  "flooring":("Flooring","flooring installers",["Material quantity should include waste: install 400 sq ft, order about 420.","Keep removal, underlayment and installation on separate lines.","Transitions and stair nosing are easy to forget; give them their own line."]),
  "drywall":("Drywall","drywall contractors",["Price patches per patch and new drywall per square foot.","Texture matching takes time; give it its own line.","Note the finish level in the description."]),
  "pressure-washing":("Pressure Washing","pressure washing businesses",["Price house, driveway and deck per square foot on separate lines.","Customers often add a second surface when each has a visible price.","Mention the cleaning solution and any plant protection in the notes."]),
+ "carpentry":("Carpentry","carpenters and finish carpenters",["Price trim and baseboard per linear foot and doors per unit; hourly labor covers the custom work.","Keep lumber and fasteners on one materials line so a wood species change is a one-line edit.","Say in the description whether paint or stain is included; it is the most common surprise."]),
+ "concrete":("Concrete","concrete contractors",["Price the slab per square foot and state the thickness (4 in for patios and walks, often 5-6 in for driveways).","Excavation, gravel base and rebar or forms belong on their own lines; they change with site conditions.","Note the finish (broom, stamped, exposed aggregate) and whether sealing is included."]),
+ "fencing":("Fencing","fence installers",["Price the fence per linear foot and gates per unit; customers compare those numbers between bids.","Removal of the old fence is its own line, and so are post holes in concrete if you charge for them.","Mention who calls 811 to locate utilities and who handles the HOA or permit approval."]),
+ "tile":("Tile","tile setters",["Price installation per square foot and demolition separately; old tile removal varies a lot from job to job.","Backer board and waterproofing get their own line in showers so nobody skips them to cut the price.","Large-format, mosaic and herringbone layouts take longer; price them at a higher per-foot rate."]),
+ "junk-removal":("Junk Removal","junk removal and hauling businesses",["Price by truck volume (quarter, half, full load) so the customer can picture what they pay for.","Mattresses, tires and appliances often carry disposal fees; show them per item.","A stairs or long-carry line covers the extra labor without arguments on site."]),
+ "window-cleaning":("Window Cleaning","window cleaners",["Price per window (or per pane) and list interior and exterior on separate lines; many customers want only the outside.","Screens and tracks are easy add-ons when each has its own price.","Note any second-story or ladder work and hard-water stain removal as extras."]),
 }
 APP=lambda: '''<div class="wide mk">
 <div class="mk-form">
@@ -46,7 +52,7 @@ APP=lambda: '''<div class="wide mk">
 PRO='''<section class="sec alt no-print" id="pro"><div class="wide">
 <div class="sec-head center"><p class="eyebrow">Pricing</p><h2>Free forever. Pro when you need more.</h2><p>The maker is free with no sign-up. Pro is for businesses that send estimates every week.</p></div>
 <div class="plans">
-<div class="plan"><h3>Free</h3><div class="price">$0</div><ul><li>Unlimited estimates and invoices</li><li>Your logo, PDF download</li><li>12 trade starting points</li><li>Small &ldquo;Made with&rdquo; line on the PDF</li></ul><a class="btn btn-plain" href="#top">Use it free</a></div>
+<div class="plan"><h3>Free</h3><div class="price">$0</div><ul><li>Unlimited estimates and invoices</li><li>Your logo, PDF download</li><li>18 trade starting points</li><li>Small &ldquo;Made with&rdquo; line on the PDF</li></ul><a class="btn btn-plain" href="#top">Use it free</a></div>
 <div class="plan hot"><span class="pill">Coming soon</span><h3>Pro</h3><div class="price">$9<small>/month</small></div><ul><li>Everything in Free, no branding line</li><li>Saved customers and price list</li><li>Turn an estimate into an invoice in one click</li><li>Document history on your device</li></ul><a class="btn btn-acc" href="#pro" data-demand-click="maker-pro" data-root="ROOT">Get Pro {A}</a></div>
 </div></div></section>'''
 def faq_html(items): return '<div class="faq">'+"".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q,a in items)+'</div>'
@@ -62,7 +68,7 @@ def write(path,p,title,desc,canon,body,lds,trade="",typ=""):
 <link rel="canonical" href="https://cleverloopdigital.com/{canon}">
 {headlinks(p)}
 <link rel="stylesheet" href="{p}site-v2.css"><link rel="stylesheet" href="{p}app-v1.css">{head}
-<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v1.js" defer></script>
+<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v2.js" defer></script>
 </head><body id="top"{attrs}>
 {header(p,"maker")}
 {body}
