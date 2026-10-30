@@ -79,7 +79,7 @@ Do NOT use Gmail tools or Hostinger Mail tools of Erkan's other businesses. asse
 
 ## DEMAND MEASUREMENT (Erkan, 30 Oct 16:20): no payment system yet
 - Do NOT set up payments (no Stripe links, no Payhip). First measure demand: every product we try to sell gets a "Buy now · $<price>" button with `data-demand-click="<slug>"`, the page gets `data-demand-view="<slug>"`, free downloads get `data-demand-download="<slug>"`, and the page loads `js/demand.js`. Add every new slug to `$PRODUCTS` in `public/api/t.php`.
-- EVERY run: fetch https://cleverloopdigital.com/api/t.php (firecrawl scrape, maxAge 0, rawHtml) and write one dashboard doc per product to collection `demand/<slug>`: {name, url, price, views, clicks, downloads, clickRate (clicks/views %), last7: {views, clicks, downloads}, updatedAt}. Counts are cumulative from the live file; if a total ever drops (file reset), keep the higher stored value and add new counts on top, and note it in the report.
+- EVERY run: fetch https://cleverloopdigital.com/api/t.php (firecrawl scrape, maxAge 0, rawHtml) and write one dashboard doc per product to collection `demand/<slug>`: {name, url, price, views, clicks, downloads, clickRate (clicks/views %), last7: {views, clicks, downloads}, updatedAt}. Counts are cumulative from the live file, minus the doc's `excludeTest` values (our own test hits; never remove that field, add to it whenever you test a live page yourself); if a total ever drops (file reset), keep the higher stored value and add new counts on top, and note it in the report.
 - Erkan decides on payments when demand shows; do not ask him about it.
 
 ## DELEGATION 29 Oct 19:20 (Erkan): DO NOT WAIT FOR HIM
