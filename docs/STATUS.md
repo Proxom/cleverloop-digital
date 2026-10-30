@@ -139,3 +139,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
 - Yeni: `public/tools/job-sales-tax-calculator.html` (1.500$ malzeme × %8,25 = 123,75$ vergi; +2.000$ işçilik = 3.623,75$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 12. SEO araç sayfası.
 - Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
+
+## 34. çalıştırma (30 Ekim)
+- Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
+- Dağıtım işi: `docs/distribution/007-ready-to-post-tool-shares.md` (3 hazır paylaşım metni; hiçbiri paylaşılmadı). Yeni araç eklemedim: 12 araç yeterli, darboğaz dağıtım.
+- Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni (006 veya 007).
