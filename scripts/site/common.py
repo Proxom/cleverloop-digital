@@ -76,6 +76,7 @@ def tool_tiles(p, grouped=True):
         if grouped and grp!=g:
             if g: out.append('</div>')
             out.append(f'<p class="group-title">{grp}</p><div class="tiles">'); g=grp
+            if grp=="Get paid" and grouped: out.append(tile(f"{p}maker/","Invoice &amp; Estimate Maker","Make an invoice or estimate and save it as a PDF. Free, no sign-up.",'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg>',"New"))
         out.append(tile(f"{p}tools/{s}.html",n,d,ICONS[s]))
     out.append('</div>'); return "\n".join(out)
 def guide_tiles(p):

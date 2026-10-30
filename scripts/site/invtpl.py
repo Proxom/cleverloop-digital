@@ -35,6 +35,7 @@ body=f'''<section class="phead"><div class="wide promo">
 </table></div>
 </div></section>
 <main class="w page">
+<p class="card" style="margin-top:0">Rather fill it in online? Use the free <a href="../maker/">invoice &amp; estimate maker</a>: type, then save as PDF. No spreadsheet needed.</p>
 <h2>What is in the template</h2>
 <ul>
 <li>Header for your business name, address, phone, email and license number</li>

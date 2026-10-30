@@ -230,6 +230,11 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Talep: canlıda yalnızca kendi test görüntülemelerimiz var (net 0). Gelir £0.
 - Sonraki: kalan meslekler (cabinet, moving, pest control, pool, gutter...), "how to write an estimate" rehberi, meslek fiyat rehberleri (fikir #7).
 
-## 52. çalıştırma (30 Ekim, 17:30 UTC) — Erkan: "kendi araştırmanı yap, en doğru kararı ver"
+## 52. çalıştırma (30 Ekim, Erkan'ın 12 örnek sitesi, paralel oturum)
+- Analiz: docs/BENCHMARKS.md (12 site: ürün, fiyat, büyüme kanalı, kaynaklı gelir tahminleri). Ders: yarısı kurucunun sosyal medya kitlesiyle büyüdü (bizde yasak); bize uyanlar HeadshotPro (SEO), Tally (ürün kendini dağıtır), Bannerbear/Revid (SEO + ücretsiz araç sayfaları). 9 $'lık Excel tek başına 5.000 £'e yetmez (~720 satış/ay).
+- Karar: yeni birincil ürün = ücretsiz "Invoice & Estimate Maker" (tarayıcıda, giriş yok, PDF; her belgede "Made with cleverloopdigital.com"). Paralel oturum aynı ürünü /maker/ altında daha kapsamlı yayınlamıştı; benim kopyam (tools/invoice-maker.html) yinelenen içerik olmaması için SİLİNDİ, bağlantılar /maker/'a yönlendirildi. Benim sürümümün özellikleri: (teklif↔fatura geçişi, vergili kalemler, depozito/kalan, notlar, yerel kayıt; 2.645$ + %8,25 vergi malzemede 99$ → 2.744$, %30 depozito 823,20$ test edildi). Ana sayfa, araç merkezi, şablon sayfaları, 29 sayfa alt bilgi, sitemap bağlandı.
+- AGENT.md: Erkan'ın emri + kapsam genişlemesi (yazılım/AI dahil) + yeni birincil ürün kalıcı olarak yazıldı.
+- Ek: araç merkezinde Maker kartı, iki şablon sayfasında "online doldur" bağlantısı (/maker/).
+## 53. çalıştırma (30 Ekim, 17:30 UTC) — Erkan: "kendi araştırmanı yap, en doğru kararı ver"
 - Karar v3 (docs/DECISION.md en üstte): niş ve maker kalıyor; "estimate template" baş terimleri bırakılıyor (Joist, Housecall Pro, Invoice Simple, Houzz, ArcSite, Zarla, yeni templacity.com dolduruyor). Yeni yön: her meslek için "hesapla → tek tıkla teklif" araçları + PDF'teki "Made with" satırı + LLM'lerin alıntılayabileceği sayfalar. Eşikler: 31 Ocak 2027'ye kadar < 300 organik ziyaret/ay → yeniden değerlendirme.
 - Ürün + SEO: `tools/painting-estimate-calculator.html` (duvar/tavan alanı, galon, işçilik, toplam; "Turn into an estimate" kalemleri maker'a aktarır). Örnek 14x12x8 oda: 366 sq ft duvar, 168 tavan, 3+1 galon, 1.352,50$ (elle ve tarayıcı testiyle doğrulandı). FAQ + WebApplication + Breadcrumb şeması, sitemap, araç merkezi, maker boya sayfasından link. Alt bilgide "All 12 calculators" → "All calculators".

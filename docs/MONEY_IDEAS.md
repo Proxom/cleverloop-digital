@@ -11,7 +11,7 @@ Sıradaki büyüme işleri (yalnızca ürün + SEO):
 4. Karşılaştırma/rehber içerikleri: "how to write an estimate", "estimate vs quote vs bid", "what to put on an invoice".
 
 
-Durum: 30 Ekim. Gelir £0. Tek darboğaz: ödeme altyapısı (Payhip/Gumroad/Stripe hesabı Erkan'da). Aşağıdakilerin hepsi gerçek kanıt istenen tahminlerdir; uydurma rakam yok.
+Durum: 30 Ekim (Erkan'ın 12 örnek sitesi incelendi → docs/BENCHMARKS.md; kapsam yazılım/AI dahil genişledi). Gelir £0. Tek darboğaz: ödeme altyapısı (Payhip/Gumroad/Stripe hesabı Erkan'da). Aşağıdakilerin hepsi gerçek kanıt istenen tahminlerdir; uydurma rakam yok.
 
 | # | Fikir | Alıcı | Fiyat | Kanal | Engel | Sonraki adım |
 |---|-------|-------|-------|-------|-------|--------------|
