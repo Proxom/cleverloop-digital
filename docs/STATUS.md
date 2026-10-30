@@ -190,3 +190,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Ana sayfa: hero + canlı "hızlı teklif" hesaplayıcısı (700$ / %25 marj → 933,33$; %25 markup → 875$ = %20 marj; elle doğrulandı), gruplanmış 12 araç kartı, "marj tuzağı" görseli, rehber kartları, Quote Sheet tanıtımı (tablo görseli CSV formülleriyle aynı: 3.744$ teklif).
 - Araç sayfaları: başlık bandı, şık form alanları, lacivert sonuç kartı. Rehberler: tablo ve ürün kartı stili. Yeni: `guides/index.html` (rehber merkezi, sitemap'e eklendi). Satış sayfası yeniden tasarlandı (fiyat hâlâ planlı $9, ödeme linki yok).
 - Kural notu: yeni sayfalar için docs/SITE_TEMPLATE.md.
+
+## 44. çalıştırma (30 Ekim, Erkan: "görsel tasarım tamamen bozuldu")
+- Neden: Hostinger eski `style.css`'i önbellekte tutuyordu; yeni HTML stilsiz göründü (logo ekranı kaplıyordu). Çözüm: CSS yeni adla `site-v2.css`, tüm sayfalar ona bağlandı; SVG'lere sabit boyut eklendi (CSS yüklenmese bile bozulmaz). Kural docs/SITE_TEMPLATE.md'de.
+- Tasarım güçlendirildi: kendi sunucumuzda Inter yazı tipi (çerezsiz), hareketli hero ışığı, teklif kartında canlı rakam etiketleri, "3 adımda" bölümü, SSS (FAQ şeması), kapanış çağrı bandı.
