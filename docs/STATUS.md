@@ -268,3 +268,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Ürün + SEO: `tools/concrete-estimate-calculator.html` (1-2 plaka boyut × kalınlık → metreküp (cu yd), fire %, çeyrek yarda yukarı yuvarlama, beton $/cu yd, donatı/hasır, kalıp-döküm-finiş $/sq ft, söküm, teslimat/kısa yük ücreti, minimum ücret). "Turn into an estimate" kalemleri maker/concrete.html'e aktarır. Örnek: 20×20 ft, 4 in = 4,94 cu yd → %10 fire ile 5,5 cu yd; 907,50$ + 320$ + 1.800$ = 3.027,50$ (tarayıcı testiyle doğrulandı, JS hatası yok).
 - FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS + ikon), maker beton sayfasından link (maker.py CALC).
 - Yapılmadı: talep (t.php) okuma ve panel güncellemesi (bu ortamda panel yazma akışı yok). Sıradaki araç: mulch, cleaning.
+
+## 60. çalıştırma (30 Ekim, karar v3 adım 8)
+- Ürün + SEO: `tools/mulch-calculator.html` (bölme alanı × derinlik → cu yd, fire %, çeyrek yarda yukarı yuvarlama, 2 ve 3 cu ft torba sayısı, malç + serme işçiliği, kenar çıtası, yabani ot örtüsü, teslimat, eski malç söküm, minimum ücret). "Turn into an estimate" kalemleri maker/landscaping.html'e aktarır. Örnek: 30×10 ft, 3 in = 2,78 cu yd → %5 fire ile 3 cu yd (41 torba); 135$ + 120$ = 255$ (tarayıcı testiyle doğrulandı, JS hatası yok).
+- FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS + ikon), maker peyzaj sayfasından link (maker.py CALC). Sıradaki araç: cleaning.
+- Yapılmadı: talep (t.php) okuma ve panel güncellemesi (bu ortamda panel yazma akışı yok). Gelir £0.
