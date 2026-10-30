@@ -120,3 +120,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
 - Yeni: `public/tools/deposit-payment-schedule-calculator.html` (12.000$ × %25 = 3.000$ depozito; 9.000$ / 3 = 3.000$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 8. SEO araç sayfası.
 - Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
+
+## 30. çalıştırma (30 Ekim)
+- Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
+- Yeni: `public/tools/invoice-processing-fee-calculator.html` (2.000$ × %2,9 + 0,30$ = 58,30$ ücret, net 1.941,70$; hedef 2.000$ net için (2.000,30)/0,971 = 2.060,04$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 9. SEO araç sayfası.
+- Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.

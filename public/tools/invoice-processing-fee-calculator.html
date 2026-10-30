@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invoice Processing Fee Calculator for Contractors | Clever Loop Digital</title>
+<meta name="description" content="Free card processing fee calculator for contractors. See what you keep from an invoice and what to invoice to net a target.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/invoice-processing-fee-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Invoice Processing Fee Calculator</h1>
+<p>Enter an invoice amount and your card processor's rate. You get the fee and what you actually keep, plus the invoice amount needed to net a target. Rates are inputs you set; check your processor's current pricing. Everything runs in your browser; nothing is stored or sent.</p>
+<div class="card">
+<div class="row"><div><label for="t">Invoice amount ($)</label><input id="t" type="number" min="0" step="50" value="2000"></div>
+<div><label for="p">Percent fee (%)</label><input id="p" type="number" min="0" max="20" step="0.01" value="2.9"></div></div>
+<div class="row"><div><label for="f">Fixed fee per payment ($)</label><input id="f" type="number" min="0" step="0.05" value="0.30"></div>
+<div><label for="n">Target amount to keep ($)</label><input id="n" type="number" min="0" step="50" value="2000"></div></div>
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Fee = amount &times; percent + fixed fee. You keep amount &minus; fee. Example: $2,000 &times; 2.9% = $58.00, plus $0.30 = $58.30 fee, so you keep $1,941.70. To net a target, invoice (target + fixed fee) &divide; (1 &minus; percent). Example: ($2,000 + $0.30) &divide; 0.971 = $2,060.04. The 2.9% + $0.30 figures are illustrative defaults, not a quote from any provider. Rules on passing card fees to customers vary by state and card network, so check before adding a surcharge.</p>
+<p>Next step: price the job with the <a href="job-price-calculator.html">job price calculator</a>.</p>
+<p><small>Estimates for planning only. This is not accounting, tax or legal advice.</small></p>
+</main>
+
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var x=parseFloat(document.getElementById(i).value);return isFinite(x)&&x>=0?x:0}
+function calc(){
+var t=v("t"),p=Math.min(v("p"),20)/100,x=v("f"),n=v("n"),fee=t*p+x,inv=(n+x)/(1-p);
+document.getElementById("out").innerHTML="<tr><td>Processing fee</td><td>"+f.format(fee)+"</td></tr><tr><td>You keep</td><td class='big'>"+f.format(t-fee)+"</td></tr><tr><td>Invoice needed to net target</td><td class='big'>"+f.format(inv)+"</td></tr>";}
+["t","p","f","n"].forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>
