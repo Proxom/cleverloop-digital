@@ -164,3 +164,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok). Payhip ürün linki hâlâ gelmedi; sprint bitişi bugün 19:20 Londra.
 - Dağıtım işi: `public/guides/markup-vs-margin-for-contractors.html` (SEO rehberi, FAQ şeması; %30 markup = %23,1 marj, 1.000$/0,70 = 1.428,57$; dönüşüm tablosu elle doğrulandı) + sitemap, ana sayfa, araç merkezi ve ilk rehberden link; satış sayfasına yönlendiriyor.
 - Erkan'ın görevi değişmedi: 008'i açıp Payhip ürününü yayınla, linki dashboard'a yaz.
+
+## 39. çalıştırma (30 Ekim, 11:20 UTC)
+- Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok). Payhip ürün linki hâlâ gelmedi; sprint bitişi bugün 19:20 Londra.
+- Dağıtım işi: `public/guides/contractor-overhead-rate.html` (SEO rehberi, FAQ şeması; 48.000$ genel gider / 200.000$ direkt maliyet = %24; 2.000$ iş + 480$ = 2.480$ / 0,75 = 3.306,67$; gideri unutunca marj %25 yerine %7; elle doğrulandı) + sitemap, ana sayfa, araç merkezi; satış sayfasına yönlendiriyor.
+- Erkan'ın görevi değişmedi: 008'i açıp Payhip ürününü yayınla, linki dashboard'a yaz.
