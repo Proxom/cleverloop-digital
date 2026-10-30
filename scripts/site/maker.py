@@ -29,6 +29,7 @@ CALC={"painting":'<p><b>Measure the room first:</b> the <a href="../tools/painti
  "flooring":'<p><b>Measure the rooms first:</b> the <a href="../tools/flooring-estimate-calculator.html">flooring estimate calculator</a> adds up room areas, applies your waste allowance, prices material, installation, removal and trim, then fills in this estimate for you.</p>\n',
  "roofing":'<p><b>Measure the roof first:</b> the <a href="../tools/roofing-estimate-calculator.html">roofing estimate calculator</a> works out sloped area from footprint and pitch, squares to order, tear-off and your minimum charge, then fills in this estimate for you.</p>\n',
  "drywall":'<p><b>Measure the rooms first:</b> the <a href="../tools/drywall-estimate-calculator.html">drywall estimate calculator</a> works out wall and ceiling area, sheets to order, hanging and finishing, texture and patches, then fills in this estimate for you.</p>\n',
+ "concrete":'<p><b>Measure the slab first:</b> the <a href="../tools/concrete-estimate-calculator.html">concrete estimate calculator</a> works out cubic yards to order, concrete, reinforcement, finishing labor and demolition, then fills in this estimate for you.</p>\n',
  "fencing":'<p><b>Measure the fence line first:</b> the <a href="../tools/fence-estimate-calculator.html">fence estimate calculator</a> works out the price per linear foot, gates, old fence removal and post count, then fills in this estimate for you.</p>\n'}
 APP=lambda: '''<div class="wide mk">
 <div class="mk-form">

@@ -3,7 +3,7 @@
 ## ANA ÜRÜN (30 Ekim, Erkan'ın örnek siteleri: Tally, HeadshotPro, Senja, ShipFast...)
 Ders: tek kişilik başarılı siteler TEK dar işi kusursuz yapar, hero'da ürünü çalışırken gösterir, "ücretsiz başla" ile çeker, programatik SEO sayfalarıyla (şablon/meslek sayfaları) trafik toplar, sonra ücretli plana çevirir.
 Bizim karşılığımız: **Estimate & Invoice Maker** (/maker/) — tarayıcıda çalışan ücretsiz teklif/fatura oluşturucu, 12 meslek sayfası (/maker/<trade>.html). Ücretli plan: **Pro $9/ay** (markasız PDF, kayıtlı müşteri/fiyat listesi, teklif→fatura tek tık, belge geçmişi). Talep: `maker` (görüntüleme, PDF indirme) + `maker-pro` (Pro tıklaması) panelde.
-**KARAR v3 (30 Ekim 17:30):** her meslek için hesapla→teklif aracı (1. boya, 2. basınçlı yıkama, 3. çit, 4. roofing, 5. flooring: YAPILDI). Sıra: drywall, concrete, mulch, cleaning. Yeni ince şablon sayfası yok.
+**KARAR v3 (30 Ekim 17:30):** her meslek için hesapla→teklif aracı (1. boya, 2. basınçlı yıkama, 3. çit, 4. roofing, 5. flooring, 6. drywall, 7. concrete: YAPILDI). Sıra: mulch, cleaning. Yeni ince şablon sayfası yok.
 Sıradaki büyüme işleri (yalnızca ürün + SEO):
 1. (DURDURULDU, karar v3) Daha fazla meslek sayfası — 51. çalıştırmada 6 eklendi (carpentry, concrete, fencing, tile, junk removal, window cleaning; toplam 18). Sırada: cabinet, moving, pest control, pool, gutter, appliance repair, masonry, siding.
 2. "Invoice" odaklı meslek sayfaları (/maker/<trade>-invoice.html, data-type="invoice").
