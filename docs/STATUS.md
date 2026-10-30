@@ -203,3 +203,9 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 46. çalıştırma (30 Ekim, Erkan'ın çalışma modeli)
 - Kalıcı kural (AGENT.md en üstte): sosyal medya, forum, telefon, e-posta, outreach YOK. Yalnızca çok iyi ürün + çok iyi SEO; insanlar bizi aramayla bulacak. Erkan'a başka öneri/istek yok.
 - Eski paylaşım/outreach dosyaları (002, 004, 006, 007) arşiv olarak işaretlendi; MONEY_IDEAS.md yalnızca ürün + SEO fikirlerine indirildi.
+
+## 47. çalıştırma (30 Ekim, ürün + SEO)
+- Ürün: ücretli pakete 6. sekme "Customer Estimate" (kalemler, vergi, depozito, kalan, şartlar, imza; örnek 2.645$ / %30 = 793,50$ / 1.851,50$ elle doğrulandı). Satış sayfası "4 bonus sekme" olarak güncellendi.
+- SEO: yeni sayfa `templates/contractor-estimate-template.html` ("free contractor estimate template" hedefi; ücretsiz .xlsx indirme, önizleme, nasıl doldurulur, örnek, FAQ şeması) + sitemap, ana sayfa, tüm alt bilgiler.
+- Teknik SEO: 27 sayfaya Open Graph/Twitter etiketleri + `og-image.png` (1200×630), iç sayfalara BreadcrumbList şeması.
+- Build betikleri `scripts/site/` altında (README).
