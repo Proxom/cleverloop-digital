@@ -115,3 +115,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Erkan'dan yeni cevap yok (3 onay da eski); Stripe'a dokunulmadı.
 - Yeni: `public/tools/material-waste-calculator.html` (1.200 sf × %10 = 1.320 sf; fazla 120 sf × 2,50$ = 300$; toplam 3.300$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 7. SEO araç sayfası.
 - Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
+
+## 29. çalıştırma (30 Ekim)
+- Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
+- Yeni: `public/tools/deposit-payment-schedule-calculator.html` (12.000$ × %25 = 3.000$ depozito; 9.000$ / 3 = 3.000$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 8. SEO araç sayfası.
+- Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
