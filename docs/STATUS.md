@@ -144,3 +144,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
 - Dağıtım işi: `docs/distribution/007-ready-to-post-tool-shares.md` (3 hazır paylaşım metni; hiçbiri paylaşılmadı). Yeni araç eklemedim: 12 araç yeterli, darboğaz dağıtım.
 - Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni (006 veya 007).
+
+## 35. çalıştırma (30 Ekim)
+- Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
+- Yeni: `public/ventures/sheets.html` gerçek satış sayfasına çevrildi (Contractor Quote & Margin Sheet, $9 planlı, ödeme linki YOK; "haber ver" e-postası). Payhip linki gelince butona eklenecek. Dağıtım işi: şablon ürün sayfası SEO/landing.
+- Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni (006 veya 007).
