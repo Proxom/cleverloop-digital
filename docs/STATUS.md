@@ -179,3 +179,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok). Payhip ürün linki hâlâ gelmedi; sprint bitişi bugün 19:20 Londra (~6 saat).
 - Dağıtım işi: `public/guides/contractor-break-even-point.html` (SEO rehberi, FAQ şeması; 4.000$ / (900$-500$) = 10 iş, 9.000$ ciro; 7 işte -1.200$; 2.000$ kâr için 15 iş; fiyat 1.000$ olunca 8 iş; elle doğrulandı) + sitemap, ana sayfa, araç merkezi, başa baş hesaplayıcısından link; satış sayfasına yönlendiriyor.
 - Erkan'ın görevi değişmedi: 008'i açıp Payhip ürününü yayınla, linki dashboard'a yaz. Bu olmadan 24 saatlik ilk satış hedefi tutmaz.
+
+## 42. çalıştırma (30 Ekim, 14:20 UTC)
+- Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok). Payhip ürün linki hâlâ gelmedi; sprint bitişi bugün 19:20 Londra (~5 saat).
+- Dağıtım işi: `public/guides/how-to-price-a-change-order.html` (SEO rehberi, FAQ şeması; 6sa × 70$ = 420$ + %10 aksama 42$ + 300$ × 1,20 = 360$ → 822$; maliyetten fiyatlanınca 720$, 102$ eksik; elle doğrulandı) + sitemap, ana sayfa, araç merkezi, ek iş hesaplayıcısından link; satış sayfasına yönlendiriyor.
+- Erkan'ın görevi değişmedi: 008'i açıp Payhip ürününü yayınla, linki dashboard'a yaz. Bu olmadan 24 saatlik ilk satış hedefi tutmaz.
