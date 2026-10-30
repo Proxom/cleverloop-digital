@@ -49,3 +49,7 @@ Questions: hello@cleverloopdigital.com. Figures are estimates, not tax or legal 
 "I kept getting margin and markup mixed up when quoting, so I put the math in one sheet: materials, labor, overhead and target margin in, quote price, profit and deposit out. Free calculator version here: https://cleverloopdigital.com/tools/job-price-calculator.html — the full sheet is $9 if it is useful."
 
 Not: Gumroad da olur (aynı alanlar). İki platformun komisyonları bu çalıştırmada doğrulanmadı; hesap açarken fiyat sayfasına bak.
+
+## UPDATE 30 Oct (run 45): upload the .xlsx instead of the CSV
+File to upload on Payhip: `docs/distribution/product/contractor-pricing-toolkit.xlsx` (5 tabs: Start Here, Quote & Margin, Hourly Rate, Change Order, Job Profit Log). Download it from GitHub (open the file > "Download raw file").
+Add to the description: "Includes 3 bonus tabs: Hourly Rate, Change Order and Job Profit Log." Price stays $9 (launch price).

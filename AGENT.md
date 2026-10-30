@@ -63,5 +63,12 @@ Do NOT use Gmail tools or Hostinger Mail tools of Erkan's other businesses. asse
 - Check Stripe (read-only) each run for new payments of ours; on the first real one, write a Turkish headline "İLK SATIŞ" in reports and the dashboard.
 - Spending money still needs an approval item; free routes first. Report honestly when a route fails and switch to the next one the same run.
 
+## ORDER 30 Oct 15:30 (Erkan): WORK NONSTOP, ALWAYS THINK HOW TO SELL. Overrides "stop early" in PRIORITIES.
+- Never end a run early and never wait for Erkan. A blocked item is not a reason to stop: switch to the next unblocked item the same run.
+- Every run ships at least TWO real changes, visible on the live site or in docs/distribution/: (1) a REVENUE step (new or better product, offer, sales page, price test, bundle, lead magnet) and (2) a DISTRIBUTION/SEO step (page, listing draft, ready-to-post text). Plus one visual/UX improvement when possible; the site must look like a top commercial site (see docs/SITE_TEMPLATE.md, especially the CSS cache rule).
+- Every run: read and update docs/MONEY_IDEAS.md (ranked backlog of ways to earn: idea, buyer, price, channel, what is blocked, next step). Execute the top unblocked item. Add at least one new idea or kill one with a reason.
+- Verify every deploy on the live site with a screenshot (firecrawl scrape, formats ["screenshot"], maxAge 0), not only the local file.
+- Payment rails need Erkan (accounts). Keep ONE clear approval item for the rail on the dashboard and keep building sellable stock so the first rail he opens can sell immediately.
+
 ## DELEGATION 29 Oct 19:20 (Erkan): DO NOT WAIT FOR HIM
 Erkan: "Whatever permission they ask for, Claude grants it; the agents must not wait for me." Claude (the manager) reviews and decides pending approvals every hour. Rules for you: (1) free, reversible, legal items (publishing pages, SEO, listings drafts, content, dashboard changes, using already-connected tools) -> just do them, record in the report what you did; no approval needed. (2) Still need Erkan personally because the rules forbid agents/Claude: spending money, buying domains/hosting, creating accounts, entering card/bank/password data, accepting terms, sending e-mails/messages (he only pastes ready texts), changing legal identity/contact details. For those, write the approval AND immediately continue with the next unblocked work; never idle.

@@ -194,3 +194,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 44. çalıştırma (30 Ekim, Erkan: "görsel tasarım tamamen bozuldu")
 - Neden: Hostinger eski `style.css`'i önbellekte tutuyordu; yeni HTML stilsiz göründü (logo ekranı kaplıyordu). Çözüm: CSS yeni adla `site-v2.css`, tüm sayfalar ona bağlandı; SVG'lere sabit boyut eklendi (CSS yüklenmese bile bozulmaz). Kural docs/SITE_TEMPLATE.md'de.
 - Tasarım güçlendirildi: kendi sunucumuzda Inter yazı tipi (çerezsiz), hareketli hero ışığı, teklif kartında canlı rakam etiketleri, "3 adımda" bölümü, SSS (FAQ şeması), kapanış çağrı bandı.
+
+## 45. çalıştırma (30 Ekim, Erkan: "durmadan çalış, sürekli ne satacağını düşün")
+- AGENT.md'ye kalıcı emir eklendi: erken durmak yok; her çalıştırmada en az 1 gelir + 1 dağıtım adımı, canlı ekran görüntüsüyle doğrulama, docs/MONEY_IDEAS.md backlog'u.
+- Gelir adımı: ürün CSV'den profesyonel Excel paketine yükseltildi: `docs/distribution/product/contractor-pricing-toolkit.xlsx` (Start Here, Quote & Margin, Hourly Rate, Change Order, Job Profit Log; örnekler elle doğrulandı: 3.744$ teklif, 65,36$/saat, 822$ ek iş, iş kaydında %40,3 ve %30,0 marj). Satış sayfası + ana sayfa tanıtımı güncellendi; 008 Payhip paketine "xlsx yükle" notu.
+- Dağıtım/strateji: docs/MONEY_IDEAS.md (6 fikir, sıralı). Engel aynı: Payhip hesabı (dashboard a-004).
