@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Travel &amp; Drive Time Cost Calculator for Contractors | Clever Loop Digital</title>
+<meta name="description" content="Free travel cost calculator for contractors. Estimate the mileage and drive time cost of a job so you can add it to your quote.">
+<link rel="canonical" href="https://cleverloopdigital.com/tools/travel-cost-calculator.html">
+<link rel="stylesheet" href="../style.css">
+<style>label{display:block;margin:12px 0 4px;font-weight:600}input{width:100%;padding:8px 10px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}#out td{padding:4px 12px 4px 0}#out .big{font-size:1.6rem;font-weight:700}</style>
+</head><body>
+<header><div class="w"><a class="logo" href="../index.html">Clever Loop Digital</a><nav><a href="../about.html">About</a></nav></div></header>
+<main class="w">
+<h1>Travel &amp; Drive Time Cost Calculator</h1>
+<p>Enter the round-trip miles, your cost per mile, the drive time and your hourly cost. You get the travel cost to add to the quote. Everything runs in your browser; nothing is stored or sent.</p>
+<div class="card">
+<div class="row"><div><label for="m">Round-trip miles</label><input id="m" type="number" min="0" step="1" value="40"></div>
+<div><label for="c">Vehicle cost per mile ($)</label><input id="c" type="number" min="0" step="0.01" value="0.70"></div></div>
+<div class="row"><div><label for="h">Drive time (hours)</label><input id="h" type="number" min="0" step="0.25" value="1"></div>
+<div><label for="r">Your hourly cost ($)</label><input id="r" type="number" min="0" step="1" value="35"></div></div>
+</div>
+<div class="card"><table id="out"></table></div>
+<h2>How it works</h2>
+<p>Travel cost = miles &times; cost per mile + drive hours &times; hourly cost. Example: 40 miles &times; $0.70 = $28.00, plus 1 hour &times; $35 = $35.00, so $63.00 per trip. The $0.70 default is illustrative; use your own fuel, insurance, maintenance and wear figures, or the current IRS mileage rate for tax purposes. For a job with several visits, multiply by the number of trips.</p>
+<p>Next step: add it to your price with the <a href="job-price-calculator.html">job price calculator</a>.</p>
+<p><small>Estimates for planning only. This is not accounting, tax or legal advice.</small></p>
+</main>
+
+<footer><div class="w"><a href="../about.html">About</a><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><br>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital. No cookies, no trackers.</div></footer>
+<script>
+(function(){
+var f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function v(i){var x=parseFloat(document.getElementById(i).value);return isFinite(x)&&x>=0?x:0}
+function calc(){
+var mi=v("m")*v("c"),dr=v("h")*v("r");
+document.getElementById("out").innerHTML="<tr><td>Mileage cost</td><td>"+f.format(mi)+"</td></tr><tr><td>Drive time cost</td><td>"+f.format(dr)+"</td></tr><tr><td>Travel cost per trip</td><td class='big'>"+f.format(mi+dr)+"</td></tr>";}
+["m","c","h","r"].forEach(function(i){document.getElementById(i).addEventListener("input",calc)});calc();
+})();
+</script>
+</body></html>

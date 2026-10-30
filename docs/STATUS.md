@@ -129,3 +129,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 31. çalıştırma (30 Ekim)
 - Yeni onay yok; Stripe'a dokunulmadı (ödeme yok). Sprint süresi bugün 19:20, Erkan'ın görevleri aynı: Payhip + CSV $9, Search Console, paylaşım metni.
 - Yeni: `public/tools/late-payment-fee-calculator.html` (1.500$ × %1,5 × 45/30 = 33,75$; yeni bakiye 1.533,75$; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 10. SEO araç sayfası.
+
+## 32. çalıştırma (30 Ekim)
+- Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
+- Yeni: `public/tools/travel-cost-calculator.html` (40 mil × 0,70$ = 28$ + 1sa × 35$ = 35$ → 63$/gidiş; elle doğrulandı) + sitemap, araç merkezi, ana sayfa. Dağıtım işi: 11. SEO araç sayfası.
+- Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni.
