@@ -1,26 +1,106 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Pricing Calculators for Home-Service Pros | Clever Loop Digital</title>
-<meta name="description" content="Free job price, hourly rate, markup/margin and break-even calculators for contractors, cleaners and other home-service businesses.">
+<meta name="description" content="Free job price, hourly rate, markup/margin and break-even calculators for contractors, cleaners and other home-service businesses. No sign-up, no cookies.">
 <link rel="canonical" href="https://cleverloopdigital.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#0d2240">
 <link rel="stylesheet" href="style.css">
 </head><body>
-<header><div class="w"><a class="logo" href="index.html">Clever Loop Digital</a><nav><a href="tools/index.html">Calculators</a><a href="about.html">About</a></nav></div></header>
-<main class="w"><h1>Price your jobs with confidence</h1>
-<p>Free calculators for contractors, cleaners, landscapers and other home-service businesses. No sign-up, no cookies; everything runs in your browser.</p>
-<div class="card"><h3><a href="tools/job-price-calculator.html">Job Price Calculator</a></h3><p>Price a job from labor, materials and your target margin.</p></div>
-<div class="card"><h3><a href="tools/hourly-rate-calculator.html">Hourly Rate Calculator</a></h3><p>Work out the hourly rate you need to hit your income goal.</p></div>
-<div class="card"><h3><a href="tools/markup-margin-calculator.html">Markup vs Margin Calculator</a></h3><p>Convert markup to margin and back, and get the selling price.</p></div>
-<div class="card"><h3><a href="tools/break-even-calculator.html">Break-Even Calculator</a></h3><p>How many jobs a month cover your fixed costs.</p></div>
-<div class="card"><h3><a href="tools/labor-burden-calculator.html">Labor Burden Calculator</a></h3><p>Real cost and billing rate per employee hour.</p></div>
-<div class="card"><h3><a href="tools/change-order-calculator.html">Change Order Calculator</a></h3><p>Price extra work added mid-job.</p></div>
-<div class="card"><h3><a href="tools/material-waste-calculator.html">Material Waste Calculator</a></h3><p>Add a waste factor and see how much to order.</p></div>
-<div class="card"><h3><a href="tools/deposit-payment-schedule-calculator.html">Deposit &amp; Payment Schedule Calculator</a></h3><p>Split a job into a deposit and milestone payments.</p></div>
-<div class="card"><h3><a href="tools/invoice-processing-fee-calculator.html">Invoice Processing Fee Calculator</a></h3><p>See the card fee on an invoice and what you keep.</p></div>
-<div class="card"><h3><a href="tools/late-payment-fee-calculator.html">Late Payment Fee Calculator</a></h3><p>Estimate the late fee on an overdue invoice.</p></div>
-<div class="card"><h3><a href="tools/travel-cost-calculator.html">Travel &amp; Drive Time Cost Calculator</a></h3><p>Estimate the mileage and drive time cost of a job.</p></div>
-<div class="card"><h3><a href="tools/job-sales-tax-calculator.html">Job Sales Tax Calculator</a></h3><p>Add sales tax to a job quote and see the invoice total.</p></div>
-<p>Guide: <a href="guides/how-to-price-a-contractor-job.html">How to price a contractor job, step by step</a> &middot; <a href="guides/markup-vs-margin-for-contractors.html">Markup vs margin for contractors</a> &middot; <a href="guides/contractor-overhead-rate.html">How to calculate contractor overhead</a> &middot; <a href="guides/how-to-calculate-labor-cost.html">How to calculate labor cost for a bid</a> &middot; <a href="guides/contractor-break-even-point.html">How to find your break-even point</a> &middot; <a href="guides/how-to-price-a-change-order.html">How to price a change order</a></p>
-<p><small>Estimates for general information only; not financial or tax advice.</small></p></main>
-<footer><div class="w"><a href="about.html">About</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div></footer>
+<header class="site-head"><div class="wide"><a class="logo" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#ff6a2b"/><path d="M21.5 11.2A7 7 0 1 0 23 16" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><path d="M17.6 10.6l4.4.4-.6 4.3" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="16" r="2.4" fill="#0d2240"/></svg><span>Clever Loop Digital</span></a><nav class="site-nav" aria-label="Main"><a href="tools/index.html">Calculators</a><a href="guides/index.html">Guides</a><a href="about.html">About</a><a href="ventures/sheets.html" class="cta">Quote Sheet</a></nav></div></header>
+<section class="hero"><div class="wide">
+<div>
+<p class="eyebrow">Free tools for home-service pros</p>
+<h1>Quote every job at the margin you <em>meant</em> to make.</h1>
+<p class="lede">Pricing calculators and plain-English guides for contractors, cleaners, landscapers and handymen. No sign-up, no cookies. Everything runs in your browser.</p>
+<div class="actions"><a class="btn btn-acc" href="tools/job-price-calculator.html">Price a job now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost" href="tools/index.html">See all 12 calculators</a></div>
+</div>
+<div class="qq" id="qq">
+<h2>Quick quote <span class="live">LIVE</span></h2>
+<div class="grid2"><div><label for="qc">Job cost ($)</label><input id="qc" type="number" min="0" step="10" value="700" inputmode="decimal"></div>
+<div><label for="qm">Target margin (%)</label><input id="qm" type="number" min="0" max="90" step="1" value="25" inputmode="decimal"></div></div>
+<div class="price" aria-live="polite"><span>Quote this price</span><strong id="qp">$933.33</strong></div>
+<p class="warn" id="qw">Adding a 25% markup instead gives <b>$875.00</b>, which is only a <b>20.0%</b> margin.</p>
+<a class="more" href="tools/job-price-calculator.html">Add labor, materials and overhead &rarr;</a>
+</div>
+</div></section>
+<section class="facts"><ul class="wide">
+<li><b>12</b>free calculators</li><li><b>6</b>step-by-step guides</li><li><b>0</b>cookies or trackers</li><li><b>$0</b>no sign-up needed</li>
+</ul></section>
+<section class="sec"><div class="wide">
+<div class="sec-head"><p class="eyebrow">Calculators</p><h2>Every number behind a profitable quote</h2><p>From the first estimate to the final invoice. Each tool shows its formula and a worked example, so you can check the math yourself.</p></div>
+<p class="group-title">Price the job</p><div class="tiles">
+<a class="tile" href="tools/job-price-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><b>Job Price Calculator</b><span>Price a job from labor, materials and your target margin.</span></a>
+<a class="tile" href="tools/hourly-rate-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>Hourly Rate Calculator</b><span>Work out the hourly rate you need to hit your income goal.</span></a>
+<a class="tile" href="tools/markup-margin-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><b>Markup vs Margin Calculator</b><span>Convert markup to margin and back, and get the selling price.</span></a>
+<a class="tile" href="tools/change-order-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M12 12v6M9 15h6"/></svg></span><b>Change Order Calculator</b><span>Price extra work added mid-job.</span></a>
+<a class="tile" href="tools/material-waste-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><b>Material Waste Calculator</b><span>Add a waste factor and see how much to order.</span></a>
+<a class="tile" href="tools/travel-cost-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6h12v10H2z"/><path d="M14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><b>Travel &amp; Drive Time Cost Calculator</b><span>Estimate the mileage and drive time cost of a job.</span></a>
+</div>
+<p class="group-title">Know your costs</p><div class="tiles">
+<a class="tile" href="tools/labor-burden-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 4.5a3.5 3.5 0 0 1 0 7"/><path d="M19 14a6.5 6.5 0 0 1 2.5 6"/></svg></span><b>Labor Burden Calculator</b><span>Real cost and billing rate per employee hour.</span></a>
+<a class="tile" href="tools/break-even-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M6 17L19 6"/><path d="M6 9h13"/></svg></span><b>Break-Even Calculator</b><span>How many jobs a month cover your fixed costs.</span></a>
+</div>
+<p class="group-title">Get paid</p><div class="tiles">
+<a class="tile" href="tools/deposit-payment-schedule-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 15h3"/></svg></span><b>Deposit &amp; Payment Schedule Calculator</b><span>Split a job into a deposit and milestone payments.</span></a>
+<a class="tile" href="tools/invoice-processing-fee-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6.5 15h4"/></svg></span><b>Invoice Processing Fee Calculator</b><span>See the card fee on an invoice and what you keep.</span></a>
+<a class="tile" href="tools/late-payment-fee-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12"/><path d="M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9"/></svg></span><b>Late Payment Fee Calculator</b><span>Estimate the late fee on an overdue invoice.</span></a>
+<a class="tile" href="tools/job-sales-tax-calculator.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span><b>Job Sales Tax Calculator</b><span>Add sales tax to a job quote and see the invoice total.</span></a>
+</div>
+</div></section>
+<section class="sec alt"><div class="wide trap">
+<div><p class="eyebrow">The margin trap</p><h2 style="margin-top:0">A 25% markup is not a 25% margin</h2>
+<p>Margin is the share of the <em>price</em> you keep. Markup is added to <em>cost</em>. Mix them up and every quote leaves money behind. On a $700 job the gap is $58.33, and it grows with every job you win.</p>
+<p><a class="btn btn-acc" href="guides/markup-vs-margin-for-contractors.html">Read the markup vs margin guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p></div>
+<div class="bars">
+<div class="bar"><div class="lbl"><span>Cost + 25% markup</span><span class="num">$875.00</span></div>
+<div class="track"><i class="c" style="width:80%">Cost $700</i><i class="p thin" style="width:20%">$175</i></div><small>Margin kept: 20.0%</small></div>
+<div class="bar"><div class="lbl"><span>Priced for a 25% margin</span><span class="num">$933.33</span></div>
+<div class="track"><i class="c" style="width:75%">Cost $700</i><i class="p" style="width:25%">$233.33</i></div><small>Margin kept: 25.0%</small></div>
+</div></div></section>
+<section class="sec"><div class="wide">
+<div class="sec-head"><p class="eyebrow">Guides</p><h2>Learn the method, not just the number</h2><p>Short guides with worked examples you can follow with a calculator in the next tab.</p></div>
+<div class="tiles"><a class="tile" href="guides/how-to-price-a-contractor-job.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6.5a2.5 2.5 0 0 0 0 5H19"/><path d="M8 7h7M8 11h5"/></svg></span><b>How to Price a Contractor Job</b><span>Materials, labor, overhead and target margin, step by step.</span><em class="ex">$2,620.80 cost &rarr; $3,744 quote</em></a>
+<a class="tile" href="guides/markup-vs-margin-for-contractors.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6.5a2.5 2.5 0 0 0 0 5H19"/><path d="M8 7h7M8 11h5"/></svg></span><b>Markup vs Margin for Contractors</b><span>Why a 30% markup is only a 23.1% margin, with a conversion chart.</span><em class="ex">30% markup = 23.1% margin</em></a>
+<a class="tile" href="guides/contractor-overhead-rate.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6.5a2.5 2.5 0 0 0 0 5H19"/><path d="M8 7h7M8 11h5"/></svg></span><b>How to Calculate Contractor Overhead</b><span>Find your overhead rate and add it to every job.</span><em class="ex">$48k &divide; $200k = 24%</em></a>
+<a class="tile" href="guides/how-to-calculate-labor-cost.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6.5a2.5 2.5 0 0 0 0 5H19"/><path d="M8 7h7M8 11h5"/></svg></span><b>How to Calculate Labor Cost for a Bid</b><span>Wage, burden and billable hours: the true cost of an hour.</span><em class="ex">$25 wage &rarr; $42.86/hour</em></a>
+<a class="tile" href="guides/contractor-break-even-point.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6.5a2.5 2.5 0 0 0 0 5H19"/><path d="M8 7h7M8 11h5"/></svg></span><b>How to Find Your Break-Even Point</b><span>How many jobs a month it takes to cover overhead.</span><em class="ex">$4,000 &divide; $400 = 10 jobs</em></a>
+<a class="tile" href="guides/how-to-price-a-change-order.html"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6.5a2.5 2.5 0 0 0 0 5H19"/><path d="M8 7h7M8 11h5"/></svg></span><b>How to Price a Change Order</b><span>Labor, disruption and marked-up materials, signed before you start.</span><em class="ex">6 h + materials = $822</em></a></div>
+</div></section>
+<section class="sec alt"><div class="wide promo">
+<div><span class="pill">Coming soon &middot; planned price $9</span>
+<h2>The Contractor Quote &amp; Margin Sheet</h2>
+<p>All of this in one Google Sheets page. Type your materials, hours, rates, overhead and target margin into the yellow cells; get the quote, your profit, the deposit and your walk-away price.</p>
+<ul><li>Works in Google Sheets or Excel</li><li>No macros, add-ons or subscription</li><li>Shows what a 10% discount does to your margin</li></ul>
+<a class="btn btn-acc" href="ventures/sheets.html">See the sheet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="sheet" role="img" aria-label="Example of the Contractor Quote and Margin Sheet: $2,620.80 total cost at a 30% margin gives a $3,744.00 quote">
+<div class="bar-top"><i></i><i></i><i></i></div>
+<table>
+<tr class="h"><td>Inputs</td><td></td></tr>
+<tr class="in"><td>Materials</td><td>$1,200</td></tr>
+<tr class="in"><td>Labor: 24 h &times; $35</td><td>$840</td></tr>
+<tr class="in"><td>Subcontractor / rental</td><td>$300</td></tr>
+<tr class="in"><td>Overhead / target margin</td><td>12% / 30%</td></tr>
+<tr class="h"><td>Results</td><td></td></tr>
+<tr><td>Total cost</td><td>$2,620.80</td></tr>
+<tr class="tot"><td>Quote price</td><td>$3,744.00</td></tr>
+<tr><td>Profit on the job</td><td>$1,123.20</td></tr>
+<tr><td>Markup on cost</td><td>42.9%</td></tr>
+<tr><td>30% deposit to ask for</td><td>$1,123.20</td></tr>
+<tr><td>Margin if they negotiate 10% off</td><td>22.2%</td></tr>
+</table></div>
+</div></section>
+<script>
+(function(){var c=document.getElementById("qc"),m=document.getElementById("qm"),p=document.getElementById("qp"),w=document.getElementById("qw"),
+f=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function u(){var C=Math.max(0,parseFloat(c.value)||0),M=Math.min(90,Math.max(0,parseFloat(m.value)||0)),P=C/(1-M/100),K=C*(1+M/100),km=K>0?(K-C)/K*100:0;
+p.textContent=f.format(P);w.innerHTML="Adding a "+M+"% markup instead gives <b>"+f.format(K)+"</b>, which is only a <b>"+km.toFixed(1)+"%</b> margin.";}
+c.addEventListener("input",u);m.addEventListener("input",u);u();})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Clever Loop Digital","url":"https://cleverloopdigital.com/","description":"Free pricing calculators and guides for US home-service businesses."}</script>
+<footer class="site-foot"><div class="wide cols">
+<div><a class="logo" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#ff6a2b"/><path d="M21.5 11.2A7 7 0 1 0 23 16" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/><path d="M17.6 10.6l4.4.4-.6 4.3" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="16" r="2.4" fill="#0d2240"/></svg><span>Clever Loop Digital</span></a><p>Free pricing calculators and plain-English guides for US home-service businesses. Everything runs in your browser.</p></div>
+<div><h4>Calculators</h4><a href="tools/job-price-calculator.html">Job price</a><a href="tools/hourly-rate-calculator.html">Hourly rate</a><a href="tools/markup-margin-calculator.html">Markup vs margin</a><a href="tools/break-even-calculator.html">Break-even</a><a href="tools/index.html">All 12 calculators</a></div>
+<div><h4>Guides</h4><a href="guides/how-to-price-a-contractor-job.html">Price a job</a><a href="guides/markup-vs-margin-for-contractors.html">Markup vs margin</a><a href="guides/contractor-overhead-rate.html">Overhead rate</a><a href="guides/how-to-price-a-change-order.html">Change orders</a><a href="guides/index.html">All guides</a></div>
+<div><h4>Company</h4><a href="about.html">About</a><a href="ventures/sheets.html">Quote &amp; Margin Sheet</a><a href="mailto:hello@cleverloopdigital.com">hello@cleverloopdigital.com</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
+</div><div class="wide legal"><span>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital, United Kingdom.</span><span>No cookies, no trackers. Estimates only, not financial, tax or legal advice.</span></div></footer>
 </body></html>

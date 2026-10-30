@@ -184,3 +184,9 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok). Payhip ürün linki hâlâ gelmedi; sprint bitişi bugün 19:20 Londra (~5 saat).
 - Dağıtım işi: `public/guides/how-to-price-a-change-order.html` (SEO rehberi, FAQ şeması; 6sa × 70$ = 420$ + %10 aksama 42$ + 300$ × 1,20 = 360$ → 822$; maliyetten fiyatlanınca 720$, 102$ eksik; elle doğrulandı) + sitemap, ana sayfa, araç merkezi, ek iş hesaplayıcısından link; satış sayfasına yönlendiriyor.
 - Erkan'ın görevi değişmedi: 008'i açıp Payhip ürününü yayınla, linki dashboard'a yaz. Bu olmadan 24 saatlik ilk satış hedefi tutmaz.
+
+## 43. çalıştırma (30 Ekim, Erkan'ın isteği: "siteyi görsel olarak muhteşem yap")
+- Tüm site yeniden tasarlandı: yeni tasarım sistemi (`public/style.css`, açık/koyu tema, lacivert + turuncu, web fontu/çerez yok), yapışkan üst menü (Hesaplayıcılar, Rehberler, Hakkında, Quote Sheet), 4 sütunlu alt bilgi, logo + favicon.
+- Ana sayfa: hero + canlı "hızlı teklif" hesaplayıcısı (700$ / %25 marj → 933,33$; %25 markup → 875$ = %20 marj; elle doğrulandı), gruplanmış 12 araç kartı, "marj tuzağı" görseli, rehber kartları, Quote Sheet tanıtımı (tablo görseli CSV formülleriyle aynı: 3.744$ teklif).
+- Araç sayfaları: başlık bandı, şık form alanları, lacivert sonuç kartı. Rehberler: tablo ve ürün kartı stili. Yeni: `guides/index.html` (rehber merkezi, sitemap'e eklendi). Satış sayfası yeniden tasarlandı (fiyat hâlâ planlı $9, ödeme linki yok).
+- Kural notu: yeni sayfalar için docs/SITE_TEMPLATE.md.
