@@ -209,3 +209,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - SEO: yeni sayfa `templates/contractor-estimate-template.html` ("free contractor estimate template" hedefi; ücretsiz .xlsx indirme, önizleme, nasıl doldurulur, örnek, FAQ şeması) + sitemap, ana sayfa, tüm alt bilgiler.
 - Teknik SEO: 27 sayfaya Open Graph/Twitter etiketleri + `og-image.png` (1200×630), iç sayfalara BreadcrumbList şeması.
 - Build betikleri `scripts/site/` altında (README).
+
+## 48. çalıştırma (30 Ekim, Erkan: "ödeme kurmadan önce talebi ölç")
+- Talep ölçümü: `public/api/t.php` (anonim günlük sayaç; çerez/IP yok; veri repo dışı `data/demand.json`, gitignore) + `public/js/demand.js`. Satış sayfasında "Buy now · $9" düğmesi → tıklama sayılır, "checkout yakında" penceresi ücretsiz araçlara yönlendirir. Ücretsiz estimate şablonunda görüntüleme + indirme sayılır. Gizlilik metni güncellendi.
+- Panel: "Talep" bölümü (ürün başına görüntüleme, Buy tıklaması, dönüşüm %). Her saatlik çalışmada ajan https://cleverloopdigital.com/api/t.php okuyup `demand/<ürün>` dokümanlarını günceller.

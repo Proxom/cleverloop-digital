@@ -133,10 +133,10 @@ page("guides/index.html","../","guides","Pricing Guides for Contractors | Clever
 # SHEETS
 sb=f'''<section class="phead"><div class="wide promo">
 <div><p class="crumbs"><a href="../index.html">Home</a> / <span>Quote &amp; Margin Sheet</span></p>
-<span class="pill">Launching soon &middot; planned price $9</span>
+<span class="pill" data-demand-view="pricing-toolkit">Early access &middot; $9 one-time</span>
 <h1 style="margin-top:14px">Contractor Quote &amp; Margin Sheet</h1>
 <p class="lede">One Google Sheets page for home-service pros (plumbers, electricians, roofers, painters and similar). Enter materials, labor hours, labor rate, subcontractor costs, overhead and the margin you want, and get the quote price, your profit and the deposit to ask for.</p>
-<p style="margin-top:22px"><a class="btn btn-acc" href="mailto:hello@cleverloopdigital.com?subject=Quote%20sheet">Tell me when it is out {ARROW}</a></p></div>
+<p style="margin-top:22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center"><a class="btn btn-acc" href="#buy" data-demand-click="pricing-toolkit" data-root="../">Buy now &middot; $9 {ARROW}</a><span class="muted" style="color:var(--mut);font-size:.92rem">One-time payment. Excel &amp; Google Sheets.</span></p></div>
 {SHEET("../")}
 </div></section>
 <main class="w page">
@@ -153,9 +153,10 @@ sb=f'''<section class="phead"><div class="wide promo">
 <li><strong>Customer Estimate:</strong> a clean estimate to send, with line items, tax, deposit and a signature line</li></ul>
 <p>One .xlsx file that opens in Excel and imports into Google Sheets (File &gt; Import &gt; Upload).</p></div>
 <p>Prefer to try the math first? Use the free <a href="../tools/job-price-calculator.html">job price calculator</a> or see all <a href="../tools/index.html">free tools</a>.</p>
-<h2>How to get it</h2>
-<p>The checkout is not open yet. To be told when it is, email <a href="mailto:hello@cleverloopdigital.com?subject=Quote%20sheet">hello@cleverloopdigital.com</a> with the subject &ldquo;Quote sheet&rdquo;. We will only write to you about this sheet.</p>
+<h2 id="buy">Get the sheet</h2>
+<p>One payment of $9, no subscription. Checkout opens soon: we are measuring interest first, and every click on Buy counts toward opening it.</p>
+<p><a class="btn btn-acc" href="#buy" data-demand-click="pricing-toolkit" data-root="../">Buy now &middot; $9 {ARROW}</a></p>
 <p><small>The example in the picture uses the sheet's own formulas: $1,200 materials + 24 h &times; $35 + $300 = $2,340 direct cost; + 12% overhead = $2,620.80; &divide; 0.70 = $3,744.00. Figures are estimates. Margin means profit divided by price; markup means profit divided by cost. This is a tool, not accounting, tax or legal advice.</small></p>
 </main>'''
-page("ventures/sheets.html","../","sheet","Contractor Quote &amp; Margin Sheet | Clever Loop Digital","Contractor Quote &amp; Margin Sheet: a Google Sheets quote, profit and deposit calculator for home-service pros. Launching soon.","ventures/sheets.html",sb)
+page("ventures/sheets.html","../","sheet","Contractor Quote &amp; Margin Sheet | Clever Loop Digital","Contractor Quote &amp; Margin Sheet: a Google Sheets quote, profit and deposit calculator for home-service pros. Launching soon.","ventures/sheets.html",sb,extra_head='\n<script src="../js/demand.js" defer></script>')
 print("done")

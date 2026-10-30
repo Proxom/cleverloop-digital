@@ -77,5 +77,10 @@ Do NOT use Gmail tools or Hostinger Mail tools of Erkan's other businesses. asse
 - Verify every deploy on the live site with a screenshot (firecrawl scrape, formats ["screenshot"], maxAge 0), not only the local file.
 - Payment rails need Erkan (accounts). Keep ONE clear approval item for the rail on the dashboard and keep building sellable stock so the first rail he opens can sell immediately.
 
+## DEMAND MEASUREMENT (Erkan, 30 Oct 16:20): no payment system yet
+- Do NOT set up payments (no Stripe links, no Payhip). First measure demand: every product we try to sell gets a "Buy now · $<price>" button with `data-demand-click="<slug>"`, the page gets `data-demand-view="<slug>"`, free downloads get `data-demand-download="<slug>"`, and the page loads `js/demand.js`. Add every new slug to `$PRODUCTS` in `public/api/t.php`.
+- EVERY run: fetch https://cleverloopdigital.com/api/t.php (firecrawl scrape, maxAge 0, rawHtml) and write one dashboard doc per product to collection `demand/<slug>`: {name, url, price, views, clicks, downloads, clickRate (clicks/views %), last7: {views, clicks, downloads}, updatedAt}. Counts are cumulative from the live file; if a total ever drops (file reset), keep the higher stored value and add new counts on top, and note it in the report.
+- Erkan decides on payments when demand shows; do not ask him about it.
+
 ## DELEGATION 29 Oct 19:20 (Erkan): DO NOT WAIT FOR HIM
 Erkan: "Whatever permission they ask for, Claude grants it; the agents must not wait for me." Claude (the manager) reviews and decides pending approvals every hour. Rules for you: (1) free, reversible, legal items (publishing pages, SEO, listings drafts, content, dashboard changes, using already-connected tools) -> just do them, record in the report what you did; no approval needed. (2) Still need Erkan personally because the rules forbid agents/Claude: spending money, buying domains/hosting, creating accounts, entering card/bank/password data, accepting terms, sending e-mails/messages (he only pastes ready texts), changing legal identity/contact details. For those, write the approval AND immediately continue with the next unblocked work; never idle.
