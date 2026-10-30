@@ -217,3 +217,9 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 49. çalıştırma (30 Ekim, Erkan: "ödeme kurmadan önce talebi ölç")
 - Talep ölçümü: `public/api/t.php` (anonim günlük sayaç; çerez/IP yok; veri repo dışı `data/demand.json`, gitignore) + `public/js/demand.js`. Satış sayfasında "Buy now · $9" düğmesi → tıklama sayılır, "checkout yakında" penceresi ücretsiz araçlara yönlendirir. Ücretsiz estimate şablonunda görüntüleme + indirme sayılır. Gizlilik metni güncellendi.
 - Panel: "Talep" bölümü (ürün başına görüntüleme, Buy tıklaması, dönüşüm %). Her saatlik çalışmada ajan https://cleverloopdigital.com/api/t.php okuyup `demand/<ürün>` dokümanlarını günceller.
+
+## 50. çalıştırma (30 Ekim, Erkan'ın örnek siteleri → ana ürün)
+- Yeni ana ürün: **Estimate & Invoice Maker** (/maker/): tarayıcıda çalışır, hesap yok; logo, kalemler, vergi, depozito/ödenen, notlar, canlı önizleme, PDF (tarayıcı yazdır→PDF). Taslak yalnızca kullanıcının tarayıcısında. Test: boya örneği 1.767,50$ + %8,25 = 1.913,32$; 500$ ödenince kalan 1.413,32$ (elle doğrulandı).
+- SEO: 12 meslek sayfası (/maker/<trade>.html; mesleğe özgü kalemler + ipuçları + FAQ + WebApplication şeması), sitemap 41 URL. Ana sayfa ürün odaklı hero ile yeniden kuruldu; menüde öne çıkan düğme "Estimate Maker".
+- Talep: `maker` (görüntüleme, PDF) + `maker-pro` (Pro $9/ay "Get Pro" tıklaması) panelde.
+- Semrush: API birimi yok (hacim verisi alınamadı).

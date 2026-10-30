@@ -13,13 +13,13 @@ def header(p, cur=""):
             + a("tools/index.html","Calculators","tools")
             + a("guides/index.html","Guides","guides")
             + a("about.html","About","about")
-            + a("ventures/sheets.html","Quote Sheet","sheet","cta")
+            + a("maker/","Estimate Maker","maker","cta")
             + '</nav></div></header>')
 
 def footer(p):
     return f'''<footer class="site-foot"><div class="wide cols">
 <div><a class="logo" href="{p}index.html">{LOGO}<span>Clever Loop Digital</span></a><p>Free pricing calculators and plain-English guides for US home-service businesses. Everything runs in your browser.</p></div>
-<div><h4>Calculators</h4><a href="{p}tools/job-price-calculator.html">Job price</a><a href="{p}tools/hourly-rate-calculator.html">Hourly rate</a><a href="{p}tools/markup-margin-calculator.html">Markup vs margin</a><a href="{p}tools/break-even-calculator.html">Break-even</a><a href="{p}tools/index.html">All 12 calculators</a></div>
+<div><h4>Free tools</h4><a href="{p}maker/">Estimate &amp; invoice maker</a><a href="{p}tools/job-price-calculator.html">Job price</a><a href="{p}tools/hourly-rate-calculator.html">Hourly rate</a><a href="{p}tools/markup-margin-calculator.html">Markup vs margin</a><a href="{p}tools/break-even-calculator.html">Break-even</a><a href="{p}tools/index.html">All 12 calculators</a></div>
 <div><h4>Guides</h4><a href="{p}guides/how-to-price-a-contractor-job.html">Price a job</a><a href="{p}guides/markup-vs-margin-for-contractors.html">Markup vs margin</a><a href="{p}guides/contractor-overhead-rate.html">Overhead rate</a><a href="{p}guides/how-to-price-a-change-order.html">Change orders</a><a href="{p}guides/index.html">All guides</a></div>
 <div><h4>Company</h4><a href="{p}templates/contractor-estimate-template.html">Free estimate template</a><a href="{p}templates/contractor-invoice-template.html">Free invoice template</a><a href="{p}about.html">About</a><a href="{p}ventures/sheets.html">Quote &amp; Margin Sheet</a><a href="mailto:hello@cleverloopdigital.com">hello@cleverloopdigital.com</a><a href="{p}terms.html">Terms</a><a href="{p}privacy.html">Privacy</a></div>
 </div><div class="wide legal"><span>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital, United Kingdom.</span><span>No cookies, no trackers. Estimates only, not financial, tax or legal advice.</span></div></footer>'''

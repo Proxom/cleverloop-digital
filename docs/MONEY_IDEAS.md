@@ -1,5 +1,15 @@
 # Para kazanma fikirleri (sıralı backlog) — her çalıştırmada güncellenir
 
+## ANA ÜRÜN (30 Ekim, Erkan'ın örnek siteleri: Tally, HeadshotPro, Senja, ShipFast...)
+Ders: tek kişilik başarılı siteler TEK dar işi kusursuz yapar, hero'da ürünü çalışırken gösterir, "ücretsiz başla" ile çeker, programatik SEO sayfalarıyla (şablon/meslek sayfaları) trafik toplar, sonra ücretli plana çevirir.
+Bizim karşılığımız: **Estimate & Invoice Maker** (/maker/) — tarayıcıda çalışan ücretsiz teklif/fatura oluşturucu, 12 meslek sayfası (/maker/<trade>.html). Ücretli plan: **Pro $9/ay** (markasız PDF, kayıtlı müşteri/fiyat listesi, teklif→fatura tek tık, belge geçmişi). Talep: `maker` (görüntüleme, PDF indirme) + `maker-pro` (Pro tıklaması) panelde.
+Sıradaki büyüme işleri (yalnızca ürün + SEO):
+1. Daha fazla meslek sayfası (carpentry, concrete, fencing, tile, cabinet, window cleaning, junk removal, moving, pest control, pool, gutter, appliance repair...) — her biri gerçek, mesleğe özgü kalem ve ipuçlarıyla.
+2. "Invoice" odaklı meslek sayfaları (/maker/<trade>-invoice.html, data-type="invoice").
+3. Ürün: tahmini-faturaya çevir, birden çok taslak, para birimi seçimi (CAD/AUD/GBP), kalem kütüphanesi.
+4. Karşılaştırma/rehber içerikleri: "how to write an estimate", "estimate vs quote vs bid", "what to put on an invoice".
+
+
 Durum: 30 Ekim. Gelir £0. Tek darboğaz: ödeme altyapısı (Payhip/Gumroad/Stripe hesabı Erkan'da). Aşağıdakilerin hepsi gerçek kanıt istenen tahminlerdir; uydurma rakam yok.
 
 | # | Fikir | Alıcı | Fiyat | Kanal | Engel | Sonraki adım |

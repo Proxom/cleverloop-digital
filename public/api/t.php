@@ -2,7 +2,7 @@
 // Anonymous demand counter. No cookies, no IP or user-agent stored: only daily totals per product and event.
 header('Content-Type: application/json');
 header('Cache-Control: no-store');
-$PRODUCTS = ['pricing-toolkit', 'estimate-template', 'invoice-template'];
+$PRODUCTS = ['pricing-toolkit', 'estimate-template', 'invoice-template', 'maker', 'maker-pro'];
 $EVENTS = ['view', 'click', 'download'];
 $dir = dirname(__DIR__, 2) . '/data';
 $file = $dir . '/demand.json';

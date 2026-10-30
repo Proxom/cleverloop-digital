@@ -9,7 +9,7 @@ def page(path,p,cur,title,desc,canon,body,extra_head=""):
 <meta name="description" content="{desc}">
 <link rel="canonical" href="https://cleverloopdigital.com/{canon}">
 {headlinks(p)}
-<link rel="stylesheet" href="{p}site-v2.css">{extra_head}
+<link rel="stylesheet" href="{p}site-v2.css"><link rel="stylesheet" href="{p}app-v1.css">{extra_head}
 </head><body>
 {header(p,cur)}
 {body}
@@ -37,30 +37,32 @@ SHEET=lambda p:'''<div class="sheet" role="img" aria-label="Example of the Contr
 # HOME
 home=f'''<section class="hero"><div class="wide">
 <div>
-<p class="eyebrow">Free tools for home-service pros</p>
-<h1>Quote every job at the margin you <em>meant</em> to make.</h1>
-<p class="lede">Pricing calculators and plain-English guides for contractors, cleaners, landscapers and handymen. No sign-up, no cookies. Everything runs in your browser.</p>
-<div class="actions"><a class="btn btn-acc" href="tools/job-price-calculator.html">Price a job now {ARROW}</a><a class="btn btn-ghost" href="tools/index.html">See all 12 calculators</a></div>
+<p class="eyebrow">Free for contractors &middot; no sign-up</p>
+<h1>Send a professional estimate in <em>two minutes</em>.</h1>
+<p class="lede">The free estimate and invoice maker for the trades. Pick your trade, fill in the job, download a clean PDF with your logo, tax and deposit worked out.</p>
+<div class="actions"><a class="btn btn-acc" href="maker/">Make an estimate, free {ARROW}</a><a class="btn btn-ghost" href="maker/#pro">See Pro</a></div>
+<p style="margin:18px 0 0;font-size:.9rem;color:#9fb0c7">Plumbing &middot; Electrical &middot; Painting &middot; Roofing &middot; Landscaping &middot; Cleaning &middot; HVAC &middot; and more</p>
 </div>
-<div class="qq-wrap"><span class="chip chip-a"><i></i>Profit <b id="qprof">$233.33</b></span><span class="chip chip-b"><i></i>Markup on cost <b id="qmk">33.3%</b></span>
-<div class="qq" id="qq">
-<h2>Quick quote <span class="live">LIVE</span></h2>
-<div class="grid2"><div><label for="qc">Job cost ($)</label><input id="qc" type="number" min="0" step="10" value="700" inputmode="decimal"></div>
-<div><label for="qm">Target margin (%)</label><input id="qm" type="number" min="0" max="90" step="1" value="25" inputmode="decimal"></div></div>
-<div class="price" aria-live="polite"><span>Quote this price</span><strong id="qp">$933.33</strong></div>
-<p class="warn" id="qw">Adding a 25% markup instead gives <b>$875.00</b>, which is only a <b>20.0%</b> margin.</p>
-<a class="more" href="tools/job-price-calculator.html">Add labor, materials and overhead &rarr;</a>
+<div class="qq-wrap"><span class="chip chip-b"><i></i>Deposit <b>$530.25</b></span><span class="chip chip-a"><i></i>PDF in <b>1 click</b></span>
+<div class="paper mini" aria-label="Example estimate made with the maker">
+<div class="dh"><div class="biz"><div><b>Acme Painting LLC</b><span>Springfield &middot; License # 000000</span></div></div><div class="dt"><h3>ESTIMATE</h3><div>No. 1001</div></div></div>
+<table><thead><tr><th>Description</th><th class=r>Qty</th><th class=r>Amount</th></tr></thead><tbody>
+<tr><td>Interior walls, 2 coats</td><td class=r>450 sq ft</td><td class=r>$1,012.50</td></tr>
+<tr><td>Ceilings</td><td class=r>180 sq ft</td><td class=r>$315.00</td></tr>
+<tr><td>Trim and baseboards</td><td class=r>120 lin ft</td><td class=r>$180.00</td></tr>
+<tr><td>Paint and supplies</td><td class=r>1 lot</td><td class=r>$260.00</td></tr></tbody></table>
+<div class="tots"><div class="grand"><span>Total</span><span>$1,767.50</span></div><div class="due"><span>Deposit (30%)</span><span>$530.25</span></div></div>
 </div></div>
 </div></section>
 <section class="facts"><ul class="wide">
-<li><b>12</b>free calculators</li><li><b>6</b>step-by-step guides</li><li><b>0</b>cookies or trackers</li><li><b>$0</b>no sign-up needed</li>
+<li><b>12</b>trade templates</li><li><b>12</b>free calculators</li><li><b>$0</b>no sign-up needed</li><li><b>0</b>cookies or trackers</li>
 </ul></section>
 <section class="sec"><div class="wide">
-<div class="sec-head center"><p class="eyebrow">How it works</p><h2>A confident quote in three steps</h2><p>No spreadsheets to build, no account to create. Open a calculator and type.</p></div>
+<div class="sec-head center"><p class="eyebrow">How it works</p><h2>From job to estimate in three steps</h2><p>No templates to format, no account to create. Open the maker and type.</p></div>
 <ol class="steps">
-<li><span class="n">1</span><h3>Enter your costs</h3><p>Materials, labor hours and your real hourly labor cost, plus overhead from your own books.</p></li>
-<li><span class="n">2</span><h3>Pick the margin you want</h3><p>The calculator divides by (1 &minus; margin), so the profit you choose is a share of the <em>price</em>.</p></li>
-<li><span class="n">3</span><h3>Send the quote</h3><p>See the price, the profit, the markup and the deposit to ask for before you hit send.</p></li>
+<li><span class="n">1</span><h3>Pick your trade</h3><p>Typical line items for your trade fill in. Change the wording, quantities and prices to yours.</p></li>
+<li><span class="n">2</span><h3>Price it right</h3><p>Not sure what to charge? The free calculators price each job from your costs and the margin you want.</p></li>
+<li><span class="n">3</span><h3>Download and send</h3><p>Tax, total and deposit are calculated. Download the PDF and send it the way you always do.</p></li>
 </ol></div></section>
 <section class="sec alt"><div class="wide">
 <div class="sec-head"><p class="eyebrow">Calculators</p><h2>Every number behind a profitable quote</h2><p>From the first estimate to the final invoice. Each tool shows its formula and a worked example, so you can check the math yourself.</p></div>
@@ -97,18 +99,11 @@ home=f'''<section class="hero"><div class="wide">
 <details><summary>Do you use cookies or track me?</summary><p>No. The site sets no cookies and loads no trackers or third-party scripts. See the <a href="privacy.html">privacy notice</a>.</p></details>
 <details><summary>Is this financial or tax advice?</summary><p>No. The tools give planning estimates. Check local taxes, licensing rules and your own books before you rely on a number.</p></details>
 </div></div></section>
-<section class="cta-band"><div class="wide"><div><h2>Your next quote is one tab away.</h2><p>Open the job price calculator and see the number you should be quoting.</p></div><a class="btn btn-acc" href="tools/job-price-calculator.html">Price a job now {ARROW}</a></div></section>
-<script>
-(function(){{var c=document.getElementById("qc"),m=document.getElementById("qm"),p=document.getElementById("qp"),w=document.getElementById("qw"),
-f=new Intl.NumberFormat("en-US",{{style:"currency",currency:"USD"}});
-function u(){{var C=Math.max(0,parseFloat(c.value)||0),M=Math.min(90,Math.max(0,parseFloat(m.value)||0)),P=C/(1-M/100),K=C*(1+M/100),km=K>0?(K-C)/K*100:0;
-p.textContent=f.format(P);document.getElementById("qprof").textContent=f.format(P-C);document.getElementById("qmk").textContent=(C>0?((P-C)/C*100).toFixed(1):"0.0")+"%";w.innerHTML="Adding a "+M+"% markup instead gives <b>"+f.format(K)+"</b>, which is only a <b>"+km.toFixed(1)+"%</b> margin.";}}
-c.addEventListener("input",u);m.addEventListener("input",u);u();}})();
-</script>
+<section class="cta-band"><div class="wide"><div><h2>Your next estimate is two minutes away.</h2><p>Free, no sign-up. Your data stays in your browser.</p></div><a class="btn btn-acc" href="maker/">Make an estimate {ARROW}</a></div></section>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"Clever Loop Digital","url":"https://cleverloopdigital.com/","description":"Free pricing calculators and guides for US home-service businesses."}}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{"@type":"Question","name":"Are the calculators really free?","acceptedAnswer":{{"@type":"Answer","text":"Yes. There is no sign-up and no paywall. Every calculator runs in your browser; nothing you type is stored or sent anywhere."}}}},{{"@type":"Question","name":"What is the difference between markup and margin?","acceptedAnswer":{{"@type":"Answer","text":"Markup is profit as a share of cost; margin is profit as a share of price. A 25% markup on a $700 job gives $875, which is only a 20% margin. For a true 25% margin you divide by 0.75 and quote $933.33."}}}}]}}</script>'''
-page("index.html","","", "Free Pricing Calculators for Home-Service Pros | Clever Loop Digital",
- "Free job price, hourly rate, markup/margin and break-even calculators for contractors, cleaners and other home-service businesses. No sign-up, no cookies.","",home)
+page("index.html","","", "Free Estimate &amp; Invoice Maker for Contractors | Clever Loop Digital",
+ "Free estimate and invoice maker for contractors and home-service pros: pick your trade, fill in the job, download a PDF. Plus free pricing calculators and guides. No sign-up.","",home)
 
 # TOOLS HUB
 tb=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../index.html">Home</a> / <span>Calculators</span></p><p class="eyebrow">12 free calculators</p><h1>Free Calculators for Home-Service Pros</h1><p class="lede">Simple pricing tools for contractors, cleaners, landscapers and other home-service businesses. No sign-up, no cookies; everything runs in your browser.</p></div></section>
