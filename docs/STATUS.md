@@ -209,3 +209,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - SEO: yeni sayfa `templates/contractor-estimate-template.html` ("free contractor estimate template" hedefi; ücretsiz .xlsx indirme, önizleme, nasıl doldurulur, örnek, FAQ şeması) + sitemap, ana sayfa, tüm alt bilgiler.
 - Teknik SEO: 27 sayfaya Open Graph/Twitter etiketleri + `og-image.png` (1200×630), iç sayfalara BreadcrumbList şeması.
 - Build betikleri `scripts/site/` altında (README).
+
+## 48. çalıştırma (30 Ekim, 16:10 UTC, ürün + SEO)
+- Ürün: ücretli pakete 7. sekme "Customer Invoice" (kalemler + imzalı ek iş, vergi, alınan depozito, kalan borç; örnek 2.645$ + 822$ = 3.467$ − 793,50$ = 2.673,50$, LibreOffice ile yeniden hesaplanıp doğrulandı). Satış sayfası "5 bonus sekme".
+- SEO: yeni sayfa `templates/contractor-invoice-template.html` ("free contractor invoice template" hedefi; ücretsiz .xlsx, önizleme, 6 adım, örnek, FAQ + Breadcrumb + OG) + sitemap; 28 sayfanın alt bilgisinde link; teklif şablonu ↔ fatura şablonu ve fatura ↔ vergi/kart ücreti/gecikme hesaplayıcıları iç link.
+- Panel: a-004 "onaylandı" ama Payhip linki notta yok; yeni istek eklenmedi.
