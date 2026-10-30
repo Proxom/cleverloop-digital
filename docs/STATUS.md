@@ -149,3 +149,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok).
 - Yeni: `public/ventures/sheets.html` gerçek satış sayfasına çevrildi (Contractor Quote & Margin Sheet, $9 planlı, ödeme linki YOK; "haber ver" e-postası). Payhip linki gelince butona eklenecek. Dağıtım işi: şablon ürün sayfası SEO/landing.
 - Erkan'ın görevleri değişmedi: Payhip hesabı + CSV'yi $9 ürün yap, Search Console, paylaşım metni (006 veya 007).
+
+## 36. çalıştırma (30 Ekim, 08:18 UTC)
+- Yeni onay yok; Stripe'ta hâlâ yalnızca Proxom Ltd (dokunulmadı, ödeme yok). Sprint bitişi bugün 19:20 Londra; Payhip ürünü hâlâ yok.
+- Dağıtım işi: `docs/distribution/008-payhip-listing-pack.md` (Payhip'e kopyala-yapıştır: başlık, $9 fiyat, açıklama, etiketler, README, ilk paylaşım metni; örnek 3.744$ teklif / 1.123,20$ kâr elle doğrulandı).
+- Erkan'ın görevi: 008'i açıp Payhip ürününü yayınla, linki dashboard'a yaz.
