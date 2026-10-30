@@ -36,6 +36,7 @@ ICONS = {
  "labor-burden-calculator": I('<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M17 4.5a3.5 3.5 0 0 1 0 7"/><path d="M19 14a6.5 6.5 0 0 1 2.5 6"/>'),
  "change-order-calculator": I('<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M12 12v6M9 15h6"/>'),
  "painting-estimate-calculator": I('<rect x="3" y="3" width="15" height="6" rx="1.5"/><path d="M18 6h3v5h-9v3"/><rect x="10" y="14" width="4" height="7" rx="1"/>'),
+ "pressure-washing-estimate-calculator": I('<path d="M3 8h9l3-3h3v6h-3l-3-3"/><path d="M6 8v4"/><path d="M15 14l-2 3M18 14l1 3M21 13l2 2"/>'),
  "material-waste-calculator": I('<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>'),
  "deposit-payment-schedule-calculator": I('<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 15h3"/>'),
  "invoice-processing-fee-calculator": I('<rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6.5 15h4"/>'),
@@ -47,6 +48,7 @@ ICONS = {
 TOOLS = [  # slug, name, desc, group
  ("job-price-calculator","Job Price Calculator","Price a job from labor, materials and your target margin.","Price the job"),
  ("painting-estimate-calculator","Painting Estimate Calculator","Wall area, gallons of paint, labor and a priced estimate in one go.","Price the job"),
+ ("pressure-washing-estimate-calculator","Pressure Washing Estimate Calculator","House, driveway and deck by the square foot, with chemicals and a minimum charge.","Price the job"),
  ("hourly-rate-calculator","Hourly Rate Calculator","Work out the hourly rate you need to hit your income goal.","Price the job"),
  ("markup-margin-calculator","Markup vs Margin Calculator","Convert markup to margin and back, and get the selling price.","Price the job"),
  ("change-order-calculator","Change Order Calculator","Price extra work added mid-job.","Price the job"),

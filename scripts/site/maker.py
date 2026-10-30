@@ -24,7 +24,8 @@ TRADES={
  "junk-removal":("Junk Removal","junk removal and hauling businesses",["Price by truck volume (quarter, half, full load) so the customer can picture what they pay for.","Mattresses, tires and appliances often carry disposal fees; show them per item.","A stairs or long-carry line covers the extra labor without arguments on site."]),
  "window-cleaning":("Window Cleaning","window cleaners",["Price per window (or per pane) and list interior and exterior on separate lines; many customers want only the outside.","Screens and tracks are easy add-ons when each has its own price.","Note any second-story or ladder work and hard-water stain removal as extras."]),
 }
-CALC={"painting":'<p><b>Measure the room first:</b> the <a href="../tools/painting-estimate-calculator.html">painting estimate calculator</a> works out wall and ceiling area, gallons of paint and labor, then fills in this estimate for you.</p>\n'}
+CALC={"painting":'<p><b>Measure the room first:</b> the <a href="../tools/painting-estimate-calculator.html">painting estimate calculator</a> works out wall and ceiling area, gallons of paint and labor, then fills in this estimate for you.</p>\n',
+ "pressure-washing":'<p><b>Measure each surface first:</b> the <a href="../tools/pressure-washing-estimate-calculator.html">pressure washing estimate calculator</a> works out siding, driveway and deck square footage, chemicals and your minimum charge, then fills in this estimate for you.</p>\n'}
 APP=lambda: '''<div class="wide mk">
 <div class="mk-form">
 <div class="mk-sec"><h2>Document <span class="seg" role="group" aria-label="Document type"><button type="button" data-settype="estimate">Estimate</button><button type="button" data-settype="invoice">Invoice</button></span></h2>

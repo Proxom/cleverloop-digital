@@ -238,3 +238,9 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 53. çalıştırma (30 Ekim, 17:30 UTC) — Erkan: "kendi araştırmanı yap, en doğru kararı ver"
 - Karar v3 (docs/DECISION.md en üstte): niş ve maker kalıyor; "estimate template" baş terimleri bırakılıyor (Joist, Housecall Pro, Invoice Simple, Houzz, ArcSite, Zarla, yeni templacity.com dolduruyor). Yeni yön: her meslek için "hesapla → tek tıkla teklif" araçları + PDF'teki "Made with" satırı + LLM'lerin alıntılayabileceği sayfalar. Eşikler: 31 Ocak 2027'ye kadar < 300 organik ziyaret/ay → yeniden değerlendirme.
 - Ürün + SEO: `tools/painting-estimate-calculator.html` (duvar/tavan alanı, galon, işçilik, toplam; "Turn into an estimate" kalemleri maker'a aktarır). Örnek 14x12x8 oda: 366 sq ft duvar, 168 tavan, 3+1 galon, 1.352,50$ (elle ve tarayıcı testiyle doğrulandı). FAQ + WebApplication + Breadcrumb şeması, sitemap, araç merkezi, maker boya sayfasından link. Alt bilgide "All 12 calculators" → "All calculators".
+
+## 54. çalıştırma (30 Ekim, 17:20 UTC, karar v3 adım 2)
+- Ürün + SEO: `tools/pressure-washing-estimate-calculator.html` (ev cephesi = çevre × yükseklik, garaj yolu, veranda/yürüyüş yolu, ahşap deck; yüzey başına $/sq ft, kimyasal $/1.000 sq ft, yol/kurulum ücreti, minimum iş ücreti → eksikse "minimum charge adjustment" satırı). "Turn into an estimate" kalemleri maker/pressure-washing.html'e aktarır. Örnek: 2.400 sq ft × 0,20 = 480$ + 800 × 0,18 = 144$ + 300 × 0,35 = 105$ + kimyasal 28$ + 25$ = 782$; yalnız garaj yolu: 150,40$ → minimum 175$ (tarayıcı testiyle doğrulandı, JS hatası yok).
+- FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS), maker basınçlı yıkama sayfasından link (maker.py CALC).
+- Not: pages.py/maker.py OG etiketlerini siliyor → her üretimden sonra `python3 scripts/site/seo_tags.py public` çalıştır.
+- Sıradaki araç: fencing (çit) hesapla→teklif.
