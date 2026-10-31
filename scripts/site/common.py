@@ -89,6 +89,7 @@ GUIDES = [  # slug, title, desc, example
  ("how-to-price-a-roof-replacement","How to Price a Roof Replacement","Per square and per sq ft rates, tear-off, decking, pitch and a worked quote.","$10,203 50x30 ft roof, 6/12"),
  ("how-to-price-a-flooring-installation","How to Price a Flooring Installation","Per sq ft rates by material, removal, underlayment, waste and a worked quote.","$3,265 400 sq ft LVP room"),
  ("how-to-price-drywall-installation","How to Price Drywall Installation","Per sq ft rates by finish level, texture, repairs, removal and a worked quote.","$1,490 14x12 room, walls + ceiling"),
+ ("how-to-price-a-concrete-slab","How to Price a Concrete Slab or Patio","Per sq ft rates by use and thickness, removal, finishes and a worked quote.","$3,028 20x20 ft, 4 in patio"),
  ("how-to-price-a-change-order","How to Price a Change Order","Labor, disruption and marked-up materials, signed before you start.","6 h + materials = $822"),
 ]
 def tile(href, name, desc, icon, ex=""):
