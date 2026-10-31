@@ -8,7 +8,7 @@ Sıradaki büyüme işleri (yalnızca ürün + SEO):
 1. (DURDURULDU, karar v3) Daha fazla meslek sayfası — 51. çalıştırmada 6 eklendi (carpentry, concrete, fencing, tile, junk removal, window cleaning; toplam 18). Sırada: cabinet, moving, pest control, pool, gutter, appliance repair, masonry, siding.
 2. "Invoice" odaklı meslek sayfaları (/maker/<trade>-invoice.html, data-type="invoice").
 3. Ürün: tahmini-faturaya çevir, birden çok taslak, para birimi seçimi (CAD/AUD/GBP), kalem kütüphanesi.
-4. Karşılaştırma/rehber içerikleri: "how to write an estimate", "estimate vs quote vs bid", "what to put on an invoice".
+4. Karşılaştırma/rehber içerikleri: "how to write an estimate", "what to put on an invoice" ve "estimate vs invoice" YAPILDI (74. çalıştırma).
 
 
 Durum: 30 Ekim (Erkan'ın 12 örnek sitesi incelendi → docs/BENCHMARKS.md; kapsam yazılım/AI dahil genişledi). Gelir £0. Tek darboğaz: ödeme altyapısı (Payhip/Gumroad/Stripe hesabı Erkan'da). Aşağıdakilerin hepsi gerçek kanıt istenen tahminlerdir; uydurma rakam yok.

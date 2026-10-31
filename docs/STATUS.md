@@ -332,3 +332,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Ürün: maker handyman sayfasına saatlik ücret hesaplayıcısı + rehber bağlantısı (maker.py CALC).
 - Beceriler: yalnızca yerel jeneratörler (pages.py, maker.py, seo_tags.py); ek skill kullanılmadı. Arama: Parallel web_search (ücretsiz araç).
 - Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı yok), canlı ekran görüntüsü. Gelir £0. Sıradaki: yeni araç/ürün fikri (MONEY_IDEAS), "estimate vs invoice" rehberi.
+
+## 74. çalıştırma (31 Ekim, "estimate vs invoice" rehberi)
+- SEO: `guides/estimate-vs-invoice-for-contractors.html` (karşılaştırma tablosu, kabul edilen tekliften faturaya dönüştürme adımları, çit onarımı örneği: 678$ + vergi 18,24$ = 696,24$ teklif; değişiklik emri +60$ ile fatura 756,24$, depozito %30 = 208,87$ düşünce kalan 547,37$ — elle doğrulandı; görünür SSS + FAQ/Breadcrumb/OG). Sitemap, rehber merkezi, ana sayfa kartı (common.py GUIDES), 18 maker meslek sayfasından link (maker.py).
+- Beceriler: yalnızca yerel jeneratörler (pages.py, maker.py, seo_tags.py); ek skill kullanılmadı.
+- Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı yok), canlı ekran görüntüsü. Gelir £0. Sıradaki: gutter / moving kaynaklı fiyat rehberleri.

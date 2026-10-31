@@ -117,7 +117,7 @@ for k,(name,who,tips) in TRADES.items():
 <div class="w no-print" style="padding-bottom:20px">
 <h2>Tips for {name.lower()} estimates</h2>
 <ul>{"".join(f"<li>{t}</li>" for t in tips)}</ul>
-{CALC.get(k,"")}<p>Not sure what to charge? Use the <a href="../tools/job-price-calculator.html">job price calculator</a> and read <a href="../guides/how-to-price-a-contractor-job.html">how to price a contractor job</a>. New to estimates? See <a href="../guides/how-to-write-a-contractor-estimate.html">how to write a contractor estimate</a> and <a href="../guides/what-to-put-on-a-contractor-invoice.html">what to put on a contractor invoice</a>.</p>
+{CALC.get(k,"")}<p>Not sure what to charge? Use the <a href="../tools/job-price-calculator.html">job price calculator</a> and read <a href="../guides/how-to-price-a-contractor-job.html">how to price a contractor job</a>. New to estimates? See <a href="../guides/how-to-write-a-contractor-estimate.html">how to write a contractor estimate</a> and <a href="../guides/estimate-vs-invoice-for-contractors.html">estimate vs invoice</a>, <a href="../guides/what-to-put-on-a-contractor-invoice.html">what to put on a contractor invoice</a>.</p>
 <h2>Frequently asked questions</h2>
 {faq_html(faq)}
 <h2>Other trades</h2>
