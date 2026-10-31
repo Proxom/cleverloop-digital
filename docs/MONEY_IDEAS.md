@@ -30,4 +30,4 @@ Kural: Kanal YALNIZCA SEO. Erkan'dan yeni bir şey istenmez.
 
 | 8 (YAPILDI 31 Ekim, 64. çalıştırma) | "Pressure washing pricing guide" / "how to price pressure washing per square foot" rehberi (kaynaklı fiyat aralıkları) + hesaplayıcıya link | Yeni başlayan basınçlı yıkama işletmeleri | Ücretsiz → Pro | SEO (uzun kuyruk) | Okunmuş fiyat kaynakları gerekir | Yeni fikir (54. çalıştırma) |
 
-| 9 (YAPILDI 31 Ekim, 73. çalıştırma) | "How to price handyman services" rehberi (saatlik, minimum ziyaret, malzeme marjı) + maker handyman sayfasına link | Handyman'lik yapanlar | Ücretsiz → Pro | SEO | Yok | gutter, junk removal, window cleaning, tile YAPILDI (78. çalıştırma); sırada moving / pest control |
+| 9 (YAPILDI 31 Ekim, 73. çalıştırma; lawn mowing rehberi 80. çalıştırmada eklendi) | "How to price handyman services" rehberi (saatlik, minimum ziyaret, malzeme marjı) + maker handyman sayfasına link | Handyman'lik yapanlar | Ücretsiz → Pro | SEO | Yok | gutter, junk removal, window cleaning, tile YAPILDI (78. çalıştırma); sırada moving / pest control |
