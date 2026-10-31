@@ -97,6 +97,7 @@ GUIDES = [  # slug, title, desc, example
  ("how-to-price-junk-removal","How to Price Junk Removal","Truckload, cubic yard and single item rates, minimum charges and a worked quote.","$470 half-load cleanout"),
  ("how-to-price-window-cleaning","How to Price Window Cleaning","Per window and per pane rates, height surcharges, screens, tracks, minimum charges and a worked quote.","$300 20 windows, inside and out"),
  ("how-to-price-lawn-mowing","How to Price Lawn Mowing","Per visit, per hour and per acre rates, lawn size table, first-cut surcharge, weekly plans and a worked quote.","$305 first month, 1/4 acre weekly"),
+ ("how-to-price-pool-cleaning","How to Price Pool Cleaning","Weekly and monthly service, first cleans, green pool recovery, opening and closing, hourly rates and a worked quote.","$765 first month, weekly service"),
  ("how-to-price-pest-control-services","How to Price Pest Control Services","One-time, initial and recurring plan rates, bed bug and rodent ranges, exclusions and a worked first-year quote.","$600 first year, quarterly plan"),
  ("how-to-price-tile-installation","How to Price Tile Installation","Labor per square foot, backsplash and shower pricing, tile removal, leveling, waterproofing and a worked quote.","$2,075 100 sq ft bathroom floor"),
  ("estimate-vs-invoice-for-contractors","Estimate vs Invoice for Contractors","What each is for, how an estimate becomes an invoice with the deposit credited, and a worked example.","$547.37 balance after deposit"),
