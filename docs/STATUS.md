@@ -337,3 +337,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - SEO: `guides/estimate-vs-invoice-for-contractors.html` (karşılaştırma tablosu, kabul edilen tekliften faturaya dönüştürme adımları, çit onarımı örneği: 678$ + vergi 18,24$ = 696,24$ teklif; değişiklik emri +60$ ile fatura 756,24$, depozito %30 = 208,87$ düşünce kalan 547,37$ — elle doğrulandı; görünür SSS + FAQ/Breadcrumb/OG). Sitemap, rehber merkezi, ana sayfa kartı (common.py GUIDES), 18 maker meslek sayfasından link (maker.py).
 - Beceriler: yalnızca yerel jeneratörler (pages.py, maker.py, seo_tags.py); ek skill kullanılmadı.
 - Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı yok), canlı ekran görüntüsü. Gelir £0. Sıradaki: gutter / moving kaynaklı fiyat rehberleri.
+
+## 75. çalıştırma (31 Ekim, kaynaklı oluk fiyat rehberi)
+- SEO: `guides/how-to-price-gutter-installation.html` (Angi 2026 ve HomeGuide 2026: alüminyum dikişli 7-10$, dikişsiz 9-13$/linear ft, HomeGuide dikişsiz alüminyum 6-12$, çelik 8-20$, vinil 3-7$, bakır 15-50$, işçilik 1,40-6$, downspout 5-8$, gutter guard 6-13$, söküm 1-2$/ft (HomeGuide) veya 80-300$ sabit (Angi), 2-3 katlı +1-3$/ft; örnek teklif 160 ft: 1.600 + 280 + 240 = 2.120$ = 13,25$/ft, guard eklenirse +1.280 = 3.400$ — elle doğrulandı). FAQ + Breadcrumb + OG; sitemap, rehber merkezi, ana sayfa kartı (common.py GUIDES), maker çatı sayfasından link.
+- Beceriler: yalnızca yerel jeneratörler (pages.py, maker.py, seo_tags.py); Parallel web_search ile fiyat okundu. Kalite denetleyici çalıştırılmadı.
+- Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı yok), canlı ekran görüntüsü. Gelir £0. Sıradaki: moving / pest control kaynaklı rehberler.
