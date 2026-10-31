@@ -297,3 +297,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 65. çalıştırma (31 Ekim, kaynaklı çit fiyat rehberi)
 - SEO: `guides/how-to-price-a-fence-installation.html` (malzemeye göre linear ft fiyatları: Angi 2026 ve HomeGuide 2026 tablosu, Estimate Fence temmuz 2026; kapı ve eski çit söküm ayrı kalem; izin/811 notu; örnek teklif 4.200+350+350+75 = 4.975$ — elle doğrulandı). FAQ + Breadcrumb + OG; sitemap, rehber merkezi ve ana sayfa kartı (common.py GUIDES), maker çit sayfası (maker.py) ve çit hesaplayıcısından link.
 - Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı yok), canlı ekran görüntüsü. Gelir £0. Sıradaki: painting, roofing kaynaklı fiyat rehberleri.
+
+## 66. çalıştırma (31 Ekim, kaynaklı boya fiyat rehberi)
+- SEO: `guides/how-to-price-interior-painting.html` (Angi 2026 verileri: tüm iç mekan 2-6$/sq ft, duvar 1-2$, tavan 1-3$, süpürgelik 1-3$/linear ft, hazırlık 0,50-0,75$/sq ft, işçilik payı %75-95, oda boyutu tablosu, galon hesabı; örnek teklif 14x12 oda: 823,50+294+160+75 = 1.352,50$ — hesaplayıcıyla aynı, elle doğrulandı). FAQ + Breadcrumb + OG; sitemap, rehber merkezi, ana sayfa kartı (common.py GUIDES), maker boya sayfası (maker.py) ve boya hesaplayıcısından link.
+- Not: HomeGuide kaynağı doğrulanamadı, kullanılmadı. Yapılmadı: talep (t.php) okuma, panel güncellemesi, canlı ekran görüntüsü. Gelir £0. Sıradaki: roofing kaynaklı fiyat rehberi.
