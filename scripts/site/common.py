@@ -84,6 +84,7 @@ GUIDES = [  # slug, title, desc, example
  ("how-to-write-a-contractor-estimate","How to Write a Contractor Estimate","What goes on an estimate, and estimate vs quote vs bid.","$696.24 fence repair"),
  ("what-to-put-on-a-contractor-invoice","What to Put on a Contractor Invoice","Invoice checklist, payment terms and late fee wording.","$647.39 balance due"),
  ("how-to-price-pressure-washing","How to Price Pressure Washing Jobs","Per square foot rates by surface, minimum charges and a worked quote.","$782 house + drive + patio"),
+ ("how-to-price-a-fence-installation","How to Price a Fence Installation","Per linear foot rates by material, gates, removal and a worked quote.","$4,975 150 ft fence + gate"),
  ("how-to-price-a-change-order","How to Price a Change Order","Labor, disruption and marked-up materials, signed before you start.","6 h + materials = $822"),
 ]
 def tile(href, name, desc, icon, ex=""):

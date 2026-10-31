@@ -293,3 +293,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - SEO: `guides/how-to-price-pressure-washing.html` (yüzey başına $/sq ft aralıkları tablosu: Angi 2026, Housecall Pro fiyat kitapları, HomeGuide; fiyatı etkileyenler, minimum ücret, "m² başına teklif ver, saatlik kontrol et", örnek teklif 480+144+105+28+25 = 782$, minimum 175$ kuralı; kaynak listesi). FAQ + Breadcrumb + OG; sitemap, rehber merkezi ve ana sayfa kartı (common.py GUIDES), maker basınçlı yıkama sayfası ve hesaplayıcıdan link.
 - Ürün: maker basınçlı yıkama sayfasında "hangi fiyatı kullanmalıyım" rehber bağlantısı.
 - Yeni fikir: aynı kaynaklı rehber kalıbı sırada fence, painting, roofing için (fikir #7). Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı yok), canlı ekran görüntüsü. Gelir £0.
+
+## 65. çalıştırma (31 Ekim, kaynaklı çit fiyat rehberi)
+- SEO: `guides/how-to-price-a-fence-installation.html` (malzemeye göre linear ft fiyatları: Angi 2026 ve HomeGuide 2026 tablosu, Estimate Fence temmuz 2026; kapı ve eski çit söküm ayrı kalem; izin/811 notu; örnek teklif 4.200+350+350+75 = 4.975$ — elle doğrulandı). FAQ + Breadcrumb + OG; sitemap, rehber merkezi ve ana sayfa kartı (common.py GUIDES), maker çit sayfası (maker.py) ve çit hesaplayıcısından link.
+- Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı yok), canlı ekran görüntüsü. Gelir £0. Sıradaki: painting, roofing kaynaklı fiyat rehberleri.
