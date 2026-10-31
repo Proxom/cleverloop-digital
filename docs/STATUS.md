@@ -273,3 +273,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Ürün + SEO: `tools/mulch-calculator.html` (bölme alanı × derinlik → cu yd, fire %, çeyrek yarda yukarı yuvarlama, 2 ve 3 cu ft torba sayısı, malç + serme işçiliği, kenar çıtası, yabani ot örtüsü, teslimat, eski malç söküm, minimum ücret). "Turn into an estimate" kalemleri maker/landscaping.html'e aktarır. Örnek: 30×10 ft, 3 in = 2,78 cu yd → %5 fire ile 3 cu yd (41 torba); 135$ + 120$ = 255$ (tarayıcı testiyle doğrulandı, JS hatası yok).
 - FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS + ikon), maker peyzaj sayfasından link (maker.py CALC). Sıradaki araç: cleaning.
 - Yapılmadı: talep (t.php) okuma ve panel güncellemesi (bu ortamda panel yazma akışı yok). Gelir £0.
+
+## 61. çalıştırma (31 Ekim, karar v3 adım 9)
+- Ürün + SEO: `tools/house-cleaning-estimate-calculator.html` (m² yerine sq ft × oran × temizlik türü çarpanı 1,0/1,5/1,75; banyo, fırın, buzdolabı, iç cam, evcil hayvan tüyü, malzeme ücreti, minimum ücret; ayrıca süre kontrolü: temiz-saat, sahada saat ve temizlikçi-saat başına kazanç). "Turn into an estimate" kalemleri maker/cleaning.html'e aktarır. Örnek: 1.800 sq ft × 0,10$ = 180$ + 2 banyo 20$ + fırın 40$ = 240$; 5,14 temizlikçi-saat → 46,67$/saat; derin temizlik 330$, taşınma 375$ (tarayıcı testiyle doğrulandı, JS hatası yok).
+- FAQ + WebApplication + Breadcrumb + OG; sitemap, ana sayfa/araç merkezi kartı (common.py TOOLS + ikon), maker temizlik sayfasından link (maker.py CALC).
+- Yapılmadı: talep (t.php) okuma ve panel güncellemesi (bu ortamda panel yazma akışı yok). Gelir £0. Planlanan hesaplayıcı listesi bitti; sıradaki: meslek fiyat rehberleri (fikir #7), "how to write an estimate" rehberi.

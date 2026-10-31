@@ -31,7 +31,8 @@ CALC={"painting":'<p><b>Measure the room first:</b> the <a href="../tools/painti
  "drywall":'<p><b>Measure the rooms first:</b> the <a href="../tools/drywall-estimate-calculator.html">drywall estimate calculator</a> works out wall and ceiling area, sheets to order, hanging and finishing, texture and patches, then fills in this estimate for you.</p>\n',
  "concrete":'<p><b>Measure the slab first:</b> the <a href="../tools/concrete-estimate-calculator.html">concrete estimate calculator</a> works out cubic yards to order, concrete, reinforcement, finishing labor and demolition, then fills in this estimate for you.</p>\n',
  "landscaping":'<p><b>Measure the beds first:</b> the <a href="../tools/mulch-calculator.html">mulch calculator</a> works out cubic yards and bags to order, spreading labor, edging and delivery, then fills in this estimate for you.</p>\n',
- "fencing":'<p><b>Measure the fence line first:</b> the <a href="../tools/fence-estimate-calculator.html">fence estimate calculator</a> works out the price per linear foot, gates, old fence removal and post count, then fills in this estimate for you.</p>\n'}
+ "fencing":'<p><b>Measure the fence line first:</b> the <a href="../tools/fence-estimate-calculator.html">fence estimate calculator</a> works out the price per linear foot, gates, old fence removal and post count, then fills in this estimate for you.</p>\n',
+ "cleaning":'<p><b>Size up the home first:</b> the <a href="../tools/house-cleaning-estimate-calculator.html">house cleaning estimate calculator</a> prices the clean by square foot and type, adds bathrooms and extras, shows your pay per cleaner-hour, then fills in this estimate for you.</p>\n'}
 APP=lambda: '''<div class="wide mk">
 <div class="mk-form">
 <div class="mk-sec"><h2>Document <span class="seg" role="group" aria-label="Document type"><button type="button" data-settype="estimate">Estimate</button><button type="button" data-settype="invoice">Invoice</button></span></h2>
