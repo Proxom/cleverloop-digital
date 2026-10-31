@@ -24,7 +24,7 @@ Durum: 30 Ekim (Erkan'ın 12 örnek sitesi incelendi → docs/BENCHMARKS.md; kap
 
 | 6 | Meslek bazlı ücretsiz şablon sayfaları (painting estimate, handyman invoice vb.) | Mesleğe özel arayan esnaf | Ücretsiz → $9 paket | SEO (uzun kuyruk) | Yok | Yeni fikir (48. çalıştırma): mevcut şablon motoru ile meslek varyantları |
 
-| 7 (fence YAPILDI 31 Ekim, 65. çalıştırma; sırada painting, roofing) | Meslek başına "pricing guide" sayfaları (ör. "how much to charge for fence installation per foot") + maker'a link | Fiyat araştıran esnaf | Ücretsiz → Pro $9/ay | SEO (uzun kuyruk, ticari niyet) | Yok; fiyat aralıkları için okunmuş kaynak gerekir | Yeni fikir (51. çalıştırma): kaynaklı 1 rehberle başla |
+| 7 (fence, painting, roofing, flooring YAPILDI; sırada drywall, concrete) | Meslek başına "pricing guide" sayfaları (ör. "how much to charge for fence installation per foot") + maker'a link | Fiyat araştıran esnaf | Ücretsiz → Pro $9/ay | SEO (uzun kuyruk, ticari niyet) | Yok; fiyat aralıkları için okunmuş kaynak gerekir | Yeni fikir (51. çalıştırma): kaynaklı 1 rehberle başla |
 
 Kural: Kanal YALNIZCA SEO. Erkan'dan yeni bir şey istenmez.
 
