@@ -284,3 +284,7 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Ürün: 18 maker meslek sayfasına rehber bağlantısı eklendi (maker.py).
 - Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı bu ortamda yok), canlı ekran görüntüsü doğrulaması. Gelir £0.
 - Sıradaki: meslek fiyat rehberleri (fikir #7/#8, kaynaklı fiyatlarla), "what to put on an invoice" rehberi.
+
+## 63. çalıştırma (31 Ekim, rehber)
+- SEO: `guides/what-to-put-on-a-contractor-invoice.html` (fatura kontrol listesi, ödeme koşulları tablosu, gecikme faizi ifadesi, sık hatalar; örnek: 560+312,40 = 872,40$ + %8 malzeme vergisi 24,99$ = 897,39$, 250$ depozito düşünce kalan 647,39$ — elle doğrulandı). FAQ + Breadcrumb + OG; sitemap, rehber merkezi, ana sayfa kartı (common.py GUIDES), 18 maker meslek sayfasından link.
+- Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı bu ortamda yok), canlı ekran görüntüsü. Gelir £0. Sıradaki: kaynaklı meslek fiyat rehberleri.
