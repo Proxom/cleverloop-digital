@@ -288,3 +288,8 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 ## 63. çalıştırma (31 Ekim, rehber)
 - SEO: `guides/what-to-put-on-a-contractor-invoice.html` (fatura kontrol listesi, ödeme koşulları tablosu, gecikme faizi ifadesi, sık hatalar; örnek: 560+312,40 = 872,40$ + %8 malzeme vergisi 24,99$ = 897,39$, 250$ depozito düşünce kalan 647,39$ — elle doğrulandı). FAQ + Breadcrumb + OG; sitemap, rehber merkezi, ana sayfa kartı (common.py GUIDES), 18 maker meslek sayfasından link.
 - Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı bu ortamda yok), canlı ekran görüntüsü. Gelir £0. Sıradaki: kaynaklı meslek fiyat rehberleri.
+
+## 64. çalıştırma (31 Ekim, kaynaklı fiyat rehberi)
+- SEO: `guides/how-to-price-pressure-washing.html` (yüzey başına $/sq ft aralıkları tablosu: Angi 2026, Housecall Pro fiyat kitapları, HomeGuide; fiyatı etkileyenler, minimum ücret, "m² başına teklif ver, saatlik kontrol et", örnek teklif 480+144+105+28+25 = 782$, minimum 175$ kuralı; kaynak listesi). FAQ + Breadcrumb + OG; sitemap, rehber merkezi ve ana sayfa kartı (common.py GUIDES), maker basınçlı yıkama sayfası ve hesaplayıcıdan link.
+- Ürün: maker basınçlı yıkama sayfasında "hangi fiyatı kullanmalıyım" rehber bağlantısı.
+- Yeni fikir: aynı kaynaklı rehber kalıbı sırada fence, painting, roofing için (fikir #7). Yapılmadı: talep (t.php) okuma ve panel güncellemesi (panel yazma akışı yok), canlı ekran görüntüsü. Gelir £0.
