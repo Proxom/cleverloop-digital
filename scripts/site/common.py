@@ -81,6 +81,7 @@ GUIDES = [  # slug, title, desc, example
  ("contractor-overhead-rate","How to Calculate Contractor Overhead","Find your overhead rate and add it to every job.","$48k &divide; $200k = 24%"),
  ("how-to-calculate-labor-cost","How to Calculate Labor Cost for a Bid","Wage, burden and billable hours: the true cost of an hour.","$25 wage &rarr; $42.86/hour"),
  ("contractor-break-even-point","How to Find Your Break-Even Point","How many jobs a month it takes to cover overhead.","$4,000 &divide; $400 = 10 jobs"),
+ ("how-to-write-a-contractor-estimate","How to Write a Contractor Estimate","What goes on an estimate, and estimate vs quote vs bid.","$696.24 fence repair"),
  ("how-to-price-a-change-order","How to Price a Change Order","Labor, disruption and marked-up materials, signed before you start.","6 h + materials = $822"),
 ]
 def tile(href, name, desc, icon, ex=""):
