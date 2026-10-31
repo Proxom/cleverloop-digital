@@ -92,6 +92,7 @@ GUIDES = [  # slug, title, desc, example
  ("how-to-price-a-concrete-slab","How to Price a Concrete Slab or Patio","Per sq ft rates by use and thickness, removal, finishes and a worked quote.","$3,028 20x20 ft, 4 in patio"),
  ("how-to-price-house-cleaning","How to Price House Cleaning Services","Per sq ft, per hour and by home size for standard, deep and move-out cleans, with a worked quote.","$240 1,800 sq ft standard clean"),
  ("how-to-price-mulch-installation","How to Price Mulch Installation","Per cubic yard and per sq ft, with labor, edging, weed barrier and removal rates and a worked quote.","$255 300 sq ft bed, 3 cu yd"),
+ ("how-to-price-handyman-services","How to Price Handyman Services","Hourly rates, minimum visit fees, flat prices by job type, materials markup and a worked quote.","$317 3 small tasks, one visit"),
  ("how-to-price-a-change-order","How to Price a Change Order","Labor, disruption and marked-up materials, signed before you start.","6 h + materials = $822"),
 ]
 def tile(href, name, desc, icon, ex=""):
