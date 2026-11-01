@@ -25,3 +25,5 @@ for f in glob.glob("**/*.html",recursive=True):
     s=s.replace(f'<link rel="canonical" href="{u}">',f'<link rel="canonical" href="{u}">\n{og}{bc}',1)
     open(f,"w").write(s); n+=1
 print("tagged",n)
+from pv_tag import run as pv_run
+print("pv tagged",pv_run("."))
