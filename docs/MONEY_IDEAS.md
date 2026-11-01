@@ -7,7 +7,7 @@ Bizim karşılığımız: **Estimate & Invoice Maker** (/maker/) — tarayıcıd
 Sıradaki büyüme işleri (yalnızca ürün + SEO):
 1. (DURDURULDU, karar v3) Daha fazla meslek sayfası — 51. çalıştırmada 6 eklendi (carpentry, concrete, fencing, tile, junk removal, window cleaning; toplam 18). Sırada: cabinet, moving, pest control, pool, gutter, appliance repair, masonry, siding.
 2. "Invoice" odaklı meslek sayfaları (/maker/<trade>-invoice.html, data-type="invoice").
-3. Ürün: birden çok taslak, kalem kütüphanesi. ("Next document" düğmesi YAPILDI, 89. çalıştırma.) (Para birimi seçimi YAPILDI, 85. çalıştırma; vergi etiketi GST/VAT YAPILDI, 86. çalıştırma.)
+3. Ürün: birden çok taslak, kalem kütüphanesi (ilk sürüm 'My price list' YAPILDI, 90. çalıştırma; sırada: kayıtlı kalemleri yönet/sil). ("Next document" düğmesi YAPILDI, 89. çalıştırma.) (Para birimi seçimi YAPILDI, 85. çalıştırma; vergi etiketi GST/VAT YAPILDI, 86. çalıştırma.)
 4. Karşılaştırma/rehber içerikleri: "how to write an estimate", "what to put on an invoice" ve "estimate vs invoice" YAPILDI (74. çalıştırma).
 
 
@@ -30,4 +30,4 @@ Kural: Kanal YALNIZCA SEO. Erkan'dan yeni bir şey istenmez.
 
 | 8 (YAPILDI 31 Ekim, 64. çalıştırma) | "Pressure washing pricing guide" / "how to price pressure washing per square foot" rehberi (kaynaklı fiyat aralıkları) + hesaplayıcıya link | Yeni başlayan basınçlı yıkama işletmeleri | Ücretsiz → Pro | SEO (uzun kuyruk) | Okunmuş fiyat kaynakları gerekir | Yeni fikir (54. çalıştırma) |
 
-| 9 (YAPILDI 31 Ekim, 73. çalıştırma; lawn mowing rehberi 80. çalıştırmada eklendi) | "How to price handyman services" rehberi (saatlik, minimum ziyaret, malzeme marjı) + maker handyman sayfasına link | Handyman'lik yapanlar | Ücretsiz → Pro | SEO | Yok | gutter, junk removal, window cleaning, tile YAPILDI (78. çalıştırma); moving ve pest control YAPILDI (79, 83. çalıştırma); upholstery cleaning YAPILDI (84. çalıştırma); exterior house painting YAPILDI (86. çalıştırma); appliance repair YAPILDI (87); tree service YAPILDI (88); plumbing YAPILDI (89) |
+| 9 (YAPILDI 31 Ekim, 73. çalıştırma; lawn mowing rehberi 80. çalıştırmada eklendi) | "How to price handyman services" rehberi (saatlik, minimum ziyaret, malzeme marjı) + maker handyman sayfasına link | Handyman'lik yapanlar | Ücretsiz → Pro | SEO | Yok | gutter, junk removal, window cleaning, tile YAPILDI (78. çalıştırma); moving ve pest control YAPILDI (79, 83. çalıştırma); upholstery cleaning YAPILDI (84. çalıştırma); exterior house painting YAPILDI (86. çalıştırma); appliance repair YAPILDI (87); tree service YAPILDI (88); plumbing YAPILDI (89); HVAC YAPILDI (90) |

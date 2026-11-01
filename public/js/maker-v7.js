@@ -72,6 +72,22 @@
     el.value = CUR[S.cur] ? S.cur : "USD";
     el.addEventListener("change", function () { S.cur = el.value; save(); renderType(); renderPrev(); });
   }
+  /* My price list: lines you type are remembered on this device and suggested next time. */
+  var LKEY = "cl-maker-prices-v1", LIB = {};
+  try { LIB = JSON.parse(localStorage.getItem(LKEY) || "{}") || {}; } catch (e) { LIB = {}; }
+  function libSave(it) {
+    var d = String(it.d || "").trim(), r = parseFloat(it.r);
+    if (!d || !(r > 0) || d.length > 80) return;
+    LIB[d.toLowerCase()] = { d: d, u: it.u || "ea", r: r };
+    var ks = Object.keys(LIB); if (ks.length > 200) delete LIB[ks[0]];
+    try { localStorage.setItem(LKEY, JSON.stringify(LIB)); } catch (e) {}
+    libList();
+  }
+  function libList() {
+    var dl = $("price-list"); if (!dl) { dl = document.createElement("datalist"); dl.id = "price-list"; document.body.appendChild(dl); }
+    dl.innerHTML = ""; Object.keys(LIB).forEach(function (k) { var o = document.createElement("option"); o.value = LIB[k].d; dl.appendChild(o); });
+  }
+  libList();
   function renderItems() {
     var host = $("items"); host.innerHTML = "";
     S.items.forEach(function (it, i) {
@@ -79,6 +95,12 @@
       row.innerHTML = '<input aria-label="Description" value="' + esc(it.d) + '"><input aria-label="Quantity" inputmode="decimal" value="' + esc(it.q) + '"><input aria-label="Unit" value="' + esc(it.u) + '"><input aria-label="Rate" inputmode="decimal" value="' + esc(it.r) + '"><button type="button" class="del" aria-label="Remove line">&times;</button>';
       var ins = row.querySelectorAll("input"), keys = ["d", "q", "u", "r"];
       ins.forEach(function (inp, j) { inp.addEventListener("input", function () { it[keys[j]] = inp.value; save(); renderPrev(); }); });
+      ins[0].setAttribute("list", "price-list");
+      ins[0].addEventListener("change", function () {
+        var m = LIB[ins[0].value.trim().toLowerCase()];
+        if (m && !(parseFloat(it.r) > 0)) { it.u = m.u; it.r = m.r; ins[2].value = m.u; ins[3].value = m.r; save(); renderPrev(); }
+      });
+      ins[3].addEventListener("change", function () { libSave(it); });
       row.querySelector(".del").onclick = function () { S.items.splice(i, 1); save(); renderItems(); renderPrev(); };
       host.appendChild(row);
     });
