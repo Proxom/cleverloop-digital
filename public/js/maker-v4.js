@@ -65,6 +65,8 @@
       el.addEventListener("input", function () { S[k] = el.value; save(); renderPrev(); });
     });
   }
+  var TAXL = { USD: "Sales tax", CAD: "GST/HST", AUD: "GST", NZD: "GST", GBP: "VAT", EUR: "VAT" };
+  function taxName() { return TAXL[S.cur] || "Sales tax"; }
   function bindCur() {
     var el = $("f-cur"); if (!el) return;
     el.value = CUR[S.cur] ? S.cur : "USD";
@@ -89,6 +91,7 @@
     var sym = CUR[S.cur] || "$";
     if ($("h-rate")) $("h-rate").textContent = "Rate " + sym;
     if ($("l-paid")) $("l-paid").textContent = "Already paid " + sym;
+    var tl = document.querySelector('label[for="f-tax"]'); if (tl) tl.textContent = taxName() + " %";
   }
   function renderPrev() {
     var t = totals(), isE = S.type === "estimate";
@@ -102,7 +105,7 @@
       '<div class="parties"><div><div class="lab">' + (isE ? "Prepared for" : "Bill to") + '</div><div class="who"><b>' + esc(S.client) + "</b>\n" + esc(S.clientInfo) + "</div></div></div>" +
       "<table><thead><tr><th>Description</th><th class=r>Qty</th><th class=r>Rate</th><th class=r>Amount</th></tr></thead><tbody>" + rows + "</tbody></table>" +
       '<div class="tots"><div><span>Subtotal</span><span>' + money.format(t.sub) + "</span></div>" +
-      (num(S.tax) ? "<div><span>Sales tax (" + esc(S.tax) + "%)</span><span>" + money.format(t.tax) + "</span></div>" : "") +
+      (num(S.tax) ? "<div><span>" + esc(taxName()) + " (" + esc(S.tax) + "%)</span><span>" + money.format(t.tax) + "</span></div>" : "") +
       '<div class="grand"><span>Total</span><span>' + money.format(t.total) + "</span></div>" +
       (isE && num(S.deposit) ? '<div class="due"><span>Deposit to start (' + esc(S.deposit) + "%)</span><span>" + money.format(t.dep) + "</span></div>" : "") +
       (!isE && t.paid ? "<div><span>Paid</span><span>&minus;" + money.format(t.paid) + "</span></div>" : "") +
