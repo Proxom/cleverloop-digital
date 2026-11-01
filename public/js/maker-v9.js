@@ -100,6 +100,44 @@
     dl.innerHTML = ""; Object.keys(LIB).forEach(function (k) { var o = document.createElement("option"); o.value = LIB[k].d; dl.appendChild(o); });
   }
   libList(); libManage();
+  /* My customers: name + job info are remembered on this device and suggested in the Customer name field. */
+  var CKEY = "cl-maker-clients-v1", CL = {};
+  try { CL = JSON.parse(localStorage.getItem(CKEY) || "{}") || {}; } catch (e) { CL = {}; }
+  function clStore() { try { localStorage.setItem(CKEY, JSON.stringify(CL)); } catch (e) {} }
+  function clList() {
+    var dl = $("client-list"); if (!dl) { dl = document.createElement("datalist"); dl.id = "client-list"; document.body.appendChild(dl); }
+    dl.innerHTML = ""; Object.keys(CL).forEach(function (k) { var o = document.createElement("option"); o.value = CL[k].n; dl.appendChild(o); });
+  }
+  function clManage() {
+    var box = $("cl-manage"); if (!box) return;
+    var ks = Object.keys(CL); $("cl-count").textContent = ks.length;
+    box.hidden = !ks.length; var ul = $("cl-items"); ul.innerHTML = "";
+    ks.forEach(function (k) {
+      var li = document.createElement("li"), b = document.createElement("button");
+      li.textContent = CL[k].n + " ";
+      b.type = "button"; b.className = "del"; b.style.cssText = "border:0;background:none;cursor:pointer;font-size:1.1rem"; b.setAttribute("aria-label", "Delete saved customer " + CL[k].n); b.innerHTML = "&times;";
+      b.onclick = function () { delete CL[k]; clStore(); clList(); clManage(); };
+      li.appendChild(b); ul.appendChild(li);
+    });
+  }
+  function clSave() {
+    var n = String(S.client || "").trim();
+    if (!n || n === "Customer Name" || n.length > 80) return;
+    CL[n.toLowerCase()] = { n: n, i: String(S.clientInfo || "").slice(0, 300) };
+    var ks = Object.keys(CL); if (ks.length > 200) delete CL[ks[0]];
+    clStore(); clList(); clManage();
+  }
+  clList(); clManage();
+  function bindClient() {
+    var el = $("f-client"); if (!el) return;
+    el.setAttribute("list", "client-list");
+    el.addEventListener("change", function () {
+      var m = CL[el.value.trim().toLowerCase()];
+      if (m) { S.client = m.n; S.clientInfo = m.i; $("f-clientInfo").value = m.i; save(); renderPrev(); }
+      clSave();
+    });
+    var ci = $("f-clientInfo"); if (ci) ci.addEventListener("change", clSave);
+  }
   function renderItems() {
     var host = $("items"); host.innerHTML = "";
     S.items.forEach(function (it, i) {
@@ -152,7 +190,7 @@
     try { var b = JSON.stringify({ p: "maker", e: e }); if (!(navigator.sendBeacon && navigator.sendBeacon("/api/t.php", b))) fetch("/api/t.php", { method: "POST", body: b, keepalive: true }); } catch (x) {}
   }
 
-  bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); track("view");
+  bindFields(); bindCur(); bindClient(); renderItems(); renderType(); renderPrev(); track("view");
   document.querySelectorAll("[data-settype]").forEach(function (b) { b.onclick = function () { S.type = b.getAttribute("data-settype"); save(); renderType(); renderPrev(); }; });
   $("add").onclick = function () { S.items.push({ d: "", q: 1, u: "ea", r: 0 }); save(); renderItems(); renderPrev(); var l = $("items").lastElementChild; if (l) l.querySelector("input").focus(); };
   $("dep-paid").onclick = function () { var t = totals(); S.paid = (Math.round(t.total * num(S.deposit)) / 100).toFixed(2); $("f-paid").value = S.paid; save(); renderPrev(); };
