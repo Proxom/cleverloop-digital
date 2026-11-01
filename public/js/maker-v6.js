@@ -124,6 +124,14 @@
   $("dep-paid").onclick = function () { var t = totals(); S.paid = (Math.round(t.total * num(S.deposit)) / 100).toFixed(2); $("f-paid").value = S.paid; save(); renderPrev(); };
   $("pdf").onclick = function () { track("download"); window.print(); };
   $("reset").onclick = function () { var tr = S.trade, cu = S.cur; S = fresh(tr); S.cur = cu || "USD"; save(); bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); };
+  $("next").onclick = function () {
+    var n = String(S.number == null ? "" : S.number), m = n.match(/^(.*?)(\d+)$/);
+    var keep = { biz: S.biz, bizInfo: S.bizInfo, logo: S.logo, cur: S.cur, tax: S.tax, deposit: S.deposit, notes: S.notes, trade: S.trade };
+    var nx = m ? m[1] + String(parseInt(m[2], 10) + 1).padStart(m[2].length, "0") : n;
+    S = fresh(S.trade); Object.keys(keep).forEach(function (k) { S[k] = keep[k]; }); S.number = nx; S.client = ""; S.clientInfo = "";
+    S.items = [{ d: "", q: 1, u: "ea", r: 0 }];
+    save(); bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); $("f-client").focus();
+  };
   $("logo").addEventListener("change", function () {
     var f = this.files && this.files[0]; if (!f) return;
     if (f.size > 600000) { $("logo-msg").textContent = "Please use an image under 600 KB."; return; }
