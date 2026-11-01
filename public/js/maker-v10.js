@@ -128,6 +128,33 @@
     clStore(); clList(); clManage();
   }
   clList(); clManage();
+  /* My documents: finished estimates/invoices saved on this device, reopened or deleted from a list. */
+  var DKEY = "cl-maker-docs-v1", DOCS = [];
+  try { DOCS = JSON.parse(localStorage.getItem(DKEY) || "[]") || []; } catch (e) { DOCS = []; }
+  function dStore() { try { localStorage.setItem(DKEY, JSON.stringify(DOCS)); } catch (e) {} }
+  function dManage() {
+    var box = $("doc-manage"); if (!box) return;
+    $("doc-count").textContent = DOCS.length; box.hidden = !DOCS.length;
+    var ul = $("doc-items"); ul.innerHTML = "";
+    DOCS.forEach(function (d, i) {
+      var li = document.createElement("li"), o = document.createElement("button"), b = document.createElement("button");
+      li.textContent = (d.s.type === "invoice" ? "Invoice " : "Estimate ") + (d.s.number || "") + " · " + (d.s.client || "no customer") + " · " + d.t + " ";
+      o.type = "button"; o.className = "open"; o.textContent = "Open"; o.style.cssText = "margin-right:8px;cursor:pointer";
+      o.onclick = function () { S = JSON.parse(JSON.stringify(d.s)); save(); bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); window.scrollTo(0, 0); };
+      b.type = "button"; b.className = "del"; b.style.cssText = "border:0;background:none;cursor:pointer;font-size:1.1rem"; b.setAttribute("aria-label", "Delete saved document " + (d.s.number || "")); b.innerHTML = "&times;";
+      b.onclick = function () { DOCS.splice(i, 1); dStore(); dManage(); };
+      li.appendChild(o); li.appendChild(b); ul.appendChild(li);
+    });
+  }
+  function dSave() {
+    var t = totals(), snap = JSON.parse(JSON.stringify(S)); snap.logo = "";
+    var label = money.format(t.total), key = snap.type + "|" + snap.number;
+    DOCS = DOCS.filter(function (d) { return d.s.type + "|" + d.s.number !== key; });
+    DOCS.unshift({ s: snap, t: label, at: new Date().toISOString().slice(0, 10) });
+    if (DOCS.length > 100) DOCS.length = 100;
+    dStore(); dManage();
+  }
+  dManage();
   function bindClient() {
     var el = $("f-client"); if (!el) return;
     el.setAttribute("list", "client-list");
@@ -194,7 +221,8 @@
   document.querySelectorAll("[data-settype]").forEach(function (b) { b.onclick = function () { S.type = b.getAttribute("data-settype"); save(); renderType(); renderPrev(); }; });
   $("add").onclick = function () { S.items.push({ d: "", q: 1, u: "ea", r: 0 }); save(); renderItems(); renderPrev(); var l = $("items").lastElementChild; if (l) l.querySelector("input").focus(); };
   $("dep-paid").onclick = function () { var t = totals(); S.paid = (Math.round(t.total * num(S.deposit)) / 100).toFixed(2); $("f-paid").value = S.paid; save(); renderPrev(); };
-  $("pdf").onclick = function () { track("download"); window.print(); };
+  $("pdf").onclick = function () { track("download"); dSave(); window.print(); };
+  if ($("savedoc")) $("savedoc").onclick = function () { dSave(); var m = $("savedoc-msg"); if (m) m.textContent = "Saved on this device."; };
   $("reset").onclick = function () { var tr = S.trade, cu = S.cur; S = fresh(tr); S.cur = cu || "USD"; save(); bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); };
   $("next").onclick = function () {
     var n = String(S.number == null ? "" : S.number), m = n.match(/^(.*?)(\d+)$/);
