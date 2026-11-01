@@ -121,6 +121,7 @@
   bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); track("view");
   document.querySelectorAll("[data-settype]").forEach(function (b) { b.onclick = function () { S.type = b.getAttribute("data-settype"); save(); renderType(); renderPrev(); }; });
   $("add").onclick = function () { S.items.push({ d: "", q: 1, u: "ea", r: 0 }); save(); renderItems(); renderPrev(); var l = $("items").lastElementChild; if (l) l.querySelector("input").focus(); };
+  $("dep-paid").onclick = function () { var t = totals(); S.paid = (Math.round(t.total * num(S.deposit)) / 100).toFixed(2); $("f-paid").value = S.paid; save(); renderPrev(); };
   $("pdf").onclick = function () { track("download"); window.print(); };
   $("reset").onclick = function () { var tr = S.trade, cu = S.cur; S = fresh(tr); S.cur = cu || "USD"; save(); bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); };
   $("logo").addEventListener("change", function () {

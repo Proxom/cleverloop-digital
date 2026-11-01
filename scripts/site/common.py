@@ -99,6 +99,7 @@ GUIDES = [  # slug, title, desc, example
  ("how-to-price-lawn-mowing","How to Price Lawn Mowing","Per visit, per hour and per acre rates, lawn size table, first-cut surcharge, weekly plans and a worked quote.","$305 first month, 1/4 acre weekly"),
  ("how-to-price-pool-cleaning","How to Price Pool Cleaning","Weekly and monthly service, first cleans, green pool recovery, opening and closing, hourly rates and a worked quote.","$765 first month, weekly service"),
  ("how-to-price-carpet-cleaning","How to Price Carpet Cleaning","Per room and per square foot, minimum charges, stairs, stain and pet odor treatment, steam vs dry methods and a worked quote.","$269 four rooms + stairs"),
+ ("how-to-price-appliance-repair","How to Price Appliance Repair","Service call and diagnostic fee, hourly labor, typical repair cost by appliance, parts markup and a worked quote.","$213 dishwasher pump repair"),
  ("how-to-price-moving-services","How to Price Moving Services","Hourly rate per mover, crew size, 3 to 5 hour minimums, long-distance per pound, packing, stairs and a worked quote.","$710 two-bedroom local move"),
  ("how-to-price-exterior-house-painting","How to Price Exterior House Painting","Per square foot by siding type, trim per linear foot, prep, stories, hourly and daily labor and a worked quote.","$5,330 two-story, 1,600 sq ft walls"),
  ("how-to-price-upholstery-cleaning","How to Price Upholstery Cleaning","Per-piece prices for sofas, loveseats and chairs, in-home minimums, cushions, stain and protector extras and a worked quote.","$370 living room visit"),

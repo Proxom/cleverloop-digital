@@ -27,7 +27,7 @@ TRADES={
 CALC={"tile":'<p><b>Not sure what to charge?</b> Read <a href="../guides/how-to-price-tile-installation.html">how to price tile installation</a> for published labor, backsplash, removal and leveling rates, waterproofing and a worked quote.</p>\n',
  "window-cleaning":'<p><b>Not sure what to charge?</b> Read <a href="../guides/how-to-price-window-cleaning.html">how to price window cleaning</a> for published per-window and per-pane rates, height surcharges, screens, minimum charges and a worked quote.</p>\n',
  "junk-removal":'<p><b>Not sure what to charge?</b> Read <a href="../guides/how-to-price-junk-removal.html">how to price junk removal</a> for published truckload, per-yard and single-item rates, minimum charges and a worked quote.</p>\n',
- "handyman":'<p><b>Not sure what to charge per hour?</b> Work out your rate with the <a href="../tools/hourly-rate-calculator.html">hourly rate calculator</a>, then read <a href="../guides/how-to-price-handyman-services.html">how to price handyman services</a> for published hourly rates, minimum visit fees and a worked quote.</p>\n',
+ "handyman":'<p><b>Not sure what to charge per hour?</b> Work out your rate with the <a href="../tools/hourly-rate-calculator.html">hourly rate calculator</a>, then read <a href="../guides/how-to-price-handyman-services.html">how to price handyman services</a> for published hourly rates, minimum visit fees and a worked quote. Fixing appliances too? See <a href="../guides/how-to-price-appliance-repair.html">how to price appliance repair</a>.</p>\n',
  "painting":'<p><b>Measure the room first:</b> the <a href="../tools/painting-estimate-calculator.html">painting estimate calculator</a> works out wall and ceiling area, gallons of paint and labor, then fills in this estimate for you. Not sure what rate to use? Read <a href="../guides/how-to-price-interior-painting.html">how to price interior painting</a> or <a href="../guides/how-to-price-exterior-house-painting.html">exterior house painting</a>.</p>\n',
  "pressure-washing":'<p><b>Measure each surface first:</b> the <a href="../tools/pressure-washing-estimate-calculator.html">pressure washing estimate calculator</a> works out siding, driveway and deck square footage, chemicals and your minimum charge, then fills in this estimate for you. Not sure what rate to use? Read <a href="../guides/how-to-price-pressure-washing.html">how to price pressure washing</a>.</p>\n',
  "flooring":'<p><b>Measure the rooms first:</b> the <a href="../tools/flooring-estimate-calculator.html">flooring estimate calculator</a> adds up room areas, applies your waste allowance, prices material, installation, removal and trim, then fills in this estimate for you. Not sure what rate to use? Read <a href="../guides/how-to-price-a-flooring-installation.html">how to price a flooring installation</a>.</p>\n',
@@ -55,7 +55,7 @@ APP=lambda: '''<div class="wide mk">
 <div class="items" id="items"></div><button type="button" class="addrow" id="add">+ Add line</button>
 <div class="g3" style="margin-top:6px"><div><label for="f-tax">Sales tax %</label><input id="f-tax" inputmode="decimal"></div>
 <div id="wrap-deposit"><label for="f-deposit">Deposit %</label><input id="f-deposit" inputmode="decimal"></div>
-<div id="wrap-paid" hidden><label for="f-paid"><span id="l-paid">Already paid $</span></label><input id="f-paid" inputmode="decimal"></div></div></div>
+<div id="wrap-paid" hidden><label for="f-paid"><span id="l-paid">Already paid $</span></label><input id="f-paid" inputmode="decimal"><button type="button" class="addrow" id="dep-paid" style="margin-top:6px">Use the deposit % as already paid</button></div></div></div>
 <div class="mk-sec"><h2>Notes &amp; terms</h2><textarea id="f-notes" rows="3" aria-label="Notes and terms"></textarea></div>
 <div class="mk-actions"><button type="button" class="btn btn-acc" id="pdf">Download PDF</button><button type="button" class="btn btn-plain" id="reset">Start over</button>
 <a class="btn btn-plain" href="#pro" data-demand-click="maker-pro" data-root="ROOT">Save &amp; reuse clients <span class="pro-tag">PRO</span></a></div>
@@ -82,7 +82,7 @@ def write(path,p,title,desc,canon,body,lds,trade="",typ=""):
 <link rel="canonical" href="https://cleverloopdigital.com/{canon}">
 {headlinks(p)}
 <link rel="stylesheet" href="{p}site-v2.css"><link rel="stylesheet" href="{p}app-v1.css">{head}
-<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v4.js" defer></script>
+<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v5.js" defer></script>
 </head><body id="top"{attrs}>
 {header(p,"maker")}
 {body}
