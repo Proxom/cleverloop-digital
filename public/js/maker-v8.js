@@ -81,13 +81,25 @@
     LIB[d.toLowerCase()] = { d: d, u: it.u || "ea", r: r };
     var ks = Object.keys(LIB); if (ks.length > 200) delete LIB[ks[0]];
     try { localStorage.setItem(LKEY, JSON.stringify(LIB)); } catch (e) {}
-    libList();
+    libList(); libManage();
+  }
+  function libManage() {
+    var box = $("lib-manage"); if (!box) return;
+    var ks = Object.keys(LIB); $("lib-count").textContent = ks.length;
+    box.hidden = !ks.length; var ul = $("lib-items"); ul.innerHTML = "";
+    ks.forEach(function (k) {
+      var li = document.createElement("li"), b = document.createElement("button");
+      li.textContent = LIB[k].d + " \u2014 " + LIB[k].r + " / " + LIB[k].u + " ";
+      b.type = "button"; b.className = "del"; b.style.cssText = "border:0;background:none;cursor:pointer;font-size:1.1rem"; b.setAttribute("aria-label", "Delete saved price " + LIB[k].d); b.innerHTML = "&times;";
+      b.onclick = function () { delete LIB[k]; try { localStorage.setItem(LKEY, JSON.stringify(LIB)); } catch (e) {} libList(); libManage(); };
+      li.appendChild(b); ul.appendChild(li);
+    });
   }
   function libList() {
     var dl = $("price-list"); if (!dl) { dl = document.createElement("datalist"); dl.id = "price-list"; document.body.appendChild(dl); }
     dl.innerHTML = ""; Object.keys(LIB).forEach(function (k) { var o = document.createElement("option"); o.value = LIB[k].d; dl.appendChild(o); });
   }
-  libList();
+  libList(); libManage();
   function renderItems() {
     var host = $("items"); host.innerHTML = "";
     S.items.forEach(function (it, i) {
