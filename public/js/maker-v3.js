@@ -26,7 +26,7 @@
   function fresh(trade) {
     var p = PRESETS[trade] || PRESETS["handyman"];
     return {
-      type: "estimate", trade: trade || "handyman", number: "1001", date: plus(0), due: plus(30),
+      type: "estimate", cur: "USD", trade: trade || "handyman", number: "1001", date: plus(0), due: plus(30),
       biz: "Your Business Name", bizInfo: "123 Main St, Springfield\n(555) 010-0000 · you@yourbusiness.com\nLicense # 000000", logo: "",
       client: "Customer Name", clientInfo: "Job address\nPhone / email",
       items: p.items.map(function (r) { return { d: r[0], q: r[1], u: r[2], r: r[3] }; }),
@@ -38,12 +38,14 @@
   var hash = (location.hash || "").slice(1);
   try { S = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { S = null; }
   var want = PRESETS[hash] ? hash : document.body.getAttribute("data-trade");
+  if (S && !S.cur) S.cur = "USD";
   if (!S) S = fresh(want || "handyman");
   else if (want && S.trade !== want) { S.trade = want; S.items = PRESETS[want].items.map(function (r) { return { d: r[0], q: r[1], u: r[2], r: r[3] }; }); }
   if (document.body.getAttribute("data-type") && !hash) S.type = document.body.getAttribute("data-type");
 
   var $ = function (id) { return document.getElementById(id); };
-  var money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+  var CUR = { USD: "$", CAD: "$", AUD: "$", GBP: "\u00a3", EUR: "\u20ac", NZD: "$" };
+  var money = { format: function (v) { var c = CUR[S.cur] ? S.cur : "USD"; return new Intl.NumberFormat("en-US", { style: "currency", currency: c }).format(v); } };
   var num = function (v) { var n = parseFloat(v); return isFinite(n) ? n : 0; };
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -63,11 +65,16 @@
       el.addEventListener("input", function () { S[k] = el.value; save(); renderPrev(); });
     });
   }
+  function bindCur() {
+    var el = $("f-cur"); if (!el) return;
+    el.value = CUR[S.cur] ? S.cur : "USD";
+    el.addEventListener("change", function () { S.cur = el.value; save(); renderType(); renderPrev(); });
+  }
   function renderItems() {
     var host = $("items"); host.innerHTML = "";
     S.items.forEach(function (it, i) {
       var row = document.createElement("div"); row.className = "item";
-      row.innerHTML = '<input aria-label="Description" value="' + esc(it.d) + '"><input aria-label="Quantity" inputmode="decimal" value="' + esc(it.q) + '"><input aria-label="Unit" value="' + esc(it.u) + '"><input aria-label="Rate in dollars" inputmode="decimal" value="' + esc(it.r) + '"><button type="button" class="del" aria-label="Remove line">&times;</button>';
+      row.innerHTML = '<input aria-label="Description" value="' + esc(it.d) + '"><input aria-label="Quantity" inputmode="decimal" value="' + esc(it.q) + '"><input aria-label="Unit" value="' + esc(it.u) + '"><input aria-label="Rate" inputmode="decimal" value="' + esc(it.r) + '"><button type="button" class="del" aria-label="Remove line">&times;</button>';
       var ins = row.querySelectorAll("input"), keys = ["d", "q", "u", "r"];
       ins.forEach(function (inp, j) { inp.addEventListener("input", function () { it[keys[j]] = inp.value; save(); renderPrev(); }); });
       row.querySelector(".del").onclick = function () { S.items.splice(i, 1); save(); renderItems(); renderPrev(); };
@@ -79,6 +86,9 @@
     $("lbl-due").textContent = S.type === "estimate" ? "Valid until" : "Due date";
     $("wrap-deposit").hidden = S.type !== "estimate";
     $("wrap-paid").hidden = S.type !== "invoice";
+    var sym = CUR[S.cur] || "$";
+    if ($("h-rate")) $("h-rate").textContent = "Rate " + sym;
+    if ($("l-paid")) $("l-paid").textContent = "Already paid " + sym;
   }
   function renderPrev() {
     var t = totals(), isE = S.type === "estimate";
@@ -105,11 +115,11 @@
     try { var b = JSON.stringify({ p: "maker", e: e }); if (!(navigator.sendBeacon && navigator.sendBeacon("/api/t.php", b))) fetch("/api/t.php", { method: "POST", body: b, keepalive: true }); } catch (x) {}
   }
 
-  bindFields(); renderItems(); renderType(); renderPrev(); track("view");
+  bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); track("view");
   document.querySelectorAll("[data-settype]").forEach(function (b) { b.onclick = function () { S.type = b.getAttribute("data-settype"); save(); renderType(); renderPrev(); }; });
   $("add").onclick = function () { S.items.push({ d: "", q: 1, u: "ea", r: 0 }); save(); renderItems(); renderPrev(); var l = $("items").lastElementChild; if (l) l.querySelector("input").focus(); };
   $("pdf").onclick = function () { track("download"); window.print(); };
-  $("reset").onclick = function () { var tr = S.trade; S = fresh(tr); save(); bindFields(); renderItems(); renderType(); renderPrev(); };
+  $("reset").onclick = function () { var tr = S.trade, cu = S.cur; S = fresh(tr); S.cur = cu || "USD"; save(); bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); };
   $("logo").addEventListener("change", function () {
     var f = this.files && this.files[0]; if (!f) return;
     if (f.size > 600000) { $("logo-msg").textContent = "Please use an image under 600 KB."; return; }

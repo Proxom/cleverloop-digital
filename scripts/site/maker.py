@@ -40,7 +40,8 @@ CALC={"tile":'<p><b>Not sure what to charge?</b> Read <a href="../guides/how-to-
 APP=lambda: '''<div class="wide mk">
 <div class="mk-form">
 <div class="mk-sec"><h2>Document <span class="seg" role="group" aria-label="Document type"><button type="button" data-settype="estimate">Estimate</button><button type="button" data-settype="invoice">Invoice</button></span></h2>
-<div class="g3"><div><label for="f-number">Number</label><input id="f-number"></div><div><label for="f-date">Date</label><input id="f-date" type="date"></div><div><label for="f-due" id="lbl-due">Valid until</label><input id="f-due" type="date"></div></div></div>
+<div class="g3"><div><label for="f-number">Number</label><input id="f-number"></div><div><label for="f-date">Date</label><input id="f-date" type="date"></div><div><label for="f-due" id="lbl-due">Valid until</label><input id="f-due" type="date"></div></div>
+<label for="f-cur">Currency</label><select id="f-cur"><option value="USD">US dollar (USD)</option><option value="CAD">Canadian dollar (CAD)</option><option value="AUD">Australian dollar (AUD)</option><option value="GBP">British pound (GBP)</option><option value="EUR">Euro (EUR)</option><option value="NZD">New Zealand dollar (NZD)</option></select></div>
 <div class="mk-sec"><h2>Your business</h2>
 <label for="f-biz">Business name</label><input id="f-biz" autocomplete="organization">
 <label for="f-bizInfo">Address, phone, email, license #</label><textarea id="f-bizInfo" rows="3"></textarea>
@@ -50,11 +51,11 @@ APP=lambda: '''<div class="wide mk">
 <label for="f-clientInfo">Job address, phone, email</label><textarea id="f-clientInfo" rows="2"></textarea></div>
 <div class="mk-sec"><h2>Line items</h2>
 <div class="prev-note" style="margin:0">Start from a trade (example prices, replace with yours):</div><div class="preset-row" id="presets"></div>
-<div class="items-h" aria-hidden="true"><span>Description</span><span>Qty</span><span>Unit</span><span>Rate $</span><span></span></div>
+<div class="items-h" aria-hidden="true"><span>Description</span><span>Qty</span><span>Unit</span><span id="h-rate">Rate $</span><span></span></div>
 <div class="items" id="items"></div><button type="button" class="addrow" id="add">+ Add line</button>
 <div class="g3" style="margin-top:6px"><div><label for="f-tax">Sales tax %</label><input id="f-tax" inputmode="decimal"></div>
 <div id="wrap-deposit"><label for="f-deposit">Deposit %</label><input id="f-deposit" inputmode="decimal"></div>
-<div id="wrap-paid" hidden><label for="f-paid">Already paid $</label><input id="f-paid" inputmode="decimal"></div></div></div>
+<div id="wrap-paid" hidden><label for="f-paid"><span id="l-paid">Already paid $</span></label><input id="f-paid" inputmode="decimal"></div></div></div>
 <div class="mk-sec"><h2>Notes &amp; terms</h2><textarea id="f-notes" rows="3" aria-label="Notes and terms"></textarea></div>
 <div class="mk-actions"><button type="button" class="btn btn-acc" id="pdf">Download PDF</button><button type="button" class="btn btn-plain" id="reset">Start over</button>
 <a class="btn btn-plain" href="#pro" data-demand-click="maker-pro" data-root="ROOT">Save &amp; reuse clients <span class="pro-tag">PRO</span></a></div>
@@ -81,7 +82,7 @@ def write(path,p,title,desc,canon,body,lds,trade="",typ=""):
 <link rel="canonical" href="https://cleverloopdigital.com/{canon}">
 {headlinks(p)}
 <link rel="stylesheet" href="{p}site-v2.css"><link rel="stylesheet" href="{p}app-v1.css">{head}
-<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v2.js" defer></script>
+<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v3.js" defer></script>
 </head><body id="top"{attrs}>
 {header(p,"maker")}
 {body}

@@ -7,7 +7,7 @@ Bizim karşılığımız: **Estimate & Invoice Maker** (/maker/) — tarayıcıd
 Sıradaki büyüme işleri (yalnızca ürün + SEO):
 1. (DURDURULDU, karar v3) Daha fazla meslek sayfası — 51. çalıştırmada 6 eklendi (carpentry, concrete, fencing, tile, junk removal, window cleaning; toplam 18). Sırada: cabinet, moving, pest control, pool, gutter, appliance repair, masonry, siding.
 2. "Invoice" odaklı meslek sayfaları (/maker/<trade>-invoice.html, data-type="invoice").
-3. Ürün: tahmini-faturaya çevir, birden çok taslak, para birimi seçimi (CAD/AUD/GBP), kalem kütüphanesi.
+3. Ürün: tahmini-faturaya çevir, birden çok taslak, kalem kütüphanesi. (Para birimi seçimi YAPILDI, 85. çalıştırma.)
 4. Karşılaştırma/rehber içerikleri: "how to write an estimate", "what to put on an invoice" ve "estimate vs invoice" YAPILDI (74. çalıştırma).
 
 
