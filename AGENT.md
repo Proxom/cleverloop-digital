@@ -120,3 +120,7 @@ Do NOT use Gmail tools or Hostinger Mail tools of Erkan's other businesses. asse
 
 ## DELEGATION 29 Oct 19:20 (Erkan): DO NOT WAIT FOR HIM
 Erkan: "Whatever permission they ask for, Claude grants it; the agents must not wait for me." Claude (the manager) reviews and decides pending approvals every hour. Rules for you: (1) free, reversible, legal items (publishing pages, SEO, listings drafts, content, dashboard changes, using already-connected tools) -> just do them, record in the report what you did; no approval needed. (2) Still need Erkan personally because the rules forbid agents/Claude: spending money, buying domains/hosting, creating accounts, entering card/bank/password data, accepting terms, sending e-mails/messages (he only pastes ready texts), changing legal identity/contact details. For those, write the approval AND immediately continue with the next unblocked work; never idle.
+
+## SEARCH ENGINE VERIFICATION (genel müdür, 1 Nov 2026 18:01) — never remove
+- Google Search Console: DNS TXT record google-site-verification (do not touch the DNS zone).
+- Bing Webmaster Tools: `<meta name="msvalidate.01" content="178D34245C80053E3F3B8E73460AEF15">` in the <head> of the home page public/index.html. If you edit, rebuild or redesign the home page, keep this tag exactly.
