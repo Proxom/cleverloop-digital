@@ -1,0 +1,45 @@
+name: IndexNow ping
+on:
+  push:
+    branches: [main]
+    paths: ['public/**']
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Wait for the Hostinger auto-deploy
+        run: sleep 150
+      - name: Notify IndexNow (Bing, Yandex, Seznam, Naver)
+        env:
+          KEY: 5a54450156ab5d96a1f268079716e260
+          HOST: cleverloopdigital.com
+          BASE: https://cleverloopdigital.com
+          STYLE: file
+          EVENT: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, urllib.request
+          base, style = os.environ['BASE'], os.environ['STYLE']
+          if os.environ['EVENT'] == 'workflow_dispatch':
+              files = subprocess.run(['git','ls-files','public'],capture_output=True,text=True).stdout.split()
+          else:
+              files = subprocess.run(['git','diff','--name-only','--diff-filter=AM','HEAD~1','HEAD','--','public'],capture_output=True,text=True).stdout.split()
+          urls = []
+          for f in files:
+              if not f.endswith('.html') or f.endswith('404.html') or '/unlock-' in f or '/d/' in f: continue
+              p = f[len('public/'):]
+              if p == 'index.html': p = ''
+              elif style == 'dir' and p.endswith('/index.html'): p = p[:-len('index.html')]
+              urls.append(base + '/' + p)
+          if 'public/sitemap.xml' in files and base + '/' not in urls: urls.append(base + '/')
+          urls = urls[:10000]
+          print(len(urls), 'URLs'); print('\n'.join(urls[:50]))
+          if not urls: raise SystemExit(0)
+          body = json.dumps({'host': os.environ['HOST'], 'key': os.environ['KEY'], 'keyLocation': base + '/' + os.environ['KEY'] + '.txt', 'urlList': urls}).encode()
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=body, headers={'Content-Type': 'application/json; charset=utf-8'})
+          with urllib.request.urlopen(req, timeout=60) as r: print('IndexNow HTTP', r.status)
+          PY

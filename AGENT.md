@@ -124,3 +124,6 @@ Erkan: "Whatever permission they ask for, Claude grants it; the agents must not 
 ## SEARCH ENGINE VERIFICATION (genel müdür, 1 Nov 2026 18:01) — never remove
 - Google Search Console: DNS TXT record google-site-verification (do not touch the DNS zone).
 - Bing Webmaster Tools: `<meta name="msvalidate.01" content="178D34245C80053E3F3B8E73460AEF15">` in the <head> of the home page public/index.html. If you edit, rebuild or redesign the home page, keep this tag exactly.
+
+## INDEXNOW (genel müdür, 1 Nov 2026 18:05) — automatic, keep it
+- Key file public/5a54450156ab5d96a1f268079716e260.txt (do not delete or rename it). The GitHub Action .github/workflows/indexnow.yml runs on every push to main that changes public/: it waits for the Hostinger auto-deploy and then sends the changed/added HTML URLs to IndexNow (Bing, Yandex and other engines; Bing feeds DuckDuckGo, Yahoo and ChatGPT search). You do not need to ping anything yourself; just keep pages, sitemap.xml and this workflow working. If you check Actions runs, a non-200 IndexNow answer goes into your run report.
