@@ -22,7 +22,7 @@ def footer(p):
 <div><h4>Free tools</h4><a href="{p}maker/">Estimate &amp; invoice maker</a><a href="{p}pro.html">Maker Pro</a><a href="{p}tools/job-price-calculator.html">Job price</a><a href="{p}tools/hourly-rate-calculator.html">Hourly rate</a><a href="{p}tools/markup-margin-calculator.html">Markup vs margin</a><a href="{p}tools/break-even-calculator.html">Break-even</a><a href="{p}tools/index.html">All calculators</a></div>
 <div><h4>Guides</h4><a href="{p}guides/how-to-price-a-contractor-job.html">Price a job</a><a href="{p}guides/markup-vs-margin-for-contractors.html">Markup vs margin</a><a href="{p}guides/contractor-overhead-rate.html">Overhead rate</a><a href="{p}guides/how-to-price-a-change-order.html">Change orders</a><a href="{p}guides/index.html">All guides</a></div>
 <div><h4>Company</h4><a href="{p}templates/contractor-estimate-template.html">Free estimate template</a><a href="{p}templates/contractor-invoice-template.html">Free invoice template</a><a href="{p}about.html">About</a><a href="{p}ventures/sheets.html">Quote &amp; Margin Sheet</a><a href="mailto:hello@cleverloopdigital.com">hello@cleverloopdigital.com</a><a href="{p}terms.html">Terms</a><a href="{p}privacy.html">Privacy</a></div>
-</div><div class="wide legal"><span>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital, United Kingdom.</span><span>No cookies, no trackers. Estimates only, not financial, tax or legal advice.</span></div></footer>'''
+</div><div class="wide legal"><span>&copy; 2026 Erkan Bedir, trading as Clever Loop Digital, United Kingdom.</span><span>No cookies, no third-party trackers. Estimates only, not financial, tax or legal advice.</span></div></footer>'''
 
 def headlinks(p):
     return f'<link rel="preload" href="{p}fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="icon" href="{p}favicon.svg" type="image/svg+xml"><meta name="theme-color" content="#0d2240">'
@@ -127,5 +127,7 @@ def tool_tiles(p, grouped=True):
             if grp=="Get paid" and grouped: out.append(tile(f"{p}maker/","Invoice &amp; Estimate Maker","Make an invoice or estimate and save it as a PDF. Free, no sign-up.",'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg>',"New"))
         out.append(tile(f"{p}tools/{s}.html",n,d,ICONS[s]))
     out.append('</div>'); return "\n".join(out)
-def guide_tiles(p):
-    return '<div class="tiles">'+"\n".join(tile(f"{p}guides/{s}.html",t,d,ICONS["guide"],ex) for s,t,d,ex in GUIDES)+'</div>'
+def guide_tiles(p, only=None):
+    g=[x for x in GUIDES if only is None or x[0] in only]
+    if only: g.sort(key=lambda x: list(only).index(x[0]))
+    return '<div class="tiles">'+"\n".join(tile(f"{p}guides/{s}.html",t,d,ICONS["guide"],ex) for s,t,d,ex in g)+'</div>'

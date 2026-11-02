@@ -448,3 +448,16 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Stripe: yalnızca Proxom Engineering Ltd görünüyor → hiçbir Stripe nesnesi oluşturulmadı. a-005 bekliyor (yeni istek eklenmedi).
 - Beceriler: website-quality-checker (ölçüt listesi olarak işe yaradı), Parallel web_search (rakip fiyatları) / web_fetch (trafik raporu), Playwright, yerel jeneratörler. Gelir £0.
 - Sıradaki: Pro özelliklerini maker'da kodla (işletme profili + logo kaydı, ödenmemiş fatura takibi, yedek/geri yükleme), aktivasyon akışının tasarımı; web-review ile ana sayfa denetimi.
+
+## 97. çalıştırma (2 Kasım, haftalık denetimin kalanı: ana sayfa web-review + düzeltmeler)
+- Panel: a-005 "onaylandı" ama Stripe bağlantısında hâlâ YALNIZCA Proxom Engineering Ltd görünüyor → hiçbir Stripe nesnesi oluşturulmadı; Payhip linki de yok. Ödeme düğmesi hâlâ talep sayacı. Yeni istek eklenmedi.
+- Trafik raporu (pv.php?days=7, önbellekten gelmiş olabilir): 0 insan, 1 bot.
+- web-review (ana sayfa) bulguları ve düzeltmeler (hepsi `scripts/site/pages.py` / `common.py` üzerinden, sayfalar yeniden üretildi):
+  1. Ana sayfada satılan ürün yoktu ("Coming soon · $9" şablon kutusu) → yerine **Maker Pro bölümü** (Free vs Pro tablosu, $9/ay, iptal/14 gün iade satırı, "See what Pro adds" → pro.html), "Nasıl çalışır"ın hemen altında.
+  2. Ana sayfada 38 rehber kartı alt alta (sayfa çiftliği görüntüsü, mobilde ~21.000 px) → 8 seçili rehber + "Browse all 38 pricing guides" düğmesi. Mobil yükseklik ~13.800 px, masaüstü 9.300 → 6.900 px.
+  3. Yanlış sayılar: "12 trade templates / 12 calculators" → kodla hesaplanıyor (18 / 21). Araç ve rehber merkezindeki "13 calculators" → 21.
+  4. Gizlilik tutarlılığı: sayaç kurulduğu için "0 cookies or trackers" ve altbilgideki "No cookies, no trackers" → "0 cookies" / "No cookies, no third-party trackers" (92 sayfa); SSS cevabı anonim sayfa sayımını dürüstçe anlatıyor.
+  5. Hata önlendi: pages.py ana sayfayı üretirken Bing `msvalidate.01` etiketini siliyordu → etiket jeneratöre eklendi (AGENT.md kuralı), yeniden üretimde korunuyor.
+- Playwright: 1280 ve 390 px'de yatay kaydırma yok, JS hatası yok; ekran görüntüleri kontrol edildi.
+- Beceriler: website-design:web-review ölçütleri (mesaj/hiyerarşi, AI-sayfa görüntüsü, tutarlılık, mobil) işe yaradı; Playwright; Parallel web_fetch. Gelir £0.
+- Sıradaki: Pro özelliklerini maker'da kodla (işletme profili, ödenmemiş fatura takibi, yedek/geri yükleme); ödeme rayı gelince "Get Pro" düğmesine link.

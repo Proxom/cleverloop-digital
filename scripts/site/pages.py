@@ -2,9 +2,11 @@ import sys,os
 sys.path.insert(0,os.path.dirname(__file__))
 from common import *
 os.chdir(sys.argv[1])
+# Bing Webmaster verification (AGENT.md: never remove from the home page)
+BING='<meta name="msvalidate.01" content="178D34245C80053E3F3B8E73460AEF15">'
 def page(path,p,cur,title,desc,canon,body,extra_head=""):
     open(path,"w").write(f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{BING if path=="index.html" else ""}
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="https://cleverloopdigital.com/{canon}">
@@ -35,6 +37,8 @@ SHEET=lambda p:'''<div class="sheet" role="img" aria-label="Example of the Contr
 </table></div>'''
 
 # HOME
+N_TRADES=len([f for f in os.listdir("maker") if f.endswith(".html") and f!="index.html"])
+FEATURED_GUIDES=("how-to-price-a-contractor-job","markup-vs-margin-for-contractors","contractor-overhead-rate","how-to-write-a-contractor-estimate","how-to-price-kitchen-remodel","how-to-price-bathroom-remodel","how-to-price-a-roof-replacement","how-to-price-interior-painting")
 home=f'''<section class="hero"><div class="wide">
 <div>
 <p class="eyebrow">Free for contractors &middot; no sign-up</p>
@@ -55,7 +59,7 @@ home=f'''<section class="hero"><div class="wide">
 </div></div>
 </div></section>
 <section class="facts"><ul class="wide">
-<li><b>12</b>trade templates</li><li><b>12</b>free calculators</li><li><b>$0</b>no sign-up needed</li><li><b>0</b>cookies or trackers</li>
+<li><b>{N_TRADES}</b>trade templates</li><li><b>{len(TOOLS)}</b>free calculators</li><li><b>$0</b>no sign-up needed</li><li><b>0</b>cookies</li>
 </ul></section>
 <section class="sec"><div class="wide">
 <div class="sec-head center"><p class="eyebrow">How it works</p><h2>From job to estimate in three steps</h2><p>No templates to format, no account to create. Open the maker and type.</p></div>
@@ -64,6 +68,28 @@ home=f'''<section class="hero"><div class="wide">
 <li><span class="n">2</span><h3>Price it right</h3><p>Not sure what to charge? The free calculators price each job from your costs and the margin you want.</p></li>
 <li><span class="n">3</span><h3>Download and send</h3><p>Tax, total and deposit are calculated. Download the PDF and send it the way you always do.</p></li>
 </ol></div></section>
+<section class="sec"><div class="wide promo">
+<div><span class="pill">Maker Pro &middot; $9 a month</span>
+<h2>Free does the job. Pro makes it yours.</h2>
+<p>Everything you need to quote and get paid stays free. Pro is for trades who send estimates every week and want them to look like they came from a bigger company.</p>
+<ul><li>Only your name on the PDF, no &ldquo;Made with&rdquo; line</li><li>Your business profile and logo on every new document</li><li>Unpaid invoice tracker with a ready-to-send reminder</li><li>Backup and move your customers, prices and documents to a new device</li></ul>
+<p style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="btn btn-acc" href="pro.html">See what Pro adds {ARROW}</a><a href="maker/">Or keep using the free maker</a></p>
+<p style="font-size:.88rem;color:var(--mut);margin:6px 0 0">Cancel any time. 14-day full refund. Checkout opens soon.</p></div>
+<div class="sheet" role="img" aria-label="Free versus Pro: estimates, invoices, logo, tax, deposit and PDF are free; branding-free PDF, saved business profile, unpaid invoice tracker and device backup are Pro, at 9 dollars a month">
+<div class="bar-top"><i></i><i></i><i></i></div>
+<table>
+<tr class="h"><td>Free, forever</td><td></td></tr>
+<tr><td>Unlimited estimates and invoices</td><td>Free</td></tr>
+<tr><td>Logo, sales tax, deposit, PDF</td><td>Free</td></tr>
+<tr><td>Saved customers, prices, documents</td><td>Free</td></tr>
+<tr class="h"><td>Pro adds</td><td></td></tr>
+<tr class="in"><td>No &ldquo;Made with&rdquo; line on PDFs</td><td>Pro</td></tr>
+<tr class="in"><td>Business profile on every document</td><td>Pro</td></tr>
+<tr class="in"><td>Unpaid invoice tracker + reminder</td><td>Pro</td></tr>
+<tr class="in"><td>Backup and restore</td><td>Pro</td></tr>
+<tr class="tot"><td>Maker Pro</td><td>$9/month</td></tr>
+</table></div>
+</div></section>
 <section class="sec alt"><div class="wide">
 <div class="sec-head"><p class="eyebrow">Calculators</p><h2>Every number behind a profitable quote</h2><p>From the first estimate to the final invoice. Each tool shows its formula and a worked example, so you can check the math yourself.</p></div>
 {tool_tiles("")}
@@ -80,15 +106,8 @@ home=f'''<section class="hero"><div class="wide">
 </div></div></section>
 <section class="sec alt"><div class="wide">
 <div class="sec-head"><p class="eyebrow">Guides</p><h2>Learn the method, not just the number</h2><p>Short guides with worked examples you can follow with a calculator in the next tab.</p></div>
-{guide_tiles("")}
-</div></section>
-<section class="sec"><div class="wide promo">
-<div><span class="pill">Coming soon &middot; planned price $9</span>
-<h2>The Contractor Quote &amp; Margin Sheet</h2>
-<p>All of this in one Google Sheets page. Type your materials, hours, rates, overhead and target margin into the yellow cells; get the quote, your profit, the deposit and your walk-away price.</p>
-<ul><li>Works in Excel and Google Sheets</li><li>Bonus tabs: hourly rate, change orders, job profit log, customer estimate and invoice</li><li>Shows what a 10% or 20% discount does to your margin</li><li>No macros, add-ons or subscription</li></ul>
-<p style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="btn btn-acc" href="ventures/sheets.html">See the sheet {ARROW}</a><a href="templates/contractor-estimate-template.html">Or get the free estimate</a> or <a href="templates/contractor-invoice-template.html">invoice template</a></p></div>
-{SHEET("")}
+{guide_tiles("", FEATURED_GUIDES)}
+<p style="margin:24px 0 0"><a class="btn btn-ghost" href="guides/index.html">Browse all {len(GUIDES)} pricing guides {ARROW}</a></p>
 </div></section>
 <section class="sec alt"><div class="w">
 <div class="sec-head center"><p class="eyebrow">FAQ</p><h2>Questions, answered</h2></div>
@@ -96,7 +115,7 @@ home=f'''<section class="hero"><div class="wide">
 <details open><summary>Are the calculators really free?</summary><p>Yes. There is no sign-up and no paywall. Every calculator runs in your browser; nothing you type is stored or sent anywhere.</p></details>
 <details><summary>What is the difference between markup and margin?</summary><p>Markup is profit as a share of cost; margin is profit as a share of price. A 25% markup on a $700 job gives $875, which is only a 20% margin. For a true 25% margin you divide by 0.75 and quote $933.33.</p></details>
 <details><summary>Who are these tools for?</summary><p>Small home-service businesses in the US: plumbers, electricians, painters, roofers, handymen, cleaners, landscapers and similar trades.</p></details>
-<details><summary>Do you use cookies or track me?</summary><p>No. The site sets no cookies and loads no trackers or third-party scripts. See the <a href="privacy.html">privacy notice</a>.</p></details>
+<details><summary>Do you use cookies or track me?</summary><p>No cookies and no third-party trackers or ads. We only count anonymous page views (the page, the day and the referring website), with no IP address and nothing that identifies you. See the <a href="privacy.html">privacy notice</a>.</p></details>
 <details><summary>Is this financial or tax advice?</summary><p>No. The tools give planning estimates. Check local taxes, licensing rules and your own books before you rely on a number.</p></details>
 </div></div></section>
 <section class="cta-band"><div class="wide"><div><h2>Your next estimate is two minutes away.</h2><p>Free, no sign-up. Your data stays in your browser.</p></div><a class="btn btn-acc" href="maker/">Make an estimate {ARROW}</a></div></section>
@@ -106,7 +125,7 @@ page("index.html","","", "Free Estimate &amp; Invoice Maker for Contractors | Cl
  "Free estimate and invoice maker for contractors and home-service pros: pick your trade, fill in the job, download a PDF. Plus free pricing calculators and guides. No sign-up.","",home)
 
 # TOOLS HUB
-tb=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../index.html">Home</a> / <span>Calculators</span></p><p class="eyebrow">13 free calculators</p><h1>Free Calculators for Home-Service Pros</h1><p class="lede">Simple pricing tools for contractors, cleaners, landscapers and other home-service businesses. No sign-up, no cookies; everything runs in your browser.</p></div></section>
+tb=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../index.html">Home</a> / <span>Calculators</span></p><p class="eyebrow">{len(TOOLS)} free calculators</p><h1>Free Calculators for Home-Service Pros</h1><p class="lede">Simple pricing tools for contractors, cleaners, landscapers and other home-service businesses. No sign-up, no cookies; everything runs in your browser.</p></div></section>
 <main class="wide page">
 {tool_tiles("../")}
 <h2>Not sure where to start?</h2>
@@ -120,7 +139,7 @@ gb=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../in
 <main class="wide page">
 {guide_tiles("../")}
 <h2>Run the numbers</h2>
-<p>Every guide links to a matching free tool. See all <a href="../tools/index.html">13 calculators</a>.</p>
+<p>Every guide links to a matching free tool. See all <a href="../tools/index.html">{len(TOOLS)} calculators</a>.</p>
 <p><small>Figures are illustrative estimates for planning only. Not accounting, tax or legal advice.</small></p>
 </main>'''
 page("guides/index.html","../","guides","Pricing Guides for Contractors | Clever Loop Digital","Step-by-step pricing guides for contractors and home-service pros: job pricing, markup vs margin, overhead, labor cost, break-even and change orders.","guides/index.html",gb)
