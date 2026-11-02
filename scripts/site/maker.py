@@ -61,7 +61,7 @@ APP=lambda: '''<div class="wide mk">
 <div id="wrap-paid" hidden><label for="f-paid"><span id="l-paid">Already paid $</span></label><input id="f-paid" inputmode="decimal"><button type="button" class="addrow" id="dep-paid" style="margin-top:6px">Use the deposit % as already paid</button></div></div></div>
 <div class="mk-sec"><h2>Notes &amp; terms</h2><textarea id="f-notes" rows="3" aria-label="Notes and terms"></textarea></div>
 <div class="mk-actions"><button type="button" class="btn btn-acc" id="pdf">Download PDF</button><button type="button" class="btn btn-plain" id="savedoc">Save to my documents</button><button type="button" class="btn btn-plain" id="next">Next document</button><button type="button" class="btn btn-plain" id="reset">Start over</button>
-<a class="btn btn-plain" href="#pro" data-demand-click="maker-pro" data-root="ROOT">Save &amp; reuse clients <span class="pro-tag">PRO</span></a></div>
+<a class="btn btn-plain" href="ROOTpro.html">Remove the &ldquo;Made with&rdquo; line <span class="pro-tag">PRO</span></a></div>
 <p class="prev-note" id="savedoc-msg" style="margin:0" aria-live="polite"></p>
 <p class="prev-note" style="margin:0">Your draft is saved only in this browser. Nothing you type is sent to us. "Download PDF" opens your browser's print window: choose "Save as PDF".</p>
 </div>
@@ -70,8 +70,8 @@ APP=lambda: '''<div class="wide mk">
 PRO='''<section class="sec alt no-print" id="pro"><div class="wide">
 <div class="sec-head center"><p class="eyebrow">Pricing</p><h2>Free forever. Pro when you need more.</h2><p>The maker is free with no sign-up. Pro is for businesses that send estimates every week.</p></div>
 <div class="plans">
-<div class="plan"><h3>Free</h3><div class="price">$0</div><ul><li>Unlimited estimates and invoices</li><li>Your logo, PDF download</li><li>18 trade starting points</li><li>Small &ldquo;Made with&rdquo; line on the PDF</li></ul><a class="btn btn-plain" href="#top">Use it free</a></div>
-<div class="plan hot"><span class="pill">Coming soon</span><h3>Pro</h3><div class="price">$9<small>/month</small></div><ul><li>Everything in Free, no branding line</li><li>Saved customers and price list</li><li>Turn an estimate into an invoice in one click</li><li>Document history on your device</li></ul><a class="btn btn-acc" href="#pro" data-demand-click="maker-pro" data-root="ROOT">Get Pro {A}</a></div>
+<div class="plan"><h3>Free</h3><div class="price">$0</div><ul><li>Unlimited estimates and invoices</li><li>Your logo, PDF download</li><li>Saved customers, prices and documents</li><li>Small &ldquo;Made with&rdquo; line on the PDF</li></ul><a class="btn btn-plain" href="#top">Use it free</a></div>
+<div class="plan hot"><span class="pill">Checkout opens soon</span><h3>Pro</h3><div class="price">$9<small>/month</small></div><ul><li>No &ldquo;Made with&rdquo; line on your PDFs</li><li>Business profile and logo filled in every time</li><li>Unpaid invoice tracker with reminder text</li><li>Backup to move everything to a new device</li></ul><a class="btn btn-acc" href="ROOTpro.html">See Pro {A}</a></div></div>
 </div></div></section>'''
 def faq_html(items): return '<div class="faq">'+"".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q,a in items)+'</div>'
 def faq_ld(items): return json.dumps({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in items]})

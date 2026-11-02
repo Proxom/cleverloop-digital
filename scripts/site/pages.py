@@ -40,7 +40,7 @@ home=f'''<section class="hero"><div class="wide">
 <p class="eyebrow">Free for contractors &middot; no sign-up</p>
 <h1>Send a professional estimate in <em>two minutes</em>.</h1>
 <p class="lede">The free estimate and invoice maker for the trades. Pick your trade, fill in the job, download a clean PDF with your logo, tax and deposit worked out.</p>
-<div class="actions"><a class="btn btn-acc" href="maker/">Make an estimate, free {ARROW}</a><a class="btn btn-ghost" href="maker/#pro">See Pro</a></div>
+<div class="actions"><a class="btn btn-acc" href="maker/">Make an estimate, free {ARROW}</a><a class="btn btn-ghost" href="pro.html">See Pro</a></div>
 <p style="margin:18px 0 0;font-size:.9rem;color:#9fb0c7">Plumbing &middot; Electrical &middot; Painting &middot; Roofing &middot; Landscaping &middot; Cleaning &middot; HVAC &middot; and more</p>
 </div>
 <div class="qq-wrap"><span class="chip chip-b"><i></i>Deposit <b>$530.25</b></span><span class="chip chip-a"><i></i>PDF in <b>1 click</b></span>
