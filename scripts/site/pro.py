@@ -31,7 +31,7 @@ ROWS = [
  ("Price", "$0", "$9 a month"),
 ]
 FAQ = [
- ("Can I buy Pro today?", "Not yet. Checkout opens soon. We are counting how many contractors click Get Pro before we switch payments on, so every click helps open it sooner. The free maker works fully in the meantime, with no sign-up."),
+ ("Can I buy Pro today?", "Not yet. Checkout opens soon. We are counting how many contractors click Get Pro before we switch payments on, so every click helps open it sooner. The free maker works fully in the meantime, with no sign-up, and you can preview the Pro tools at the bottom of the maker: it already counts your unpaid invoices from the ones you save."),
  ("Will the free version stay free?", "Yes. Unlimited estimates and invoices, your logo, PDF download, saved customers, saved prices and document history stay free. Pro adds the extras listed on this page; nothing that is free today will be moved behind Pro."),
  ("How will Pro work without an account?", "Your documents stay in your own browser, as they do now. After checkout you receive a Pro activation link by email; opening it switches on Pro in that browser. Use the backup file to bring your data and Pro to another device."),
  ("How do I cancel?", "Cancel any time from the link in your receipt email, or email hello@cleverloopdigital.com. Pro keeps working until the end of the month you paid for, and you are not charged again. Your documents stay on your device either way."),

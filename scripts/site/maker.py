@@ -64,6 +64,21 @@ APP=lambda: '''<div class="wide mk">
 <a class="btn btn-plain" href="ROOTpro.html">Remove the &ldquo;Made with&rdquo; line <span class="pro-tag">PRO</span></a></div>
 <p class="prev-note" id="savedoc-msg" style="margin:0" aria-live="polite"></p>
 <p class="prev-note" style="margin:0">Your draft is saved only in this browser. Nothing you type is sent to us. "Download PDF" opens your browser's print window: choose "Save as PDF".</p>
+<div class="mk-sec no-print" id="pro-box" style="margin-top:18px"><h2>Pro tools <span class="pro-tag">PRO</span></h2>
+<p class="prev-note" id="pro-state" style="margin:0 0 10px"></p>
+<h3 style="font-size:1rem;margin:0 0 4px">Unpaid invoices</h3>
+<p class="prev-note" id="unpaid-sum" style="margin:0" aria-live="polite"></p>
+<p class="prev-note" id="unpaid-lock" style="margin:4px 0 0" hidden>With Pro you see each one with days late, copy a ready-made payment reminder and mark it paid. <a href="ROOTpro.html">See Pro</a></p>
+<ul id="unpaid-items" style="margin:6px 0;padding-left:18px;font-size:.9rem"></ul>
+<h3 style="font-size:1rem;margin:14px 0 4px">Business profile</h3>
+<p class="prev-note" style="margin:0">Save your business name, details, logo, currency, tax, deposit and terms once; every new document starts with them.</p>
+<button type="button" class="btn btn-plain" id="profile-save" style="margin-top:6px">Save as my business profile</button>
+<p class="prev-note" id="profile-msg" style="margin:4px 0 0" aria-live="polite"></p>
+<h3 style="font-size:1rem;margin:14px 0 4px">Backup and restore</h3>
+<p class="prev-note" style="margin:0">Move your documents, customers, prices and profile to another device or browser with one file.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px"><button type="button" class="btn btn-plain" id="backup">Download backup</button><label for="restore" style="margin:0">Restore from a backup file</label><input id="restore" type="file" accept="application/json,.json"></div>
+<p class="prev-note" id="backup-msg" style="margin:4px 0 0" aria-live="polite"></p>
+</div>
 </div>
 <div class="mk-prev"><div class="paper" id="paper" aria-label="Document preview"></div><p class="prev-note">Live preview. This is exactly what your customer receives.</p></div>
 </div>'''
@@ -86,7 +101,7 @@ def write(path,p,title,desc,canon,body,lds,trade="",typ=""):
 <link rel="canonical" href="https://cleverloopdigital.com/{canon}">
 {headlinks(p)}
 <link rel="stylesheet" href="{p}site-v2.css"><link rel="stylesheet" href="{p}app-v1.css">{head}
-<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v10.js" defer></script>
+<script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v11.js" defer></script>
 </head><body id="top"{attrs}>
 {header(p,"maker")}
 {body}
@@ -97,6 +112,7 @@ GEN_FAQ=[("Is the estimate and invoice maker really free?","Yes. Make as many es
 ("Where is my data stored?","Only in your own browser on this device. Nothing you type, including your logo and customer details, is sent to our server. Clearing your browser data removes the draft."),
 ("How do I save the estimate as a PDF?","Click Download PDF. Your browser's print window opens; choose Save as PDF as the destination. On a phone, use Share or Print and then Save to Files."),
 ("What is the difference between an estimate and an invoice?","An estimate tells the customer what a job will cost before you start; an invoice asks for payment after the work (or a stage of it) is done. Switch between them with the Estimate / Invoice toggle."),
+("What do the Pro tools do?","Pro adds a list of unpaid invoices with days late, a ready-to-copy payment reminder and a Mark paid button; a business profile (name, details, logo, tax, deposit and terms) that fills in every new document; a backup file to move everything to another device; and PDFs without the Made with line. The free maker already shows how many saved invoices are unpaid. Pro is $9/month; see the Pro page for details."),
 ("How should I price the line items?","Start from your real costs and the margin you want. The free job price calculator divides cost by (1 minus your target margin), so a $700 job at a 25% margin is $933.33, not $875.")]
 # main maker page
 body=f'''<section class="phead"><div class="wide"><p class="crumbs"><a href="../index.html">Home</a> / <span>Estimate &amp; Invoice Maker</span></p><p class="eyebrow">Free online tool</p><h1>Free Estimate &amp; Invoice Maker for Contractors</h1><p class="lede">Fill in the form, watch the document build itself, download a clean PDF. Your logo, your line items, tax and deposit worked out for you. No sign-up.</p></div></section>

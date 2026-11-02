@@ -34,27 +34,34 @@
       notes: "Example prices. Replace them with your own.\nPrice valid until the date above. Work not listed is extra and needs a signed change order."
     };
   }
+  /* Pro: an activation key switches Pro on in this browser. Only SHA-256 hashes of issued keys are published, in /js/pro-keys.json (fetched fresh, so adding a key needs no new JS file). */
+  var PKEY = "cl-maker-pro-v1", FKEY = "cl-maker-profile-v1", PRO_HASHES = [];
+  var PRO = false, PROF = null;
+  try { PROF = JSON.parse(localStorage.getItem(FKEY) || "null"); } catch (e) { PROF = null; }
+  var PROF_KEYS = ["biz", "bizInfo", "logo", "cur", "tax", "deposit", "notes"];
+  function applyProfile(s) { if (PRO && PROF) PROF_KEYS.forEach(function (k) { if (PROF[k] != null) s[k] = PROF[k]; }); return s; }
   var S;
   var hash = (location.hash || "").slice(1);
   try { S = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) { S = null; }
   var want = PRESETS[hash] ? hash : document.body.getAttribute("data-trade");
   if (S && !S.cur) S.cur = "USD";
-  if (!S) S = fresh(want || "handyman");
+  if (!S) S = applyProfile(fresh(want || "handyman"));
   else if (want && S.trade !== want) { S.trade = want; S.items = PRESETS[want].items.map(function (r) { return { d: r[0], q: r[1], u: r[2], r: r[3] }; }); }
   if (document.body.getAttribute("data-type") && !hash) S.type = document.body.getAttribute("data-type");
 
   var $ = function (id) { return document.getElementById(id); };
   var CUR = { USD: "$", CAD: "$", AUD: "$", GBP: "\u00a3", EUR: "\u20ac", NZD: "$" };
-  var money = { format: function (v) { var c = CUR[S.cur] ? S.cur : "USD"; return new Intl.NumberFormat("en-US", { style: "currency", currency: c }).format(v); } };
+  var money = { format: function (v, cur) { var c = CUR[cur || S.cur] ? (cur || S.cur) : "USD"; return new Intl.NumberFormat("en-US", { style: "currency", currency: c }).format(v); } };
   var num = function (v) { var n = parseFloat(v); return isFinite(n) ? n : 0; };
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
-  function totals() {
-    var sub = S.items.reduce(function (a, it) { return a + num(it.q) * num(it.r); }, 0);
-    var tax = sub * num(S.tax) / 100, total = sub + tax;
-    var dep = S.type === "estimate" ? total * num(S.deposit) / 100 : 0;
-    var paid = S.type === "invoice" ? num(S.paid) : 0;
+  function totals(s) {
+    s = s || S;
+    var sub = s.items.reduce(function (a, it) { return a + num(it.q) * num(it.r); }, 0);
+    var tax = sub * num(s.tax) / 100, total = sub + tax;
+    var dep = s.type === "estimate" ? total * num(s.deposit) / 100 : 0;
+    var paid = s.type === "invoice" ? num(s.paid) : 0;
     return { sub: sub, tax: tax, total: total, dep: dep, paid: paid, bal: total - paid };
   }
 
@@ -145,15 +152,109 @@
       b.onclick = function () { DOCS.splice(i, 1); dStore(); dManage(); };
       li.appendChild(o); li.appendChild(b); ul.appendChild(li);
     });
+    unpaidRender();
   }
   function dSave() {
     var t = totals(), snap = JSON.parse(JSON.stringify(S)); snap.logo = "";
     var label = money.format(t.total), key = snap.type + "|" + snap.number;
+    var old = DOCS.filter(function (d) { return d.s.type + "|" + d.s.number === key; })[0];
     DOCS = DOCS.filter(function (d) { return d.s.type + "|" + d.s.number !== key; });
-    DOCS.unshift({ s: snap, t: label, at: new Date().toISOString().slice(0, 10) });
+    var rec = { s: snap, t: label, at: new Date().toISOString().slice(0, 10) };
+    if (old && old.paidAt) rec.paidAt = old.paidAt;
+    DOCS.unshift(rec);
     if (DOCS.length > 100) DOCS.length = 100;
     dStore(); dManage();
   }
+  /* Pro tools: unpaid invoice tracker, business profile, backup and restore. */
+  function proGate(msgId) {
+    if (PRO) return true;
+    var m = $(msgId); if (m) m.innerHTML = 'This is a Pro feature. <a href="' + (document.body.getAttribute("data-root") || "/") + 'pro.html">See what Pro adds</a>.';
+    return false;
+  }
+  function daysLate(due) { var d = Date.parse(due); if (!isFinite(d)) return 0; return Math.floor((Date.parse(new Date().toISOString().slice(0, 10)) - d) / 86400000); }
+  function reminder(d) {
+    var t = totals(d.s), late = daysLate(d.s.due), who = String(d.s.client || "").trim();
+    return "Hi" + (who ? " " + who : "") + ",\n\nThis is a friendly reminder that invoice " + d.s.number + " for " + money.format(t.bal, d.s.cur) +
+      (d.s.due ? (late > 0 ? " was due on " + d.s.due + " (" + late + " day" + (late === 1 ? "" : "s") + " ago)" : " is due on " + d.s.due) : "") +
+      ". If you have already paid, thank you, and please ignore this message. Otherwise, could you let me know when to expect payment?\n\nThank you,\n" + String(d.s.biz || "").trim();
+  }
+  function copyText(txt, btn) {
+    function ok() { var o = btn.textContent; btn.textContent = "Copied"; setTimeout(function () { btn.textContent = o; }, 1500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(ok, function () { window.prompt("Copy this reminder:", txt); });
+    else window.prompt("Copy this reminder:", txt);
+  }
+  function unpaidRender() {
+    var box = $("pro-box"); if (!box) return;
+    var list = DOCS.filter(function (d) { return d.s.type === "invoice" && !d.paidAt && totals(d.s).bal > 0.004; });
+    var byCur = {}; list.forEach(function (d) { var c = d.s.cur || "USD"; byCur[c] = (byCur[c] || 0) + totals(d.s).bal; });
+    var sum = Object.keys(byCur).map(function (c) { return money.format(byCur[c], c); }).join(" + ");
+    $("unpaid-sum").textContent = list.length ? list.length + " unpaid invoice" + (list.length === 1 ? "" : "s") + ", " + sum + " outstanding" : (DOCS.some(function (d) { return d.s.type === "invoice"; }) ? "No unpaid invoices. Every saved invoice is paid." : "No unpaid invoices saved yet. Save an invoice (or download its PDF) and it appears here until you mark it paid.");
+    var ul = $("unpaid-items"); ul.innerHTML = ""; ul.hidden = !PRO;
+    if (!PRO) { $("unpaid-lock").hidden = !list.length; return; }
+    $("unpaid-lock").hidden = true;
+    list.forEach(function (d) {
+      var li = document.createElement("li"), late = daysLate(d.s.due);
+      li.style.margin = "6px 0";
+      li.appendChild(document.createTextNode("Invoice " + d.s.number + " \u00b7 " + (d.s.client || "no customer") + " \u00b7 " + money.format(totals(d.s).bal, d.s.cur) + (late > 0 ? " \u00b7 " + late + " days late " : " \u00b7 due " + (d.s.due || "-") + " ")));
+      var c = document.createElement("button"), p = document.createElement("button");
+      c.type = p.type = "button"; c.className = "copyrem"; p.className = "markpaid";
+      c.style.cssText = p.style.cssText = "margin-left:6px;cursor:pointer";
+      c.textContent = "Copy reminder"; p.textContent = "Mark paid";
+      c.onclick = function () { copyText(reminder(d), c); };
+      p.onclick = function () { d.paidAt = new Date().toISOString().slice(0, 10); dStore(); dManage(); };
+      li.appendChild(c); li.appendChild(p); ul.appendChild(li);
+    });
+  }
+  function proInit() {
+    var box = $("pro-box"); if (!box) return;
+    $("pro-state").innerHTML = PRO ? "Pro is on in this browser. Thank you for supporting the maker." : 'Preview. These tools switch on with <a href="' + (document.body.getAttribute("data-root") || "/") + 'pro.html">Maker Pro</a> ($9/month). Everything else on this page stays free.';
+    $("profile-save").onclick = function () {
+      if (!proGate("profile-msg")) return;
+      PROF = {}; PROF_KEYS.forEach(function (k) { PROF[k] = S[k]; });
+      try { localStorage.setItem(FKEY, JSON.stringify(PROF)); $("profile-msg").textContent = "Saved. New documents and Start over now begin with these details."; }
+      catch (e) { $("profile-msg").textContent = "Could not save: browser storage is full or blocked."; }
+    };
+    $("backup").onclick = function () {
+      if (!proGate("backup-msg")) return;
+      var out = { app: "cl-maker", v: 1, at: new Date().toISOString(), data: {} };
+      [KEY, LKEY, CKEY, DKEY, FKEY, PKEY].forEach(function (k) { var v = localStorage.getItem(k); if (v != null) out.data[k] = v; });
+      var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(out)], { type: "application/json" }));
+      a.download = "estimate-maker-backup-" + out.at.slice(0, 10) + ".json"; document.body.appendChild(a); a.click(); a.remove();
+      $("backup-msg").textContent = "Backup downloaded. Open this page on your other device and use Restore.";
+    };
+    $("restore").addEventListener("change", function () {
+      var f = this.files && this.files[0]; if (!f) return;
+      var r = new FileReader(); r.onload = function () {
+        var b; try { b = JSON.parse(r.result); } catch (e) { b = null; }
+        var ks = [KEY, LKEY, CKEY, DKEY, FKEY, PKEY];
+        if (!b || b.app !== "cl-maker" || typeof b.data !== "object") { $("backup-msg").textContent = "That file is not a maker backup."; return; }
+        var hasPro = false; try { var bp = JSON.parse(b.data[PKEY] || "null"); hasPro = !!(bp && PRO_HASHES.indexOf(bp.h) > -1); } catch (e) {}
+        if (!PRO && !hasPro) { proGate("backup-msg"); return; }
+        if (!window.confirm("Replace the documents, customers and prices in this browser with the backup?")) return;
+        try { ks.forEach(function (k) { if (typeof b.data[k] === "string") localStorage.setItem(k, b.data[k]); }); } catch (e) { $("backup-msg").textContent = "Could not restore: browser storage is full or blocked."; return; }
+        location.reload();
+      }; r.readAsText(f);
+    });
+    unpaidRender();
+  }
+  /* Load the issued key hashes, re-check the stored key, then handle a ?pro=KEY activation link from the purchase email. */
+  function proActivate() {
+    try { var pv = JSON.parse(localStorage.getItem(PKEY) || "null"); if (pv && PRO_HASHES.indexOf(pv.h) > -1 && !PRO) { PRO = true; proInit(); renderPrev(); } } catch (e) {}
+    var m = location.search.match(/[?&]pro=([A-Za-z0-9-]{12,64})/);
+    if (!m || !(window.crypto && crypto.subtle)) return;
+    crypto.subtle.digest("SHA-256", new TextEncoder().encode(m[1])).then(function (buf) {
+      var h = Array.prototype.map.call(new Uint8Array(buf), function (x) { return ("0" + x.toString(16)).slice(-2); }).join("");
+      var ok = PRO_HASHES.indexOf(h) > -1, st = $("pro-state");
+      if (ok) { try { localStorage.setItem(PKEY, JSON.stringify({ h: h, at: new Date().toISOString() })); } catch (e) {} PRO = true; proInit(); renderPrev(); }
+      else if (st) st.textContent = "That Pro activation link is not valid. Email hello@cleverloopdigital.com and we will sort it out.";
+      history.replaceState(null, "", location.pathname + location.hash);
+    });
+  }
+  try {
+    fetch("/js/pro-keys.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : { hashes: [] }; })
+      .then(function (j) { PRO_HASHES = (j && j.hashes) || []; proActivate(); }, proActivate);
+  } catch (e) {}
+  proInit();
   dManage();
   function bindClient() {
     var el = $("f-client"); if (!el) return;
@@ -211,7 +312,7 @@
       (!isE ? '<div class="due"><span>Balance due</span><span>' + money.format(t.bal) + "</span></div>" : "") + "</div>" +
       (S.notes ? '<div class="notes"><div class="lab">Notes &amp; terms</div>' + esc(S.notes) + "</div>" : "") +
       (isE ? '<div class="sign"><div>Accepted by (customer signature)</div><div>Date</div></div>' : "") +
-      '<div class="brand">Made with the free Estimate &amp; Invoice Maker at cleverloopdigital.com</div>';
+      (PRO ? "" : '<div class="brand">Made with the free Estimate &amp; Invoice Maker at cleverloopdigital.com</div>');
   }
   function track(e) {
     try { var b = JSON.stringify({ p: "maker", e: e }); if (!(navigator.sendBeacon && navigator.sendBeacon("/api/t.php", b))) fetch("/api/t.php", { method: "POST", body: b, keepalive: true }); } catch (x) {}
@@ -223,7 +324,7 @@
   $("dep-paid").onclick = function () { var t = totals(); S.paid = (Math.round(t.total * num(S.deposit)) / 100).toFixed(2); $("f-paid").value = S.paid; save(); renderPrev(); };
   $("pdf").onclick = function () { track("download"); dSave(); window.print(); };
   if ($("savedoc")) $("savedoc").onclick = function () { dSave(); var m = $("savedoc-msg"); if (m) m.textContent = "Saved on this device."; };
-  $("reset").onclick = function () { var tr = S.trade, cu = S.cur; S = fresh(tr); S.cur = cu || "USD"; save(); bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); };
+  $("reset").onclick = function () { var tr = S.trade, cu = S.cur; S = fresh(tr); S.cur = cu || "USD"; applyProfile(S); save(); bindFields(); bindCur(); renderItems(); renderType(); renderPrev(); if (S.logo) { $("logo-prev").src = S.logo; $("logo-prev").hidden = false; } else { $("logo-prev").hidden = true; } };
   $("next").onclick = function () {
     var n = String(S.number == null ? "" : S.number), m = n.match(/^(.*?)(\d+)$/);
     var keep = { biz: S.biz, bizInfo: S.bizInfo, logo: S.logo, cur: S.cur, tax: S.tax, deposit: S.deposit, notes: S.notes, trade: S.trade };
@@ -237,7 +338,7 @@
     if (f.size > 600000) { $("logo-msg").textContent = "Please use an image under 600 KB."; return; }
     var r = new FileReader(); r.onload = function () { S.logo = r.result; $("logo-prev").src = r.result; $("logo-prev").hidden = false; $("logo-msg").textContent = ""; save(); renderPrev(); }; r.readAsDataURL(f);
   });
-  if (S.logo) { $("logo-prev").src = S.logo; $("logo-prev").hidden = false; }
+  if (S.logo) { $("logo-prev").src = S.logo; $("logo-prev").hidden = false; } else { $("logo-prev").hidden = true; }
   var pr = $("presets");
   Object.keys(PRESETS).forEach(function (k) {
     var b = document.createElement("button"); b.type = "button"; b.textContent = PRESETS[k].label;

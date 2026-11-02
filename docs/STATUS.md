@@ -461,3 +461,16 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Playwright: 1280 ve 390 px'de yatay kaydırma yok, JS hatası yok; ekran görüntüleri kontrol edildi.
 - Beceriler: website-design:web-review ölçütleri (mesaj/hiyerarşi, AI-sayfa görüntüsü, tutarlılık, mobil) işe yaradı; Playwright; Parallel web_fetch. Gelir £0.
 - Sıradaki: Pro özelliklerini maker'da kodla (işletme profili, ödenmemiş fatura takibi, yedek/geri yükleme); ödeme rayı gelince "Get Pro" düğmesine link.
+
+## 98. çalıştırma (2 Kasım, Pro özellikleri maker'da kodlandı)
+- Panel: a-005 "onaylandı" ama Stripe bağlantısında hâlâ YALNIZCA Proxom Engineering Ltd var → hiçbir Stripe nesnesi oluşturulmadı, Payhip linki de yok. Yeni istek eklenmedi.
+- Ürün (genel müdür önceliği 1, ödeme gelince satılacak şey artık gerçekten çalışıyor): `maker-v11.js` (önbellek kuralı: v10 → v11, 19 maker sayfası yeniden üretildi). Maker'ın altında **"Pro tools"** bölümü:
+  1. Ödenmemiş faturalar: kayıtlı faturalardan bakiyesi olanlar; ücretsiz kullanıcı sayıyı ve toplamı görür (kendi verisinden önizleme + "See Pro"), Pro'da her biri gecikme günüyle listelenir, "Copy reminder" hazır ödeme hatırlatma metnini kopyalar, "Mark paid" kapatır.
+  2. İşletme profili: ad, bilgiler, logo, para birimi, vergi, depozito, şartlar bir kez kaydedilir; yeni belge ve "Start over" bunlarla başlar.
+  3. Yedek / geri yükleme: tüm belgeler, müşteriler, fiyatlar, profil (ve Pro anahtarı) tek JSON dosyasında; başka cihazda geri yüklenir.
+  4. Pro'da PDF'teki "Made with" satırı kalkar.
+- Aktivasyon: `maker/?pro=<ANAHTAR>` linki; anahtarın SHA-256 özeti `public/js/pro-keys.json` içinde olmalı (her açılışta önbelleksiz okunur, yeni anahtar için JS dosya adı değişmez). Şu an liste BOŞ (satış yok). Düz anahtar asla repoya yazılmaz (repo herkese açık).
+- SEO: maker SSS'ye "What do the Pro tools do?" (FAQPage şemasında), pro.html SSS'si maker'daki önizlemeye yönlendiriyor.
+- Playwright (390 px ve 1280 px): ücretsiz kilit, geçersiz anahtar mesajı, geçerli anahtarla Pro açılması, markasız önizleme, hatırlatma panoya kopyalama, profil + Start over, yedek indirme, Mark paid, yeni tarayıcıda geri yükleme doğrulandı; JS hatası yok, yatay kaydırma yok.
+- Beceriler: yalnızca Playwright + yerel jeneratörler (yeterli). Gelir £0.
+- Sıradaki: ödeme rayı gelince satın alma → anahtar teslimi akışı (Stripe başarı sayfası + anahtar e-postası; e-posta Erkan'dan geçmeli ya da başarı sayfasında gösterilmeli); trafik getiren rehberleri derinleştirme.
