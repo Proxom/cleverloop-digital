@@ -100,7 +100,7 @@ def write(path,p,title,desc,canon,body,lds,trade="",typ=""):
 <meta name="description" content="{desc}">
 <link rel="canonical" href="https://cleverloopdigital.com/{canon}">
 {headlinks(p)}
-<link rel="stylesheet" href="{p}site-v2.css"><link rel="stylesheet" href="{p}app-v1.css">{head}
+<link rel="stylesheet" href="{p}site-v3.css"><link rel="stylesheet" href="{p}app-v1.css">{head}
 <script src="{p}js/demand.js" defer></script><script src="{p}js/maker-v11.js" defer></script>
 </head><body id="top"{attrs}>
 {header(p,"maker")}

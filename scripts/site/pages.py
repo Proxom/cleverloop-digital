@@ -11,7 +11,7 @@ def page(path,p,cur,title,desc,canon,body,extra_head=""):
 <meta name="description" content="{desc}">
 <link rel="canonical" href="https://cleverloopdigital.com/{canon}">
 {headlinks(p)}
-<link rel="stylesheet" href="{p}site-v2.css"><link rel="stylesheet" href="{p}app-v1.css">{extra_head}
+<link rel="stylesheet" href="{p}site-v3.css"><link rel="stylesheet" href="{p}app-v1.css">{extra_head}
 </head><body>
 {header(p,cur)}
 {body}

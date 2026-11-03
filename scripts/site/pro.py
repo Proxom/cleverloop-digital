@@ -94,7 +94,7 @@ open("pro.html", "w").write(f'''<!doctype html>
 <meta name="description" content="Pro for the free contractor estimate and invoice maker: no branding line on PDFs, business profile filled in automatically, unpaid invoice reminders, device backup. $9/month, cancel any time, 14-day refund.">
 <link rel="canonical" href="https://cleverloopdigital.com/pro.html">
 {headlinks("")}
-<link rel="stylesheet" href="site-v2.css"><link rel="stylesheet" href="app-v1.css">{CSS}
+<link rel="stylesheet" href="site-v3.css"><link rel="stylesheet" href="app-v1.css">{CSS}
 <script type="application/ld+json">{product_ld}</script>
 <script type="application/ld+json">{faq_ld(FAQ)}</script>
 <script src="js/demand.js" defer></script>

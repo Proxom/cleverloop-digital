@@ -229,3 +229,4 @@ h1{letter-spacing:-.035em}h2{letter-spacing:-.028em}
 .tile .ic{background:linear-gradient(135deg,var(--acc-soft),color-mix(in srgb,var(--acc-soft) 60%,var(--surface)))}
 .btn-acc{background:linear-gradient(180deg,#ff7a3d,#ff6a2b)}
 .hero .wide{z-index:1}
+.card.promo-card a.btn-acc{color:#1a0b03}
