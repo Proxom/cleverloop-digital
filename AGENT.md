@@ -1,3 +1,11 @@
+# PAUSE — READ THIS FIRST (Erkan, 3 Nov 2026 18:52)
+
+Erkan has paused this agent until **Friday 6 November 2026 15:00 Europe/London** to save the weekly Claude usage limit for the Instagram and YouTube agents.
+
+Before doing anything else, check the current time in Europe/London (`TZ=Europe/London date`).
+- If it is BEFORE 2026-11-06 15:00 Europe/London: do NOTHING else. Do not clone other repos, research, build, commit, write to dashboards or send messages. End the run immediately with one line: "Paused by Erkan until 6 Nov 15:00."
+- If it is 2026-11-06 15:00 or later: ignore this block completely and follow the rest of this file as usual.
+
 # CLEVER LOOP AGENT - standing instructions
 
 Last updated 30 Oct 2026 (benchmark order). Single source of truth for the scheduled routine. The routine prompt only says: "Read AGENT.md in the Proxom/cleverloop-digital repository and follow it."
