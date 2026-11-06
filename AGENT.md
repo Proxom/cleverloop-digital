@@ -1,10 +1,8 @@
-# PAUSE — READ THIS FIRST (Erkan, 3 Nov 2026 18:52)
+# PAUSE — READ THIS FIRST (Erkan, 3 Nov 2026; extended 6 Nov 2026 15:04 until Erkan decides)
 
-Erkan has paused this agent until **Friday 6 November 2026 15:00 Europe/London** to save the weekly Claude usage limit for the Instagram and YouTube agents.
+Erkan has paused this agent to save the weekly Claude usage limit. The pause has NO end date now: it lasts until this block is removed from this file.
 
-Before doing anything else, check the current time in Europe/London (`TZ=Europe/London date`).
-- If it is BEFORE 2026-11-06 15:00 Europe/London: do NOTHING else. Do not clone other repos, research, build, commit, write to dashboards or send messages. End the run immediately with one line: "Paused by Erkan until 6 Nov 15:00."
-- If it is 2026-11-06 15:00 or later: ignore this block completely and follow the rest of this file as usual.
+Do NOTHING else. Do not clone other repos, research, build, commit, write to dashboards or send messages. End the run immediately with one line: "Paused by Erkan."
 
 # CLEVER LOOP AGENT - standing instructions
 
