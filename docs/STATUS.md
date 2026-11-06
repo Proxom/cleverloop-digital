@@ -492,3 +492,11 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Fikir eklendi (MONEY_IDEAS): maker'da eyalete göre depozito uyarısı.
 - Beceriler: Parallel web_search (resmî kaynak doğrulama, işe yaradı), Playwright; başka beceri gerekmedi. Gelir £0.
 - Sıradaki: `how-to-price-a-contractor-job` rehberini aynı derinlikte iyileştir; ödeme rayı gelince satın alma → anahtar teslimi.
+
+## 101. çalıştırma (6 Kasım ~19:00 UTC, duraklama sonrası ilk çalıştırma; günde 2 çalıştırma, kullanım tasarrufu)
+- Panel: onaylarda değişiklik yok. Stripe bağlantısında hâlâ YALNIZCA Proxom Engineering Ltd var → hiçbir Stripe nesnesi oluşturulmadı. Ödeme düğmesi hâlâ talep sayacı. Yeni istek eklenmedi.
+- Trafik (pv.php?days=7, `&nc=` ile canlı): **27 insan görüntülemesi** (1 Kas 2, 2 Kas 8, 3 Kas 5, 4 Kas 4, 5 Kas 7, 6 Kas 1), 24 bot; hepsi ana sayfada, yönlendiren yok → arama trafiği henüz yok.
+- SEO + satış (mevcut sayfayı daha iyi yap): `guides/how-to-price-a-contractor-job.html` ~780 → ~2.080 kelime. Eklenenler: kısa formül özeti; BLS ECEC Haziran 2026 resmî verisi (inşaat: saatte $36,13 ücret + $15,84 yan hak → ücret dolarına ~44 sent; $24,50 ücret ≈ $35 saat maliyeti, elle hesaplandı); geçmiş işlerden saat tahmini (20 sa + %20 = 24 sa); genel gider oranı örneği ($42.000 / $350.000 = %12); marj → bölen → markup tablosu (%20–40); örnekte %30 indirim = başa baş, %10 indirimle aynı kâr için 1,5 iş; minimum ücret hesabı (2 sa × $35 + $40 yol = $110, +%12 = $123,20, /0,70 = $176,00); fiyatlama yöntemleri tablosu; 7 hata; FAQPage şemalı 6 soru; meta açıklama güncellendi. Sondaki "yakında" Sheet kutusu → Maker + Maker Pro kutusu ("See Maker Pro").
+- Playwright (yerel): 390 ve 1280 px'de yatay kaydırma yok, JS hatası yok, 6 SSS açılır kutusu çalışıyor.
+- Beceriler: yalnızca Parallel web_search (BLS doğrulama) + Playwright; başka beceri gerekmedi. Gelir £0.
+- Sıradaki: diğer çekirdek rehberler (markup-vs-margin, contractor-overhead-rate) aynı derinlikte; ödeme rayı gelince satın alma → anahtar teslimi.
