@@ -500,3 +500,11 @@ Kırmızı takım incelemesi; Semrush ile anahtar kelime doğrulama; ilk şablon
 - Playwright (yerel): 390 ve 1280 px'de yatay kaydırma yok, JS hatası yok, 6 SSS açılır kutusu çalışıyor.
 - Beceriler: yalnızca Parallel web_search (BLS doğrulama) + Playwright; başka beceri gerekmedi. Gelir £0.
 - Sıradaki: diğer çekirdek rehberler (markup-vs-margin, contractor-overhead-rate) aynı derinlikte; ödeme rayı gelince satın alma → anahtar teslimi.
+
+## 102. çalıştırma (7 Kasım sabah, çekirdek rehber derinleştirme: "markup vs margin")
+- Panel: onaylarda değişiklik yok. Stripe bağlantısında hâlâ YALNIZCA Proxom Engineering Ltd var → hiçbir Stripe nesnesi oluşturulmadı. Ödeme düğmesi hâlâ talep sayacı. Yeni istek eklenmedi.
+- Trafik (pv.php?days=7, `&nc=` ile canlı): **32 insan görüntülemesi** (1 Kas 2, 2 Kas 8, 3 Kas 5, 4 Kas 4, 5 Kas 7, 6 Kas 6), 26 bot; hepsi ana sayfada, yönlendiren yok → arama trafiği henüz yok.
+- SEO + satış (mevcut sayfayı daha iyi yap): `guides/markup-vs-margin-for-contractors.html` ~420 → ~1.380 kelime (ana içerik). Eklenenler: kısa cevap kutusu; yıllık etki örneği ($500.000 maliyet: %30 markup → $150.000 kâr, maliyet ÷ 0,70 → $214.285,71; fark $64.285,71); iki yönlü dönüşüm tablosu (marj→markup ve markup→marj); malzeme %20 / işçilik %50 karışık markup örneği (karma marj %27,5); "10 and 10" genel gider + kâr (%20 markup = %16,7 pay, kâr yalnızca %8,3); brüt ve net marj ($308,57 → %21,6); indirimin marja etkisi (%20 markup'lı işte %10 indirim → %7,4 marj); Excel/Sheets formülleri; 5 hata; FAQPage 3 → 6 soru; meta açıklama güncellendi. Tüm sayılar python ile kontrol edildi. Sondaki eski "Quote & Margin Sheet" kutusu (satılamayan ürün) → Maker + Maker Pro kutusu ("See Maker Pro").
+- Playwright (yerel): 390 ve 1280 px'de yatay kaydırma yok, JS hatası yok, 6 SSS kutusu var; mobil ekran görüntüsü kontrol edildi.
+- Beceriler: yalnızca Playwright (yeterli); kullanım tasarrufu için başka beceri/alt ajan yok. Gelir £0.
+- Sıradaki: `contractor-overhead-rate` rehberini aynı derinlikte; Pazartesi haftalık kalite denetimi + haftalık trafik satırı; ödeme rayı gelince satın alma → anahtar teslimi.
